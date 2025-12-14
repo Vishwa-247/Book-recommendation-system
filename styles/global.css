@@ -32,7 +32,7 @@
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
-  
+
   /* Sidebar colors */
   --sidebar: #f1f5f9;
   --sidebar-foreground: #0f172a;
@@ -161,7 +161,9 @@ a.border[class*="bg-transparent"]:hover,
 }
 
 /* Ghost Button Variant - Only apply when explicitly using hover:bg-accent */
-button[class*="hover:bg-accent"][class*="hover:text-accent-foreground"]:hover:not(.nav-item):not([class*="justify-start"]),
+button[class*="hover:bg-accent"][class*="hover:text-accent-foreground"]:hover:not(.nav-item):not(
+    [class*="justify-start"]
+  ),
 button.hover\:bg-accent.hover\:text-accent-foreground:hover:not(.nav-item):not([class*="justify-start"]) {
   background-color: var(--accent);
   color: var(--accent-foreground);
@@ -456,8 +458,8 @@ div.bg-white.border.rounded-lg.shadow-sm:hover {
 /* Prevent hover on top contributors avatars */
 div.w-8.h-8.rounded-full:hover,
 div[class*="w-8"][class*="h-8"][class*="rounded-full"]:hover,
-div.bg-\[#00377b\]\/10.rounded-full:hover,
-div.bg-\[#d67c40\]\/10.rounded-full:hover,
+div.bg-\[\#00377b\]\/10.rounded-full:hover,
+div.bg-\[\#d67c40\]\/10.rounded-full:hover,
 div.bg-green-100.rounded-full:hover {
   background-color: inherit !important;
   transform: none !important;
@@ -905,24 +907,24 @@ aside[class*="sidebar"] button.active,
 section .bg-white[class*="border"][class*="rounded"],
 section .bg-white[class*="border"][class*="shadow"],
 section .bg-white[class*="rounded"][class*="shadow"] {
-  background-color: #F3F9FF !important;
+  background-color: #f3f9ff !important;
 }
 
 /* Cards in grid layouts (feature cards, step cards) */
 .grid .bg-white[class*="border"][class*="rounded"],
 .grid .bg-white[class*="border"][class*="shadow"],
 .grid .bg-white[class*="rounded"][class*="shadow"] {
-  background-color: #F3F9FF !important;
+  background-color: #f3f9ff !important;
 }
 
 /* Cards with all three: border + rounded + shadow (definite card pattern) */
 .bg-white[class*="border"][class*="rounded"][class*="shadow"] {
-  background-color: #F3F9FF !important;
+  background-color: #f3f9ff !important;
 }
 
 /* Cards with border-2 (specific card pattern used in how-it-works) */
 .bg-white[class*="border-2"][class*="rounded"] {
-  background-color: #F3F9FF !important;
+  background-color: #f3f9ff !important;
 }
 
 /* Explicitly exclude header, footer, nav contexts */
@@ -940,89 +942,4 @@ svg {
   display: inline-block;
   vertical-align: middle;
   flex-shrink: 0;
-}
-
-/* Ensure SVG icons with text color classes inherit color properly */
-svg[class*="text-"] {
-  color: inherit;
-}
-
-svg[class*="text-"] path,
-svg[class*="text-"] circle,
-svg[class*="text-"] rect,
-svg[class*="text-"] line,
-svg[class*="text-"] polyline,
-svg[class*="text-"] polygon {
-  stroke: currentColor;
-}
-
-/* Ensure icons in icon containers are visible and properly sized */
-.w-10.h-10 svg,
-.w-12.h-12 svg {
-  display: block;
-  flex-shrink: 0;
-}
-
-/* Ensure small icons (w-4 h-4, w-5 h-5) are visible */
-svg.w-4,
-svg.w-5 {
-  min-width: 1rem;
-  min-height: 1rem;
-}
-
-svg.h-4,
-svg.h-5 {
-  min-width: 1rem;
-  min-height: 1rem;
-}
-
-/* Fix for browser extension injected elements (nextjs-portal, etc.) */
-nextjs-portal,
-[data-cursor-element-id] {
-  position: fixed !important;
-  pointer-events: none !important;
-  z-index: 9999 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: auto !important;
-  bottom: auto !important;
-}
-
-/* Hide empty portal elements that might cause layout issues */
-nextjs-portal:empty,
-[data-cursor-element-id]:empty {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: auto !important;
-  bottom: auto !important;
-}
-
-/* Ensure portal elements don't interfere with page layout */
-nextjs-portal[style*="width: 0px"],
-nextjs-portal[style*="height: 0px"],
-[data-cursor-element-id][style*="width: 0px"],
-[data-cursor-element-id][style*="height: 0px"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: auto !important;
-  bottom: auto !important;
-}
-
-/* Force reset positioning for all portal elements regardless of inline styles */
-nextjs-portal,
-[data-cursor-element-id] {
-  top: 0 !important;
-  left: 0 !important;
-  right: auto !important;
-  bottom: auto !important;
-  transform: none !important;
 }

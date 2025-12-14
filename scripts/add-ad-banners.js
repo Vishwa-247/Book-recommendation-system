@@ -87,4 +87,3 @@ const rootDir = path.join(__dirname, '..');
 processDirectory(rootDir);
 
 console.log('Done!');
-

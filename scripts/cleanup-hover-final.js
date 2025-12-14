@@ -102,4 +102,3 @@ function processDirectory(dir, baseDir) {
 const rootDir = path.join(__dirname, '..');
 const count = processDirectory(rootDir, rootDir);
 console.log(`\nTotal files updated: ${count}`);
-

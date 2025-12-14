@@ -102,4 +102,3 @@
 4. Border widths - Outline buttons should use `border` not `border-2`
 5. Colors - Ensure exact color matches
 6. Padding/spacing - Match Next.js exactly
-

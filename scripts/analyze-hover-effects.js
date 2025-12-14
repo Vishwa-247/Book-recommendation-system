@@ -99,4 +99,3 @@ if (fs.existsSync(nextJsDir)) {
 } else {
   console.error('Next.js directory not found:', nextJsDir);
 }
-

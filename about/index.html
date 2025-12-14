@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AdvocateKhoj</title>
+    <meta name="description" content="Learn about AdvocateKhoj - India's leading platform connecting clients with qualified advocates.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../styles/global.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00377b',
+                        'primary-dark': '#001944',
+                        'primary-light': '#1453a3',
+                        secondary: '#d67c40',
+                        'secondary-dark': '#c26a36',
+                        accent: '#f17313',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-[#001944]/20 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center flex-shrink-0">
+                <a href="../index.html" class="flex items-center hover:opacity-85 transition-opacity">
+                    <img src="../assets/logo.svg" alt="AdvocateKhoj Logo" class="h-14 w-auto sm:h-16"
+                        onerror="this.src='https://via.placeholder.com/140x80?text=AdvocateKhoj'">
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 relative" id="main-nav">
+                <a href="../client-area/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Post a Case</a>
+                <a href="../advocate-area/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Join as Advocate</a>
+                <a href="../law-colleges/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Law College</a>
+                <a href="../sawal-jawab/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Sawal Jawab</a>
+                <a href="../law-library/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Law Library</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-3">
+                <a href="../login/index.html" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#00377b] hover:bg-[#00377b]/90 text-white shadow-md border border-[#001944]/80 transition-all duration-200">Log In</a>
+                <a href="../register/index.html" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#d67c40] hover:bg-[#c26a36] text-white font-semibold shadow-md border border-[#d67c40]/70 transition-[background] duration-200">Register</a>
+            </div>
+            <button class="md:hidden text-[#001944] p-2 hover:bg-gray-100 rounded-md transition-colors" id="mobile-menu-btn" aria-label="Toggle navigation">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden border-t border-[#001944]/10 bg-white/95 backdrop-blur hidden" id="mobile-menu">
+            <nav class="max-w-7xl mx-auto px-4 py-4 space-y-3">
+                <a href="../client-area/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Post a Case</a>
+                <a href="../advocate-area/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Join as Advocate</a>
+                <a href="../law-colleges/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Law College</a>
+                <a href="../sawal-jawab/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Sawal Jawab</a>
+                <a href="../law-library/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Law Library</a>
+                <div class="pt-4 border-t border-[#001944]/10 space-y-2">
+                    <a href="../login/index.html" class="block w-full px-4 py-3 text-center bg-[#00377b] hover:bg-[#00377b]/90 text-white rounded-md font-medium">Log In</a>
+                    <a href="../register/index.html" class="block w-full px-4 py-3 text-center bg-[#d67c40] text-white rounded-md font-medium hover:bg-[#c26a36]">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-[#00377b] to-[#001944] py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">About AdvocateKhoj</h1>
+                <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+                    India's leading platform connecting clients with qualified advocates. We believe in making legal services accessible to everyone.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="py-16 md:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            AdvocateKhoj was founded with a simple yet powerful mission: to bridge the gap between clients seeking legal assistance and qualified advocates who can help them.
+                        </p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            We understand that finding the right advocate can be challenging. That's why we've built a platform that provides transparency, accessibility, and trust in the legal services industry.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Our platform empowers clients to make informed decisions by providing detailed information about advocates' backgrounds, education, experience, and case history.
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-br from-[#00377b]/10 to-[#d67c40]/10 rounded-2xl p-8 md:p-12">
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-[#00377b] rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 mb-1">Verified Advocates</h3>
+                                    <p class="text-gray-600 text-sm">All advocates on our platform are verified for authenticity</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-[#d67c40] rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 mb-1">Secure Platform</h3>
+                                    <p class="text-gray-600 text-sm">Your data and communications are fully protected</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-[#00377b] rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 mb-1">Pan-India Network</h3>
+                                    <p class="text-gray-600 text-sm">Connect with advocates across all states and cities</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="bg-[#00377b] py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-white mb-2">10,000+</div>
+                        <div class="text-white/80">Registered Advocates</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-white mb-2">50,000+</div>
+                        <div class="text-white/80">Cases Posted</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-white mb-2">100+</div>
+                        <div class="text-white/80">Cities Covered</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-white mb-2">4.8/5</div>
+                        <div class="text-white/80">User Rating</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-16 md:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">The principles that guide everything we do at AdvocateKhoj</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 md:p-8 hover:shadow-lg transition-shadow">
+                        <div class="w-14 h-14 bg-[#00377b]/10 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Trust & Transparency</h3>
+                        <p class="text-gray-600">We believe in complete transparency in all our dealings and work hard to build trust with our users.</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 md:p-8 hover:shadow-lg transition-shadow">
+                        <div class="w-14 h-14 bg-[#d67c40]/10 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7 text-[#d67c40]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Innovation</h3>
+                        <p class="text-gray-600">We continuously innovate to improve the legal services experience for both clients and advocates.</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 md:p-8 hover:shadow-lg transition-shadow">
+                        <div class="w-14 h-14 bg-[#00377b]/10 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Accessibility</h3>
+                        <p class="text-gray-600">We strive to make quality legal services accessible to everyone, regardless of their location or background.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-gradient-to-br from-[#00377b] to-[#001944] py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
+                <p class="text-white/90 mb-8 max-w-2xl mx-auto">Join thousands of clients and advocates who trust AdvocateKhoj for their legal needs.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="../register/index.html" class="inline-flex items-center justify-center h-12 px-8 text-base font-medium rounded-md bg-[#d67c40] text-white hover:bg-[#c26a36] transition-all duration-200 shadow-lg">
+                        Register Now
+                    </a>
+                    <a href="../contact/index.html" class="inline-flex items-center justify-center h-12 px-8 text-base font-medium rounded-md border-2 border-white text-white hover:bg-white/10 transition-all duration-200">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#00377b] text-white border-t-4 border-[#001944]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../about/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">About Us</a></li>
+                        <li><a href="../media-coverage/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Media Coverage</a></li>
+                        <li><a href="../contact/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../client-area/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Post a Case</a></li>
+                        <li><a href="../advocate-area/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Join as Advocate</a></li>
+                        <li><a href="../law-library/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Law Library</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../law-colleges/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Law Colleges</a></li>
+                        <li><a href="../sawal-jawab/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Sawal Jawab</a></li>
+                        <li><a href="../blogs/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Blogs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../privacy-policy/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Privacy Policy</a></li>
+                        <li><a href="../user-agreement/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">User Agreement</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-[#001944] mt-8 pt-8 text-center">
+                <p class="text-white/80 text-sm">&copy; 2025 AdvocateKhoj. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

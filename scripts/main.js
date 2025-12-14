@@ -6,6 +6,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   MobileMenu.init()
+  GlobalMobileMenu.init()
+  DashboardSidebar.init()
   SmoothScroll.init()
   ActiveLinks.init()
   BackToTop.init()
@@ -65,6 +67,124 @@ const MobileMenu = {
         }
       })
     }
+  },
+}
+
+/**
+ * Global Mobile Menu Module - Handles header mobile menu across all pages
+ */
+const GlobalMobileMenu = {
+  init() {
+    const globalMobileMenuBtn = document.getElementById("global-mobile-menu-btn")
+    const globalMobileMenu = document.getElementById("global-mobile-menu")
+    const globalMenuIcon = document.getElementById("global-menu-icon")
+
+    if (globalMobileMenuBtn && globalMobileMenu) {
+      globalMobileMenuBtn.addEventListener("click", () => {
+        const isOpen = !globalMobileMenu.classList.contains("hidden")
+        globalMobileMenu.classList.toggle("hidden")
+
+        if (globalMenuIcon) {
+          if (isOpen) {
+            globalMenuIcon.innerHTML =
+              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>'
+          } else {
+            globalMenuIcon.innerHTML =
+              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'
+          }
+        }
+      })
+
+      // Close on link click
+      globalMobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          globalMobileMenu.classList.add("hidden")
+          if (globalMenuIcon) {
+            globalMenuIcon.innerHTML =
+              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>'
+          }
+        })
+      })
+
+      // Close on outside click
+      document.addEventListener("click", (e) => {
+        if (!globalMobileMenuBtn.contains(e.target) && !globalMobileMenu.contains(e.target)) {
+          globalMobileMenu.classList.add("hidden")
+          if (globalMenuIcon) {
+            globalMenuIcon.innerHTML =
+              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>'
+          }
+        }
+      })
+    }
+  },
+}
+
+/**
+ * Dashboard Sidebar Module - Handles sidebar toggle for advocate/client dashboards
+ */
+const DashboardSidebar = {
+  overlay: null,
+
+  init() {
+    const sidebar = document.getElementById("sidebar")
+    const mobileSidebarBtn = document.getElementById("mobile-sidebar-btn")
+    const closeSidebarBtn = document.getElementById("close-sidebar-btn")
+
+    if (!sidebar) return
+
+    // Create overlay element
+    this.overlay = document.createElement("div")
+    this.overlay.className = "sidebar-overlay hidden"
+    this.overlay.id = "sidebar-overlay"
+    document.body.appendChild(this.overlay)
+
+    // Mobile sidebar toggle button
+    if (mobileSidebarBtn) {
+      mobileSidebarBtn.addEventListener("click", () => {
+        this.openSidebar(sidebar)
+      })
+    }
+
+    // Close sidebar button
+    if (closeSidebarBtn) {
+      closeSidebarBtn.addEventListener("click", () => {
+        this.closeSidebar(sidebar)
+      })
+    }
+
+    // Close on overlay click
+    this.overlay.addEventListener("click", () => {
+      this.closeSidebar(sidebar)
+    })
+
+    // Close on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && sidebar.classList.contains("open")) {
+        this.closeSidebar(sidebar)
+      }
+    })
+
+    // Handle resize - close sidebar on desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) {
+        this.closeSidebar(sidebar)
+      }
+    })
+  },
+
+  openSidebar(sidebar) {
+    sidebar.classList.remove("-translate-x-full")
+    sidebar.classList.add("open", "translate-x-0")
+    this.overlay.classList.remove("hidden")
+    document.body.style.overflow = "hidden"
+  },
+
+  closeSidebar(sidebar) {
+    sidebar.classList.add("-translate-x-full")
+    sidebar.classList.remove("open", "translate-x-0")
+    this.overlay.classList.add("hidden")
+    document.body.style.overflow = ""
   },
 }
 
@@ -398,53 +518,51 @@ const PortalCleanup = {
   init() {
     // Clean up empty portal elements on load
     this.cleanupPortals()
-    
+
     // Watch for dynamically added portal elements and style changes
     const observer = new MutationObserver(() => {
       this.cleanupPortals()
     })
-    
+
     observer.observe(document.body, {
       childList: true,
       subtree: true,
       attributes: true,
-      attributeFilter: ['style', 'class']
+      attributeFilter: ["style", "class"],
     })
-    
+
     // Aggressively reset positioning every 50ms to override any dynamic changes
     // This ensures we catch any browser extension that modifies styles frequently
     setInterval(() => {
       this.cleanupPortals()
     }, 50)
   },
-  
+
   cleanupPortals() {
     // Find all portal elements
-    const portals = document.querySelectorAll('nextjs-portal, [data-cursor-element-id]')
-    
-    portals.forEach(portal => {
+    const portals = document.querySelectorAll("nextjs-portal, [data-cursor-element-id]")
+
+    portals.forEach((portal) => {
       // Force reset positioning to prevent layout issues - override any inline styles
-      portal.style.setProperty('top', '0', 'important')
-      portal.style.setProperty('left', '0', 'important')
-      portal.style.setProperty('right', 'auto', 'important')
-      portal.style.setProperty('bottom', 'auto', 'important')
-      portal.style.setProperty('transform', 'none', 'important')
-      portal.style.setProperty('pointer-events', 'none', 'important')
-      
+      portal.style.setProperty("top", "0", "important")
+      portal.style.setProperty("left", "0", "important")
+      portal.style.setProperty("right", "auto", "important")
+      portal.style.setProperty("bottom", "auto", "important")
+      portal.style.setProperty("transform", "none", "important")
+      portal.style.setProperty("pointer-events", "none", "important")
+
       // If portal is empty or has zero dimensions, hide it completely
-      if (!portal.hasChildNodes() || 
-          portal.offsetWidth === 0 || 
-          portal.offsetHeight === 0) {
-        portal.style.setProperty('display', 'none', 'important')
-        portal.style.setProperty('visibility', 'hidden', 'important')
-        portal.style.setProperty('opacity', '0', 'important')
-        portal.style.setProperty('width', '0', 'important')
-        portal.style.setProperty('height', '0', 'important')
-        portal.style.setProperty('margin', '0', 'important')
-        portal.style.setProperty('padding', '0', 'important')
+      if (!portal.hasChildNodes() || portal.offsetWidth === 0 || portal.offsetHeight === 0) {
+        portal.style.setProperty("display", "none", "important")
+        portal.style.setProperty("visibility", "hidden", "important")
+        portal.style.setProperty("opacity", "0", "important")
+        portal.style.setProperty("width", "0", "important")
+        portal.style.setProperty("height", "0", "important")
+        portal.style.setProperty("margin", "0", "important")
+        portal.style.setProperty("padding", "0", "important")
       }
     })
-  }
+  },
 }
 
 // Make Toast globally accessible
