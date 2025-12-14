@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Settings - Admin | AdvocateKhoj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#00377b', dark: '#001944', light: '#1453a3' },
+                        secondary: { DEFAULT: '#d67c40', dark: '#c26a36' },
+                        accent: '#f17313',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="../../styles/global.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Top Bar -->
+    <header id="admin-top-bar" class="bg-white border-b shadow-sm fixed top-0 left-0 right-0 z-30">
+        <!-- Populated by admin-layout.js -->
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="admin-sidebar-container" class="fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r shadow-sm transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-20 overflow-y-auto">
+        <div class="p-4" id="admin-sidebar">
+            <!-- Populated by admin-layout.js -->
+        </div>
+    </aside>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-10 hidden lg:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[57px] lg:pl-64 min-h-screen transition-all duration-300">
+        <div class="p-6">
+                <!-- Tabs -->
+                <div class="mb-6 border-b border-gray-200">
+                    <nav class="flex gap-4">
+                        <button class="tab-btn active px-4 py-3 text-sm font-medium border-b-2 border-[#00377b] text-[#00377b]" data-tab="general">General</button>
+                        <button class="tab-btn px-4 py-3 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700" data-tab="seo">SEO</button>
+                        <button class="tab-btn px-4 py-3 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700" data-tab="appearance">Appearance</button>
+                        <button class="tab-btn px-4 py-3 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700" data-tab="social">Social Media</button>
+                        <button class="tab-btn px-4 py-3 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700" data-tab="maintenance">Maintenance</button>
+                    </nav>
+                </div>
+
+                <!-- General Tab -->
+                <div id="tab-general" class="tab-content">
+                    <div class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h2 class="text-lg font-semibold text-gray-900 mb-6">General Settings</h2>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="form-label">Site Name</label>
+                                    <input type="text" class="form-input" value="AdvocateKhoj">
+                                </div>
+                                <div>
+                                    <label class="form-label">Site Tagline</label>
+                                    <input type="text" class="form-input" value="Find the Right Advocate">
+                                </div>
+                                <div>
+                                    <label class="form-label">Admin Email</label>
+                                    <input type="email" class="form-input" value="admin@advocatekhoj.com">
+                                </div>
+                                <div>
+                                    <label class="form-label">Support Email</label>
+                                    <input type="email" class="form-input" value="support@advocatekhoj.com">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label">Site Description</label>
+                                <textarea class="form-input h-24" placeholder="Enter site description...">AdvocateKhoj helps you connect with qualified advocates by providing access to their background, education, experience and previous case work.</textarea>
+                            </div>
+                            <div class="flex justify-end">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- SEO Tab -->
+                <div id="tab-seo" class="tab-content hidden">
+                    <div class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h2 class="text-lg font-semibold text-gray-900 mb-6">SEO Settings</h2>
+                        <form class="space-y-6">
+                            <div>
+                                <label class="form-label">Meta Title</label>
+                                <input type="text" class="form-input" value="AdvocateKhoj - Find the Right Advocate in India">
+                            </div>
+                            <div>
+                                <label class="form-label">Meta Description</label>
+                                <textarea class="form-input h-24">Find qualified advocates, access law library, legal forms, and expert consultation. Connect with experienced lawyers across India.</textarea>
+                            </div>
+                            <div>
+                                <label class="form-label">Meta Keywords</label>
+                                <input type="text" class="form-input" value="advocate, lawyer, legal, India, law library, legal consultation">
+                            </div>
+                            <div>
+                                <label class="form-label">Robots.txt</label>
+                                <textarea class="form-input h-32 font-mono text-sm">User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Sitemap: https://advocatekhoj.com/sitemap.xml</textarea>
+                            </div>
+                            <div class="flex justify-end">
+                                <button type="submit" class="btn btn-primary">Save SEO Settings</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Appearance Tab -->
+                <div id="tab-appearance" class="tab-content hidden">
+                    <div class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h2 class="text-lg font-semibold text-gray-900 mb-6">Appearance Settings</h2>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div>
+                                    <label class="form-label">Primary Color</label>
+                                    <div class="flex gap-2">
+                                        <input type="color" value="#00377b" class="w-12 h-10 rounded border cursor-pointer">
+                                        <input type="text" class="form-input" value="#00377b">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="form-label">Secondary Color</label>
+                                    <div class="flex gap-2">
+                                        <input type="color" value="#d67c40" class="w-12 h-10 rounded border cursor-pointer">
+                                        <input type="text" class="form-input" value="#d67c40">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="form-label">Accent Color</label>
+                                    <div class="flex gap-2">
+                                        <input type="color" value="#f17313" class="w-12 h-10 rounded border cursor-pointer">
+                                        <input type="text" class="form-input" value="#f17313">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="form-label">Logo Upload</label>
+                                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#00377b]/50 transition-colors hover:border-gray-400">
+                                        <svg class="w-10 h-10 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                        <p class="text-sm text-gray-500">Click to upload or drag and drop</p>
+                                        <p class="text-xs text-gray-400 mt-1">SVG, PNG, JPG (max. 2MB)</p>
+                                        <input type="file" class="hidden" accept="image/*">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="form-label">Favicon Upload</label>
+                                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#00377b]/50 transition-colors hover:border-gray-400">
+                                        <svg class="w-10 h-10 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                        <p class="text-sm text-gray-500">Click to upload or drag and drop</p>
+                                        <p class="text-xs text-gray-400 mt-1">ICO, PNG (32x32 or 16x16)</p>
+                                        <input type="file" class="hidden" accept=".ico,.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <button type="submit" class="btn btn-primary">Save Appearance</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Social Media Tab -->
+                <div id="tab-social" class="tab-content hidden">
+                    <div class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h2 class="text-lg font-semibold text-gray-900 mb-6">Social Media Links</h2>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="form-label">Facebook URL</label>
+                                    <input type="url" class="form-input" placeholder="https://facebook.com/advocatekhoj">
+                                </div>
+                                <div>
+                                    <label class="form-label">Twitter URL</label>
+                                    <input type="url" class="form-input" placeholder="https://twitter.com/advocatekhoj">
+                                </div>
+                                <div>
+                                    <label class="form-label">LinkedIn URL</label>
+                                    <input type="url" class="form-input" placeholder="https://linkedin.com/company/advocatekhoj">
+                                </div>
+                                <div>
+                                    <label class="form-label">Instagram URL</label>
+                                    <input type="url" class="form-input" placeholder="https://instagram.com/advocatekhoj">
+                                </div>
+                                <div>
+                                    <label class="form-label">YouTube URL</label>
+                                    <input type="url" class="form-input" placeholder="https://youtube.com/@advocatekhoj">
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <button type="submit" class="btn btn-primary">Save Social Links</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Maintenance Tab -->
+                <div id="tab-maintenance" class="tab-content hidden">
+                    <div class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h2 class="text-lg font-semibold text-gray-900 mb-6">Maintenance Mode</h2>
+                        <form class="space-y-6">
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg ">
+                                <div>
+                                    <h3 class="font-medium text-gray-900">Enable Maintenance Mode</h3>
+                                    <p class="text-sm text-gray-500">When enabled, visitors will see a maintenance page</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer ">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#00377b]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#00377b] hover:bg-[#00377b]/90"></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="form-label">Maintenance Message</label>
+                                <textarea class="form-input h-24" placeholder="We're currently performing scheduled maintenance. Please check back soon."></textarea>
+                            </div>
+                            <div>
+                                <label class="form-label">Expected End Time</label>
+                                <input type="datetime-local" class="form-input">
+                            </div>
+                            <div>
+                                <label class="form-label">Allowed IP Addresses (one per line)</label>
+                                <textarea class="form-input h-24 font-mono text-sm" placeholder="127.0.0.1
+192.168.1.1"></textarea>
+                                <p class="text-xs text-gray-500 mt-1">These IPs can access the site during maintenance</p>
+                            </div>
+                            <div class="flex justify-end">
+                                <button type="submit" class="btn btn-primary">Save Maintenance Settings</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </main>
+
+    <script src="../scripts/admin-layout.js"></script>
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('active', 'border-[#00377b]', 'text-[#00377b]');
+                    b.classList.add('border-transparent', 'text-gray-500');
+                });
+                this.classList.add('active', 'border-[#00377b]', 'text-[#00377b]');
+                this.classList.remove('border-transparent', 'text-gray-500');
+                
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+                document.getElementById('tab-' + this.dataset.tab).classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

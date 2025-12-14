@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Colleges - AdvocateKhoj</title>
+    <meta name="description"
+        content="Discover law colleges, admissions, conferences, and career opportunities in legal field.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../styles/global.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00377b',
+                        'primary-dark': '#001944',
+                        secondary: '#d67c40',
+                        'secondary-dark': '#c26a36',
+                        accent: '#f17313',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#F9FAFB] min-h-screen flex flex-col">
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 w-full border-b border-[#001944]/20 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between ">
+            <div class="flex items-center flex-shrink-0 ">
+                <a href="../index.html" class="flex items-center hover:opacity-85 transition-opacity">
+                    <img src="../assets/logo.svg" alt="AdvocateKhoj Logo" class="h-14 w-auto sm:h-16"
+                        onerror="this.src='https://via.placeholder.com/140x80?text=AdvocateKhoj'">
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 relative " id="main-nav">
+                <a href="../client-area/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Post
+                    a Case</a>
+                <a href="../advocate-area/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Join
+                    as Advocate</a>
+                <a href="index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] border-[#f17313]">Law
+                    College</a>
+                <a href="../sawal-jawab/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Sawal
+                    Jawab</a>
+                <a href="../law-library/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Law
+                    Library</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-3 ">
+                <a href="../login/index.html"
+                    class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#00377b] hover:bg-[#00377b]/90 text-white shadow-md border border-[#001944]/80 transition-all duration-200 ">Log
+                    In</a>
+                <a href="../register/index.html"
+                    class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#d67c40] hover:bg-[#c26a36] text-white font-semibold shadow-md border border-[#d67c40]/70 transition-[background] duration-200 ">Register</a>
+            </div>
+            <button class="md:hidden text-[#001944] p-2 hover:bg-gray-100 rounded-md transition-colors"
+                id="mobile-menu-btn" aria-label="Toggle navigation">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden border-t border-[#001944]/10 bg-white/95 backdrop-blur hidden" id="mobile-menu">
+            <nav class="max-w-7xl mx-auto px-4 py-4 space-y-3">
+                <a href="../client-area/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Post
+                    a Case</a>
+                <a href="../advocate-area/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Join
+                    as Advocate</a>
+                <a href="index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Law
+                    College</a>
+                <a href="../sawal-jawab/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Sawal
+                    Jawab</a>
+                <a href="../law-library/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Law
+                    Library</a>
+                <div class="pt-4 border-t border-[#001944]/10 space-y-2">
+                    <a href="../login/index.html"
+                        class="block w-full px-4 py-3 text-center bg-[#00377b] hover:bg-[#00377b]/90 text-white rounded-md font-medium">Log
+                        In</a>
+                    <a href="../register/index.html"
+                        class="block w-full px-4 py-3 text-center bg-[#d67c40] text-white rounded-md font-medium hover:bg-[#c26a36]">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Global Top Banner -->
+    <div class="w-full bg-white/80 backdrop-blur-sm border-b border-[#001944]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Left Banner -->
+                <div
+                    class="flex-1 h-24 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center  ">
+                    <div class="text-center text-gray-500">
+                        <div class="text-sm font-medium">Advertisement Space Available</div>
+                        <div class="text-xs mt-1">550 x 94</div>
+                    </div>
+                </div>
+                <!-- Right Banner -->
+                <div
+                    class="flex-1 h-24 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center  ">
+                    <div class="text-center text-gray-500">
+                        <div class="text-sm font-medium">Advertisement Space Available</div>
+                        <div class="text-xs mt-1">550 x 94</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-1">
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-r from-[#00377b] to-[#1453a3] text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl font-bold mb-4">Legal Education Hub</h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Discover top law colleges, admissions, conferences, and career opportunities in legal education
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="mt-8">
+                <!-- Tabs -->
+                <div class="tabs-list mb-8">
+                    <button class="tabs-trigger active" data-tab="colleges">Law Colleges</button>
+                    <button class="tabs-trigger" data-tab="announcements">Announcements</button>
+                    <button class="tabs-trigger" data-tab="internships">Internships</button>
+                    <button class="tabs-trigger" data-tab="submit">Submit Content</button>
+                </div>
+
+                <!-- Colleges Tab Content -->
+                <div id="tab-colleges" class="tabs-content active">
+                    <!-- Search and Filter Section -->
+                    <div class="bg-white border rounded-lg shadow-sm p-6 mb-8">
+                        <div class="flex flex-col lg:flex-row gap-4">
+                            <div class="flex-1">
+                                <input type="text" placeholder="Search law colleges by name or location..."
+                                    class="h-12 w-full px-3 py-2 text-base border-2 border-gray-300 rounded-md bg-white shadow-sm transition-colors focus-visible:border-[#00377b] focus-visible:ring-2 focus-visible:ring-[#00377b]/20 md:text-sm hover:border-gray-400 hover:border-gray-400">
+                            </div>
+                            <select
+                                class="w-full lg:w-48 h-12 px-3 py-2 text-base border-2 border-gray-300 rounded-md bg-white shadow-sm transition-colors focus-visible:border-[#00377b] focus-visible:ring-2 focus-visible:ring-[#00377b]/20 md:text-sm hover:border-gray-400 hover:border-gray-400">
+                                <option value="all-locations">All Locations</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Ahmedabad">Ahmedabad</option>
+                            </select>
+                            <select
+                                class="w-full lg:w-48 h-12 px-3 py-2 text-base border-2 border-gray-300 rounded-md bg-white shadow-sm transition-colors focus-visible:border-[#00377b] focus-visible:ring-2 focus-visible:ring-[#00377b]/20 md:text-sm hover:border-gray-400 hover:border-gray-400">
+                                <option value="all-courses">All Courses</option>
+                                <option value="BA LLB">BA LLB</option>
+                                <option value="LLB">LLB</option>
+                                <option value="LLM">LLM</option>
+                                <option value="PhD">PhD</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 xl:grid-cols-4 gap-8">
+                        <!-- Colleges List -->
+                        <div class="xl:col-span-3 space-y-6">
+                            <!-- College Card 1 -->
+                            <div
+                                class="bg-white border-0 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                                <div class="flex flex-col lg:flex-row">
+                                    <!-- College Logo -->
+                                    <div
+                                        class="lg:w-1/4 bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 p-8 flex items-center justify-center ">
+                                        <div
+                                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-100 ">
+                                            <svg class="w-16 h-16 text-[#00377b]/30" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- College Information -->
+                                    <div class="lg:w-3/4 p-6">
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="flex items-center gap-3 mb-2 ">
+                                                    <h3 class="text-xl font-bold text-gray-900 leading-tight">National
+                                                        Law School of India University</h3>
+                                                    <span
+                                                        class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-[#00377b] text-white ">NIRF
+                                                        #1</span>
+                                                </div>
+                                                <div
+                                                    class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-[#00377b]" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">Bangalore, Karnataka</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">A++ by NAAC</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-gray-500" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Est. 1987</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Courses -->
+                                                <div class="mb-4">
+                                                    <span
+                                                        class="text-sm font-semibold text-gray-700 mb-2 block">Available
+                                                        Courses:</span>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">BA
+                                                            LLB</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">LLM</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">PhD</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Action Buttons -->
+                                                <div class="flex flex-wrap gap-3">
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold "
+                                                        disabled>NIRF 2025 #1</button>
+                                                    <a href="detail/index.html?id=1"
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-white transition-all duration-200 ">View
+                                                        Details</a>
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md hover:bg-[#f17313] hover:text-white text-[#00377b] transition-all duration-200 ">Compare</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- College Card 2 -->
+                            <div
+                                class="bg-white border-0 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                                <div class="flex flex-col lg:flex-row">
+                                    <div
+                                        class="lg:w-1/4 bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 p-8 flex items-center justify-center ">
+                                        <div
+                                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-100 ">
+                                            <svg class="w-16 h-16 text-[#00377b]/30" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-3/4 p-6">
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="flex items-center gap-3 mb-2 ">
+                                                    <h3 class="text-xl font-bold text-gray-900 leading-tight">Rajiv
+                                                        Gandhi School of Intellectual Property Law</h3>
+                                                    <span
+                                                        class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-[#00377b] text-white ">NIRF
+                                                        #2</span>
+                                                </div>
+                                                <div
+                                                    class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-[#00377b]" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">Kharagpur, West Bengal</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">A+ by NAAC</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-gray-500" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Est. 2006</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <span
+                                                        class="text-sm font-semibold text-gray-700 mb-2 block">Available
+                                                        Courses:</span>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">BA
+                                                            LLB</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">LLM</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">PhD</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap gap-3">
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold "
+                                                        disabled>NIRF 2025 #2</button>
+                                                    <a href="detail/index.html?id=2"
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-white transition-all duration-200 ">View
+                                                        Details</a>
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md hover:bg-[#f17313] hover:text-white text-[#00377b] transition-all duration-200 ">Compare</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- College Card 3 -->
+                            <div
+                                class="bg-white border-0 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                                <div class="flex flex-col lg:flex-row">
+                                    <div
+                                        class="lg:w-1/4 bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 p-8 flex items-center justify-center ">
+                                        <div
+                                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-100 ">
+                                            <svg class="w-16 h-16 text-[#00377b]/30" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-3/4 p-6">
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="flex items-center gap-3 mb-2 ">
+                                                    <h3 class="text-xl font-bold text-gray-900 leading-tight">Gujarat
+                                                        National Law University</h3>
+                                                    <span
+                                                        class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-[#00377b] text-white ">NIRF
+                                                        #3</span>
+                                                </div>
+                                                <div
+                                                    class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-[#00377b]" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">Gandhinagar, Gujarat</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">A by NAAC</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-gray-500" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Est. 2003</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <span
+                                                        class="text-sm font-semibold text-gray-700 mb-2 block">Available
+                                                        Courses:</span>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">BA
+                                                            LLB</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">LLM</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">PhD</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap gap-3">
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold "
+                                                        disabled>NIRF 2025 #3</button>
+                                                    <a href="detail/index.html?id=3"
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-white transition-all duration-200 ">View
+                                                        Details</a>
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md hover:bg-[#f17313] hover:text-white text-[#00377b] transition-all duration-200 ">Compare</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- College Card 4 -->
+                            <div
+                                class="bg-white border-0 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                                <div class="flex flex-col lg:flex-row">
+                                    <div
+                                        class="lg:w-1/4 bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 p-8 flex items-center justify-center ">
+                                        <div
+                                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-100 ">
+                                            <svg class="w-16 h-16 text-[#00377b]/30" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-3/4 p-6">
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="flex items-center gap-3 mb-2 ">
+                                                    <h3 class="text-xl font-bold text-gray-900 leading-tight">The West
+                                                        Bengal National University of Juridical Sciences</h3>
+                                                    <span
+                                                        class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-[#00377b] text-white ">NIRF
+                                                        #4</span>
+                                                </div>
+                                                <div
+                                                    class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-[#00377b]" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">Kolkata, West Bengal</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">A++ by NAAC</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-gray-500" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Est. 1999</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <span
+                                                        class="text-sm font-semibold text-gray-700 mb-2 block">Available
+                                                        Courses:</span>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">BA
+                                                            LLB</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">LLM</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">PhD</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap gap-3">
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold "
+                                                        disabled>NIRF 2025 #4</button>
+                                                    <a href="detail/index.html?id=4"
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-white transition-all duration-200 ">View
+                                                        Details</a>
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md hover:bg-[#f17313] hover:text-white text-[#00377b] transition-all duration-200 ">Compare</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- College Card 5 -->
+                            <div
+                                class="bg-white border-0 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                                <div class="flex flex-col lg:flex-row">
+                                    <div
+                                        class="lg:w-1/4 bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 p-8 flex items-center justify-center ">
+                                        <div
+                                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-100 ">
+                                            <svg class="w-16 h-16 text-[#00377b]/30" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-3/4 p-6">
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="flex items-center gap-3 mb-2 ">
+                                                    <h3 class="text-xl font-bold text-gray-900 leading-tight">Jamia
+                                                        Millia Islamia (Faculty of Law)</h3>
+                                                    <span
+                                                        class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-[#00377b] text-white ">NIRF
+                                                        #5</span>
+                                                </div>
+                                                <div
+                                                    class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-[#00377b]" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">New Delhi, Delhi</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">A by NAAC</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-gray-500" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Est. 1920</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <span
+                                                        class="text-sm font-semibold text-gray-700 mb-2 block">Available
+                                                        Courses:</span>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">BA
+                                                            LLB</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">LLM</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">PhD</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap gap-3">
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold "
+                                                        disabled>NIRF 2025 #5</button>
+                                                    <a href="detail/index.html?id=5"
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-white transition-all duration-200 ">View
+                                                        Details</a>
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md hover:bg-[#f17313] hover:text-white text-[#00377b] transition-all duration-200 ">Compare</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- College Card 6 -->
+                            <div
+                                class="bg-white border-0 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                                <div class="flex flex-col lg:flex-row">
+                                    <div
+                                        class="lg:w-1/4 bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 p-8 flex items-center justify-center ">
+                                        <div
+                                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-100 ">
+                                            <svg class="w-16 h-16 text-[#00377b]/30" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-3/4 p-6">
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="flex items-center gap-3 mb-2 ">
+                                                    <h3 class="text-xl font-bold text-gray-900 leading-tight">Aligarh
+                                                        Muslim University (Faculty of Law)</h3>
+                                                    <span
+                                                        class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-[#00377b] text-white ">NIRF
+                                                        #6</span>
+                                                </div>
+                                                <div
+                                                    class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-[#00377b]" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">Aligarh, Uttar Pradesh</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">A by NAAC</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-gray-500" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Est. 1875</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <span
+                                                        class="text-sm font-semibold text-gray-700 mb-2 block">Available
+                                                        Courses:</span>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">BA
+                                                            LLB</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">LLM</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">PhD</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap gap-3">
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold "
+                                                        disabled>NIRF 2025 #6</button>
+                                                    <a href="detail/index.html?id=6"
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-white transition-all duration-200 ">View
+                                                        Details</a>
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md hover:bg-[#f17313] hover:text-white text-[#00377b] transition-all duration-200 ">Compare</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- College Card 7 -->
+                            <div
+                                class="bg-white border-0 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                                <div class="flex flex-col lg:flex-row">
+                                    <div
+                                        class="lg:w-1/4 bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 p-8 flex items-center justify-center ">
+                                        <div
+                                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-100 ">
+                                            <svg class="w-16 h-16 text-[#00377b]/30" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-3/4 p-6">
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="flex items-center gap-3 mb-2 ">
+                                                    <h3 class="text-xl font-bold text-gray-900 leading-tight">Symbiosis
+                                                        Law School</h3>
+                                                    <span
+                                                        class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-[#00377b] text-white ">NIRF
+                                                        #7</span>
+                                                </div>
+                                                <div
+                                                    class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-[#00377b]" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">Pune, Maharashtra</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">A+ by NAAC</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-gray-500" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Est. 1977</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <span
+                                                        class="text-sm font-semibold text-gray-700 mb-2 block">Available
+                                                        Courses:</span>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">BA
+                                                            LLB</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">LLM</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">PhD</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap gap-3">
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold "
+                                                        disabled>NIRF 2025 #7</button>
+                                                    <a href="detail/index.html?id=7"
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-white transition-all duration-200 ">View
+                                                        Details</a>
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md hover:bg-[#f17313] hover:text-white text-[#00377b] transition-all duration-200 ">Compare</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- College Card 8 -->
+                            <div
+                                class="bg-white border-0 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                                <div class="flex flex-col lg:flex-row">
+                                    <div
+                                        class="lg:w-1/4 bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 p-8 flex items-center justify-center ">
+                                        <div
+                                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-100 ">
+                                            <svg class="w-16 h-16 text-[#00377b]/30" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-3/4 p-6">
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="flex items-center gap-3 mb-2 ">
+                                                    <h3 class="text-xl font-bold text-gray-900 leading-tight">Banaras
+                                                        Hindu University (Faculty of Law)</h3>
+                                                    <span
+                                                        class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-[#00377b] text-white ">NIRF
+                                                        #8</span>
+                                                </div>
+                                                <div
+                                                    class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-[#00377b]" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">Varanasi, Uttar Pradesh</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">A+ by NAAC</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-gray-500" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Est. 1916</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <span
+                                                        class="text-sm font-semibold text-gray-700 mb-2 block">Available
+                                                        Courses:</span>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">BA
+                                                            LLB</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">LLM</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">PhD</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap gap-3">
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold "
+                                                        disabled>NIRF 2025 #8</button>
+                                                    <a href="detail/index.html?id=8"
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-white transition-all duration-200 ">View
+                                                        Details</a>
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md hover:bg-[#f17313] hover:text-white text-[#00377b] transition-all duration-200 ">Compare</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- College Card 9 -->
+                            <div
+                                class="bg-white border-0 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                                <div class="flex flex-col lg:flex-row">
+                                    <div
+                                        class="lg:w-1/4 bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 p-8 flex items-center justify-center ">
+                                        <div
+                                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-100 ">
+                                            <svg class="w-16 h-16 text-[#00377b]/30" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-3/4 p-6">
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="flex items-center gap-3 mb-2 ">
+                                                    <h3 class="text-xl font-bold text-gray-900 leading-tight">University
+                                                        of Delhi (Faculty of Law)</h3>
+                                                    <span
+                                                        class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-[#00377b] text-white ">NIRF
+                                                        #9</span>
+                                                </div>
+                                                <div
+                                                    class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-[#00377b]" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">New Delhi, Delhi</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">A++ by NAAC</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-gray-500" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Est. 1922</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <span
+                                                        class="text-sm font-semibold text-gray-700 mb-2 block">Available
+                                                        Courses:</span>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">BA
+                                                            LLB</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">LLM</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">PhD</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap gap-3">
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold "
+                                                        disabled>NIRF 2025 #9</button>
+                                                    <a href="detail/index.html?id=9"
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-white transition-all duration-200 ">View
+                                                        Details</a>
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md hover:bg-[#f17313] hover:text-white text-[#00377b] transition-all duration-200 ">Compare</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- College Card 10 -->
+                            <div
+                                class="bg-white border-0 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                                <div class="flex flex-col lg:flex-row">
+                                    <div
+                                        class="lg:w-1/4 bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 p-8 flex items-center justify-center ">
+                                        <div
+                                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-100 ">
+                                            <svg class="w-16 h-16 text-[#00377b]/30" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-3/4 p-6">
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="flex items-center gap-3 mb-2 ">
+                                                    <h3 class="text-xl font-bold text-gray-900 leading-tight">
+                                                        Hidayatullah National Law University</h3>
+                                                    <span
+                                                        class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-[#00377b] text-white ">NIRF
+                                                        #10</span>
+                                                </div>
+                                                <div
+                                                    class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-[#00377b]" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">Raipur, Chhattisgarh</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="font-medium">A by NAAC</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-1 ">
+                                                        <svg class="w-4 h-4 text-gray-500" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Est. 2003</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <span
+                                                        class="text-sm font-semibold text-gray-700 mb-2 block">Available
+                                                        Courses:</span>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">BA
+                                                            LLB</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">LLM</span>
+                                                        <span
+                                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200 ">PhD</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-wrap gap-3">
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold "
+                                                        disabled>NIRF 2025 #10</button>
+                                                    <a href="detail/index.html?id=10"
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-white transition-all duration-200 ">View
+                                                        Details</a>
+                                                    <button
+                                                        class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md hover:bg-[#f17313] hover:text-white text-[#00377b] transition-all duration-200 ">Compare</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar -->
+                        <div class="xl:col-span-1 space-y-6">
+                            <!-- Advertisement -->
+                            <div
+                                class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center h-64  ">
+                                <div class="text-center text-gray-500">
+                                    <div class="text-sm font-medium">Advertisement Space Available</div>
+                                    <div class="text-xs mt-1">300 x 250</div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Stats -->
+                            <div class="bg-white border rounded-lg shadow-sm p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4">Legal Education Stats</h3>
+                                <div class="space-y-4">
+                                    <div
+                                        class="flex items-center justify-between p-3 bg-[#00377b]/5 rounded-lg hover:bg-[#00377b]/90 ">
+                                        <span class="text-sm font-medium text-gray-700">Top Law Colleges</span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-[#00377b] text-white ">1,200+</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between p-3 bg-[#d67c40]/5 rounded-lg hover:bg-[#c26a36] ">
+                                        <span class="text-sm font-medium text-gray-700">Active Admissions</span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-[#d67c40] text-white ">45</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-yellow-50 rounded-lg ">
+                                        <span class="text-sm font-medium text-gray-700">Upcoming Events</span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border border-yellow-500 text-yellow-700 ">28</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg ">
+                                        <span class="text-sm font-medium text-gray-700">NIRF Ranked</span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border border-green-500 text-green-700 ">200+</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Links -->
+                            <div class="bg-white border rounded-lg shadow-sm p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
+                                <div class="space-y-2">
+                                    <a href="../law-library/index.html"
+                                        class="block p-2 text-sm text-[#00377b] rounded">Law Library</a>
+                                    <div class="flex items-center justify-between p-2 rounded ">
+                                        <a href="../sawal-jawab/index.html" class="text-sm text-[#00377b] flex-1">Sawal
+                                            Jawab</a>
+                                        <button
+                                            class="text-xs text-red-500 font-medium px-2 py-1 rounded border border-red-100 ml-2"
+                                            title="Report Abuse">Report Abuse</button>
+                                    </div>
+                                    <a href="../advocate-area/index.html"
+                                        class="block p-2 text-sm text-[#00377b] rounded">Join as Advocate</a>
+                                    <a href="../client-area/index.html"
+                                        class="block p-2 text-sm text-[#00377b] rounded">Post a Case</a>
+                                </div>
+                            </div>
+
+                            <!-- Trusted Source Banner -->
+                            <div class="mt-4">
+                                <div
+                                    class="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-[#00377b]/80 to-[#d67c40]/80 shadow border border-[#00377b]/30 ">
+                                    <img src="../assets/logo.svg" alt="AdvocateKhoj Logo"
+                                        class="w-10 h-10 rounded-full bg-white border border-gray-200 flex-shrink-0"
+                                        onerror="this.style.display='none'">
+                                    <div class="flex-1 min-w-0">
+                                        <div class="font-semibold text-white text-base">Add AdvocateKhoj as a Trusted
+                                            Source</div>
+                                        <a href="https://www.google.com/preferences/source?q=AdvocateKhoj"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="text-xs text-white underline opacity-80 hover:opacity-100">Learn
+                                            more</a>
+                                    </div>
+                                    <span
+                                        class="px-3 py-1 rounded bg-white text-[#00377b] font-bold text-xs shadow flex-shrink-0 whitespace-nowrap">Recommended</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Announcements Tab Content -->
+                <div id="tab-announcements" class="tabs-content hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2 space-y-6">
+                            <!-- Announcement 1 -->
+                            <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2 mb-2 ">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-[#00377b] text-white ">Admissions</span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border border-gray-300 text-gray-700 ">Sponsored</span>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">CLAT 2025 Registration Open
+                                        </h3>
+                                        <p class="text-sm text-gray-600">Common Law Admission Test registration is now
+                                            open for undergraduate and postgraduate programs.</p>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-sm text-gray-500 ml-4 ">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        <span>Deadline: 12/31/2025</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1 text-xs text-gray-500 mb-4 ">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>Online</span>
+                                </div>
+                                <button
+                                    class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#d67c40] hover:text-white transition-all duration-200 hover:bg-[#f17313] hover:text-white ">Learn
+                                    More</button>
+                            </div>
+
+                            <!-- Announcement 2 -->
+                            <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2 mb-2 ">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-[#d67c40] text-white ">Conference</span>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">International Conference on
+                                            Intellectual Property Rights</h3>
+                                        <p class="text-sm text-gray-600">Join leading experts discussing the future of
+                                            IP law in the digital age.</p>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-sm text-gray-500 ml-4 ">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        <span>11/20/2025</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1 text-xs text-gray-500 mb-4 ">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>IIT Delhi, New Delhi</span>
+                                </div>
+                                <button
+                                    class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#d67c40] hover:text-white transition-all duration-200 hover:bg-[#f17313] hover:text-white ">Learn
+                                    More</button>
+                            </div>
+
+                            <!-- Announcement 3 -->
+                            <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2 mb-2 ">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-[#d67c40] text-white ">Workshop</span>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Legal Research Methodology
+                                            Workshop</h3>
+                                        <p class="text-sm text-gray-600">Learn advanced techniques for legal research
+                                            and writing.</p>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-sm text-gray-500 ml-4 ">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        <span>10/15/2025</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1 text-xs text-gray-500 mb-4 ">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>NALSAR University, Hyderabad</span>
+                                </div>
+                                <button
+                                    class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#d67c40] hover:text-white transition-all duration-200 hover:bg-[#f17313] hover:text-white ">Learn
+                                    More</button>
+                            </div>
+
+                            <!-- Announcement 4 -->
+                            <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2 mb-2 ">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-[#d67c40] text-white ">Internship</span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border border-gray-300 text-gray-700 ">Sponsored</span>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Summer Internship Program
+                                            at Top Law Firms</h3>
+                                        <p class="text-sm text-gray-600">Apply for prestigious internship opportunities
+                                            with leading law firms across India.</p>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-sm text-gray-500 ml-4 ">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        <span>Deadline: 11/30/2025</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1 text-xs text-gray-500 mb-4 ">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>Multiple Locations</span>
+                                </div>
+                                <button
+                                    class="inline-flex items-center justify-center h-8 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#d67c40] hover:text-white transition-all duration-200 hover:bg-[#f17313] hover:text-white ">Learn
+                                    More</button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Advertisement -->
+                            <div
+                                class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center h-64  ">
+                                <div class="text-center text-gray-500">
+                                    <div class="text-sm font-medium">Advertisement Space Available</div>
+                                    <div class="text-xs mt-1">300 x 250</div>
+                                </div>
+                            </div>
+
+                            <!-- Categories Card -->
+                            <div class="bg-white border rounded-lg shadow-sm p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4">Categories</h3>
+                                <div class="space-y-2">
+                                    <div
+                                        class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0 ">
+                                        <div class="flex items-center gap-2 ">
+                                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">Admissions</span>
+                                        </div>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border border-gray-300 text-gray-700 ">12</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0 ">
+                                        <div class="flex items-center gap-2 ">
+                                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">Conferences</span>
+                                        </div>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border border-gray-300 text-gray-700 ">8</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0 ">
+                                        <div class="flex items-center gap-2 ">
+                                            <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">Workshops</span>
+                                        </div>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border border-gray-300 text-gray-700 ">15</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0 ">
+                                        <div class="flex items-center gap-2 ">
+                                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">Internships</span>
+                                        </div>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border border-gray-300 text-gray-700 ">22</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internships Tab Content -->
+                <div id="tab-internships" class="tabs-content hidden">
+                    <div class="bg-white border rounded-lg shadow-sm p-6">
+                        <div class="mb-6">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-2">Legal Internship & Job Opportunities</h2>
+                            <p class="text-gray-600">Find internships and career opportunities in the legal field</p>
+                        </div>
+                        <div class="text-center py-12">
+                            <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            <h3 class="text-lg font-medium text-gray-900 mb-2">Coming Soon</h3>
+                            <p class="text-gray-600 mb-4">We're building a comprehensive internship and job portal for
+                                legal professionals.</p>
+                            <button
+                                class="inline-flex items-center justify-center h-10 px-6 text-sm font-medium rounded-md bg-[#00377b] text-white hover:bg-[#00377b]/90 transition-all duration-200 shadow-xs ">Get
+                                Notified</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Content Tab -->
+                <div id="tab-submit" class="tabs-content hidden">
+                    <div class="bg-white border rounded-lg shadow-sm p-6">
+                        <div class="mb-6">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-2">Submit Content for Review</h2>
+                            <p class="text-gray-600">Share announcements, events, or opportunities with our community
+                            </p>
+                        </div>
+                        <div class="text-center py-12">
+                            <div class="mb-6">
+                                <div
+                                    class="w-32 h-32 mx-auto mb-4 bg-gray-100 rounded-lg flex items-center justify-center opacity-50 ">
+                                    <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-2">Want to Submit Content?</h3>
+                            <p class="text-gray-600 mb-6 max-w-md mx-auto">Share your announcements, events,
+                                conferences, workshops, or job opportunities with our legal community.</p>
+                            <a href="../contact/index.html">
+                                <button
+                                    class="inline-flex items-center justify-center h-10 px-8 text-sm font-medium rounded-md bg-[#00377b] text-white hover:bg-[#00377b]/90 transition-all duration-200 shadow-xs ">Contact
+                                    Us to Submit Content</button>
+                            </a>
+                            <p class="text-xs text-gray-500 mt-4">All submissions are reviewed before publication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Advertisement Banner -->
+    <div class="w-full px-4 sm:px-6 lg:px-8 py-8">
+        <div class="max-w-7xl mx-auto">
+            <div
+                class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center h-32 md:h-40  ">
+                <div class="text-center text-gray-500">
+                    <div class="text-sm font-medium">Advertisement Space - Footer Area</div>
+                    <div class="text-xs mt-1">728x90 / 970x250 / Responsive</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#00377b] text-white border-t-4 border-[#001944] ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-6">
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../about/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">About
+                                Us</a></li>
+                        <li><a href="../media-coverage/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Media
+                                Coverage</a></li>
+                        <li><a href="../contact/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Contact
+                                Us</a></li>
+                        <li><a href="../user-agreement/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">User
+                                Agreement</a></li>
+                        <li><a href="../privacy-policy/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Privacy
+                                Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Client Area</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../register/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Register</a>
+                        </li>
+                        <li><a href="../login/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Login</a>
+                        </li>
+                        <li><a href="../client-area/index.html#faqs"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">FAQ's</a>
+                        </li>
+                        <li><a href="../client-area/index.html#how-it-works"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">How It
+                                Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Advocate Area</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../advocate/register/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Register</a>
+                        </li>
+                        <li><a href="../login/index.html?userType=advocate"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Login</a>
+                        </li>
+                        <li><a href="../advocate-area/index.html#faqs"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">FAQ's</a>
+                        </li>
+                        <li><a href="../advocate-area/index.html#how-it-works"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">How It
+                                Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Law School</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Search
+                                Colleges</a></li>
+                        <li><a href="../sawal-jawab/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Search a
+                                Sawaal</a></li>
+                        <li><a href="../sawal-jawab/index.html?mode=ask"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Ask a
+                                Sawaal</a></li>
+                    </ul>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mt-6 mb-4">Blogs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../blogs/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Post a
+                                Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Law Library</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../law-library/legal-tips/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Legal
+                                Tips</a></li>
+                        <li><a href="../law-library/agreements/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Agreements</a>
+                        </li>
+                        <li><a href="../law-library/areas-of-law/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Area of
+                                Law</a></li>
+                        <li><a href="../law-library/bare-acts/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Indian
+                                Bare Acts</a></li>
+                        <li><a href="../law-library/rules/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Rules</a>
+                        </li>
+                        <li><a href="../law-library/judgements/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Judgments</a>
+                        </li>
+                        <li><a href="../law-library/forms/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Legal
+                                Forms</a></li>
+                        <li><a href="../law-library/glossary/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Glossary</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Advertise</h3>
+                    <ul class="space-y-2 mb-6">
+                        <li><a href="../contact/index.html?context=advertise"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Get in
+                                Touch</a></li>
+                    </ul>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Social</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://www.facebook.com/advocatekhoj" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm "
+                                aria-label="Visit AdvocateKhoj on Facebook">
+                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                                Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/scjudgments" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm "
+                                aria-label="Visit AdvocateKhoj on X">
+                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                                X (Twitter)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/advocatekho" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm "
+                                aria-label="Visit AdvocateKhoj on LinkedIn">
+                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-[#001944] mt-10 pt-6">
+                <div class="text-center text-xs text-white/80 leading-relaxed">
+                    <p class="mb-2">Information provided on advocatekhoj.com is solely available at your request for
+                        informational purposes only and should not be interpreted as soliciting or advertisement.</p>
+                    <p>&copy; 2025 AdvocateKhoj. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tabs-trigger');
+            const tabContents = document.querySelectorAll('.tabs-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const targetTab = this.getAttribute('data-tab');
+
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(tc => {
+                        tc.classList.remove('active');
+                        tc.classList.add('hidden');
+                    });
+
+                    // Add active class to clicked tab and corresponding content
+                    this.classList.add('active');
+                    const targetContent = document.getElementById('tab-' + targetTab);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                        targetContent.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

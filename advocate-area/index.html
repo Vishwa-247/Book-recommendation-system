@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocate Area - AdvocateKhoj</title>
+    <meta name="description"
+        content="Join AdvocateKhoj to connect with clients seeking legal representation. Showcase your expertise and grow your legal practice.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../styles/global.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-[#F9FAFB]">
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 w-full border-b border-[#001944]/20 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center flex-shrink-0">
+                <a href="../index.html" class="flex items-center hover:opacity-85 transition-opacity">
+                    <img src="../assets/logo.svg" alt="AdvocateKhoj Logo" class="h-14 w-auto sm:h-16"
+                        onerror="this.src='https://via.placeholder.com/140x80?text=AdvocateKhoj'">
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-6 relative" id="main-nav">
+                <a href="../client-area/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Post
+                    a Case</a>
+                <a href="../advocate-area/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-[#f17313]">Join
+                    as Advocate</a>
+                <a href="../law-colleges/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Law
+                    College</a>
+                <a href="../sawal-jawab/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Sawal
+                    Jawab</a>
+                <a href="../law-library/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Law
+                    Library</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-3">
+                <a href="../login/index.html"
+                    class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#00377b] hover:bg-[#00377b]/90 text-white shadow-md border border-[#001944]/80 transition-all duration-200">Log
+                    In</a>
+                <a href="../register/index.html"
+                    class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#d67c40] hover:bg-[#c26a36] text-white font-semibold shadow-md border border-[#d67c40]/70 transition-[background] duration-200">Register</a>
+            </div>
+
+            <button class="md:hidden text-[#001944] p-2 hover:bg-gray-100 rounded-md transition-colors"
+                id="mobile-menu-btn" aria-label="Toggle navigation">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden border-t border-[#001944]/10 bg-white/95 backdrop-blur hidden" id="mobile-menu">
+            <nav class="max-w-7xl mx-auto px-4 py-4 space-y-3">
+                <a href="../client-area/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Post
+                    a Case</a>
+                <a href="../advocate-area/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Join
+                    as Advocate</a>
+                <a href="../law-colleges/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Law
+                    College</a>
+                <a href="../sawal-jawab/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Sawal
+                    Jawab</a>
+                <a href="../law-library/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Law
+                    Library</a>
+                <div class="pt-4 border-t border-[#001944]/10 space-y-2">
+                    <a href="../login/index.html"
+                        class="block w-full px-4 py-3 text-center bg-[#00377b] hover:bg-[#00377b]/90 text-white rounded-md font-medium">Log
+                        In</a>
+                    <a href="../register/index.html"
+                        class="block w-full px-4 py-3 text-center bg-[#d67c40] text-white rounded-md font-medium hover:bg-[#c26a36]">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Global Top Banner -->
+    <div class="w-full bg-white/80 backdrop-blur-sm border-b border-[#001944]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Left Banner -->
+                <div
+                    class="flex-1 h-24 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center ">
+                    <div class="text-center text-gray-500">
+                        <div class="text-sm font-medium">Advertisement Space Available</div>
+                        <div class="text-xs mt-1">550 x 94</div>
+                    </div>
+                </div>
+                <!-- Right Banner -->
+                <div
+                    class="flex-1 h-24 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center ">
+                    <div class="text-center text-gray-500">
+                        <div class="text-sm font-medium">Advertisement Space Available</div>
+                        <div class="text-xs mt-1">550 x 94</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-[#00377b]/10 to-[#d67c40]/10 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <span
+                        class="inline-block px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-[#d67c40]/10 text-[#d67c40] border border-[#d67c40]/20">Advocate
+                        Area</span>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Grow Your Legal Practice Online</h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        Join AdvocateKhoj to connect with clients seeking legal representation. Showcase your expertise,
+                        respond to cases, and build your professional reputation.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../register/index.html?userType=advocate"
+                            class="inline-flex items-center justify-center h-10 px-6 text-sm font-medium rounded-md bg-[#00377b] text-white hover:bg-[#00377b]/90 transition-all duration-200 shadow-xs w-full sm:w-auto ">
+                            Register Now
+                        </a>
+                        <a href="../login/index.html?userType=advocate"
+                            class="inline-flex items-center justify-center h-10 px-6 text-sm font-medium rounded-md bg-[#d67c40] text-white hover:bg-[#d67c40]/80 transition-all duration-200 shadow-xs w-full sm:w-auto ">
+                            Advocate Log In
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-16 bg-[#F3F9FF]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+                    <p class="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                        AdvocateKhoj is a "communication platform" that helps consumers find advocates to represent
+                        their legal need. By becoming a member of AdvocateKhoj, you can get steady case flow, selective
+                        clients and in turn increase your revenues.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <div
+                            class="bg-white border-2 border-gray-200 rounded-xl py-6 flex flex-col gap-6 hover:shadow-lg transition-shadow hover:border-[#001944]/20 h-full shadow-sm">
+                            <div class="px-6">
+                                <div class="flex items-center justify-between mb-4 ">
+                                    <div
+                                        class="h-14 w-14 rounded-full bg-[#00377b] text-white flex items-center justify-center text-xl font-bold hover:bg-[#00377b]/90 ">
+                                        1
+                                    </div>
+                                    <div
+                                        class="h-12 w-12 rounded-full bg-[#00377b]/10 flex items-center justify-center hover:bg-[#00377b]/90 ">
+                                        <svg class="h-6 w-6 text-[#00377b]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900">User Posts a Case</h3>
+                            </div>
+                            <div class="px-6">
+                                <p class="text-gray-600 text-sm leading-relaxed">A user (client) visits AdvocateKhoj and
+                                    posts their legal case by filling out a simple questionnaire about their legal
+                                    situation.</p>
+                            </div>
+                        </div>
+                        <!-- Arrow connector -->
+                        <div
+                            class="hidden lg:block absolute -bottom-4 left-1/2 transform -translate-x-1/2 lg:bottom-auto lg:top-1/2 lg:-right-4 lg:left-auto lg:-translate-y-1/2 lg:translate-x-0 z-10">
+                            <svg class="h-6 w-6 text-[#00377b] rotate-90 lg:rotate-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <div
+                            class="bg-white border-2 border-gray-200 rounded-xl py-6 flex flex-col gap-6 hover:shadow-lg transition-shadow hover:border-[#001944]/20 h-full shadow-sm">
+                            <div class="px-6">
+                                <div class="flex items-center justify-between mb-4 ">
+                                    <div
+                                        class="h-14 w-14 rounded-full bg-[#00377b] text-white flex items-center justify-center text-xl font-bold hover:bg-[#00377b]/90 ">
+                                        2
+                                    </div>
+                                    <div
+                                        class="h-12 w-12 rounded-full bg-[#00377b]/10 flex items-center justify-center hover:bg-[#00377b]/90 ">
+                                        <svg class="h-6 w-6 text-[#00377b]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900">Authentication & Database</h3>
+                            </div>
+                            <div class="px-6">
+                                <p class="text-gray-600 text-sm leading-relaxed">The case is authenticated and stored
+                                    securely in our database. Member advocates can then view the case details.</p>
+                            </div>
+                        </div>
+                        <!-- Arrow connector -->
+                        <div
+                            class="hidden lg:block absolute -bottom-4 left-1/2 transform -translate-x-1/2 lg:bottom-auto lg:top-1/2 lg:-right-4 lg:left-auto lg:-translate-y-1/2 lg:translate-x-0 z-10">
+                            <svg class="h-6 w-6 text-[#00377b] rotate-90 lg:rotate-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative">
+                        <div
+                            class="bg-white border-2 border-gray-200 rounded-xl py-6 flex flex-col gap-6 hover:shadow-lg transition-shadow hover:border-[#001944]/20 h-full shadow-sm">
+                            <div class="px-6">
+                                <div class="flex items-center justify-between mb-4 ">
+                                    <div
+                                        class="h-14 w-14 rounded-full bg-[#00377b] text-white flex items-center justify-center text-xl font-bold hover:bg-[#00377b]/90 ">
+                                        3
+                                    </div>
+                                    <div
+                                        class="h-12 w-12 rounded-full bg-[#00377b]/10 flex items-center justify-center hover:bg-[#00377b]/90 ">
+                                        <svg class="h-6 w-6 text-[#00377b]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900">Advocates View Cases</h3>
+                            </div>
+                            <div class="px-6">
+                                <p class="text-gray-600 text-sm leading-relaxed">Member advocates log in and browse
+                                    available cases. They can view case details, client requirements, and decide which
+                                    cases match their expertise.</p>
+                            </div>
+                        </div>
+                        <!-- Arrow connector -->
+                        <div
+                            class="hidden lg:block absolute -bottom-4 left-1/2 transform -translate-x-1/2 lg:bottom-auto lg:top-1/2 lg:-right-4 lg:left-auto lg:-translate-y-1/2 lg:translate-x-0 z-10">
+                            <svg class="h-6 w-6 text-[#00377b] rotate-90 lg:rotate-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative">
+                        <div
+                            class="bg-white border-2 border-gray-200 rounded-xl py-6 flex flex-col gap-6 hover:shadow-lg transition-shadow hover:border-[#001944]/20 h-full shadow-sm">
+                            <div class="px-6">
+                                <div class="flex items-center justify-between mb-4 ">
+                                    <div
+                                        class="h-14 w-14 rounded-full bg-[#00377b] text-white flex items-center justify-center text-xl font-bold hover:bg-[#00377b]/90 ">
+                                        4
+                                    </div>
+                                    <div
+                                        class="h-12 w-12 rounded-full bg-[#00377b]/10 flex items-center justify-center hover:bg-[#00377b]/90 ">
+                                        <svg class="h-6 w-6 text-[#00377b]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900">Advocate Replies to Case</h3>
+                            </div>
+                            <div class="px-6">
+                                <p class="text-gray-600 text-sm leading-relaxed">Interested advocates send responses to
+                                    the user's case, explaining their approach, experience, and how they can help.</p>
+                            </div>
+                        </div>
+                        <!-- Arrow connector -->
+                        <div
+                            class="hidden lg:block absolute -bottom-4 left-1/2 transform -translate-x-1/2 lg:bottom-auto lg:top-1/2 lg:-right-4 lg:left-auto lg:-translate-y-1/2 lg:translate-x-0 z-10">
+                            <svg class="h-6 w-6 text-[#00377b] rotate-90 lg:rotate-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="relative">
+                        <div
+                            class="bg-white border-2 border-gray-200 rounded-xl py-6 flex flex-col gap-6 hover:shadow-lg transition-shadow hover:border-[#001944]/20 h-full shadow-sm">
+                            <div class="px-6">
+                                <div class="flex items-center justify-between mb-4 ">
+                                    <div
+                                        class="h-14 w-14 rounded-full bg-[#00377b] text-white flex items-center justify-center text-xl font-bold hover:bg-[#00377b]/90 ">
+                                        5
+                                    </div>
+                                    <div
+                                        class="h-12 w-12 rounded-full bg-[#00377b]/10 flex items-center justify-center hover:bg-[#00377b]/90 ">
+                                        <svg class="h-6 w-6 text-[#00377b]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900">User Views Advocate Profile</h3>
+                            </div>
+                            <div class="px-6">
+                                <p class="text-gray-600 text-sm leading-relaxed">The user receives responses and can
+                                    view detailed profiles of advocates including their qualifications, experience, case
+                                    history, and expertise.</p>
+                            </div>
+                        </div>
+                        <!-- Arrow connector -->
+                        <div
+                            class="hidden lg:block absolute -bottom-4 left-1/2 transform -translate-x-1/2 lg:bottom-auto lg:top-1/2 lg:-right-4 lg:left-auto lg:-translate-y-1/2 lg:translate-x-0 z-10">
+                            <svg class="h-6 w-6 text-[#00377b] rotate-90 lg:rotate-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Step 6 -->
+                    <div class="relative">
+                        <div
+                            class="bg-white border-2 border-gray-200 rounded-xl py-6 flex flex-col gap-6 hover:shadow-lg transition-shadow hover:border-[#001944]/20 h-full shadow-sm">
+                            <div class="px-6">
+                                <div class="flex items-center justify-between mb-4 ">
+                                    <div
+                                        class="h-14 w-14 rounded-full bg-[#00377b] text-white flex items-center justify-center text-xl font-bold hover:bg-[#00377b]/90 ">
+                                        6
+                                    </div>
+                                    <div
+                                        class="h-12 w-12 rounded-full bg-[#00377b]/10 flex items-center justify-center hover:bg-[#00377b]/90 ">
+                                        <svg class="h-6 w-6 text-[#00377b]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900">User Selects Best Advocate</h3>
+                            </div>
+                            <div class="px-6">
+                                <p class="text-gray-600 text-sm leading-relaxed">After reviewing advocate profiles and
+                                    responses, the user selects the advocate they feel is best suited for their case and
+                                    engages them directly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Join AdvocateKhoj Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Join AdvocateKhoj</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Benefits of being part of India's trusted legal
+                        platform</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card p-6 hover:shadow-lg transition-shadow">
+                        <div
+                            class="h-12 w-12 rounded-lg bg-[#00377b]/10 flex items-center justify-center mb-4 hover:bg-[#00377b]/90 ">
+                            <svg class="h-6 w-6 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Access to Clients</h3>
+                        <p class="text-gray-600 text-sm">Connect with clients actively seeking legal representation
+                            across various practice areas.</p>
+                    </div>
+                    <div class="card p-6 hover:shadow-lg transition-shadow">
+                        <div
+                            class="h-12 w-12 rounded-lg bg-[#00377b]/10 flex items-center justify-center mb-4 hover:bg-[#00377b]/90 ">
+                            <svg class="h-6 w-6 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Professional Profile</h3>
+                        <p class="text-gray-600 text-sm">Showcase your credentials, experience, and expertise with a
+                            comprehensive verified profile.</p>
+                    </div>
+                    <div class="card p-6 hover:shadow-lg transition-shadow">
+                        <div
+                            class="h-12 w-12 rounded-lg bg-[#00377b]/10 flex items-center justify-center mb-4 hover:bg-[#00377b]/90 ">
+                            <svg class="h-6 w-6 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Grow Your Practice</h3>
+                        <p class="text-gray-600 text-sm">Expand your client base and build your reputation through
+                            client reviews and successful cases.</p>
+                    </div>
+                    <div class="card p-6 hover:shadow-lg transition-shadow">
+                        <div
+                            class="h-12 w-12 rounded-lg bg-[#00377b]/10 flex items-center justify-center mb-4 hover:bg-[#00377b]/90 ">
+                            <svg class="h-6 w-6 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Verified Platform</h3>
+                        <p class="text-gray-600 text-sm">Join a trusted network where all advocates are BAR Council
+                            verified and clients are serious.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Membership Plans Section -->
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Membership Plans</h2>
+                    <p class="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                        Join India's leading legal platform and expand your practice. Choose a membership plan that
+                        suits your professional goals and start connecting with clients actively seeking legal
+                        representation.
+                    </p>
+                </div>
+
+                <!-- Eligibility Section -->
+                <div class="bg-white border-2 border-[#001944]/20 rounded-xl mb-12">
+                    <div class="bg-[#00377b]/5 px-6 py-4 border-b border-[#001944]/20 hover:bg-[#00377b]/90">
+                        <h3 class="text-2xl font-bold text-center text-gray-900">Who Can Join AdvocateKhoj?</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-center text-xl font-bold text-[#00377b] mb-6">
+                            Any advocate in good standing with their State BAR Council is eligible to join AdvocateKhoj.
+                        </p>
+                        <div class="max-w-2xl mx-auto space-y-4">
+                            <p class="text-gray-700 leading-relaxed">
+                                <strong>Simple Process:</strong> Register online, verify your credentials, select a
+                                membership plan, and start connecting with clients looking for legal representation.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed">
+                                <strong>What You Get:</strong> Complete profile control, access to verified client
+                                cases, secure messaging system, and the ability to showcase your expertise to potential
+                                clients across India.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed">
+                                <strong>Quality Assurance:</strong> All advocates are verified through our stringent
+                                screening process to maintain the highest standards of professionalism on our platform.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Subscription Plans Table -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                        Subscription Plans
+                    </h3>
+                    <p class="text-center text-gray-600 mb-8">
+                        We offer the following subscription plans:
+                    </p>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse border-2 border-gray-300 bg-white">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="border border-gray-300 px-6 py-3 text-left font-semibold text-gray-900">
+                                        Serial No.
+                                    </th>
+                                    <th class="border border-gray-300 px-6 py-3 text-left font-semibold text-gray-900">
+                                        Subscription Plans
+                                    </th>
+                                    <th class="border border-gray-300 px-6 py-3 text-left font-semibold text-gray-900">
+                                        Validity
+                                    </th>
+                                    <th class="border border-gray-300 px-6 py-3 text-left font-semibold text-gray-900">
+                                        Discount
+                                    </th>
+                                    <th class="border border-gray-300 px-6 py-3 text-left font-semibold text-gray-900">
+                                        Net Price
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="border border-gray-300 px-6 py-4 text-center">
+                                        1.
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4 font-medium">
+                                        Silver Plan
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        3 months
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">-</td>
+                                    <td class="border border-gray-300 px-6 py-4 font-semibold">
+                                        400 INR + GST*
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="border border-gray-300 px-6 py-4 text-center">
+                                        2.
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4 font-medium">
+                                        Gold Plan
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        6 months
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        12.5%
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4 font-semibold">
+                                        700 INR + GST*
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="border border-gray-300 px-6 py-4 text-center">
+                                        3.
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4 font-medium">
+                                        Platinum Plan
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        12 months
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">25%</td>
+                                    <td class="border border-gray-300 px-6 py-4 font-semibold">
+                                        1200 INR + GST*
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-sm text-gray-600 mt-3">*18% GST</p>
+                    </div>
+                </div> AdvocateKhoj considers all information submitted to this site as <span
+                    class="font-semibold italic">"sensitive & confidential"</span>. Hence, we take
+                immense measure to secure all information submitted and viewed on our site. All login
+                and authenticated areas on our site use SSL-High Grade Encryption for the transfer of
+                your data.
+                </p>
+            </div>
+            </div>
+
+            <!-- Using Internal Messaging System (IMS) -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 border-l-4 border-l-[#00377b]">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Using Internal Messaging System (IMS)</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        AdvocateKhoj provides you with an Internal Messaging System that works just like your
+                        regular email. The IMS has an inbox, sent items and deleted folder. AdvocateKhoj highly
+                        recommends that you use IMS to communicate with potential clients.
+                    </p>
+                </div>
+            </div>
+
+            <!-- We Will Not Sell Your Personal Information -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 border-l-4 border-l-[#00377b]">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">We Will Not Sell Your Personal Information
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        AdvocateKhoj will not sell or distribute your personal information to any company or any
+                        individual.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Privacy & Security Notice -->
+            <div class="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
+                <div class="flex items-start gap-3">
+                    <svg class="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                        </path>
+                    </svg>
+                    <div>
+                        <h3 class="font-semibold text-blue-900 mb-2">Privacy & Security Commitment</h3>
+                        <p class="text-blue-800 text-sm leading-relaxed">
+                            We are committed to protecting your privacy and maintaining the security of your
+                            personal information. All data transmission is encrypted using industry-standard SSL
+                            protocols. Your trust is our priority.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-[#F3F9FF]" id="faqs">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Find answers to common questions about joining AdvocateKhoj as an advocate
+                    </p>
+
+                    <!-- FAQ Search -->
+                    <div class="max-w-2xl mx-auto relative">
+                        <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none"
+                            fill="none" stroke="#9CA3AF" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text" id="faq-search" placeholder="Search FAQs..."
+                            class="w-full pl-14 pr-10 py-3 text-base border-2 border-gray-200 rounded-lg focus:border-[#00377b] focus:ring-0 outline-none transition-colors">
+                        <button id="faq-search-clear"
+                            class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="faq-sections" class="space-y-12">
+                    <!-- Using AdvocateKhoj -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-[#00377b]">Using
+                            AdvocateKhoj</h3>
+                        <div class="space-y-4 accordion">
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">What
+                                        is the purpose of AdvocateKhoj?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    AdvocateKhoj helps people find the right advocate. Anyone who needs legal assistance
+                                    can present a case (answer some simple questions about their legal situation) "free
+                                    of cost" on the AdvocateKhoj website without revealing his or her identity. Then,
+                                    subscribing advocates of AdvocateKhoj review your case and then decide whether to
+                                    respond. Once you get a reply from an advocate, we provide you with the advocate's
+                                    background information so that you can make a smart decision.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">What
+                                        are the benefits of becoming a member of AdvocateKhoj?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Generating new clientele can be difficult and costly. Every day there are clients in
+                                    need of legal services and some may be right around the corner or down the street
+                                    from you! Wouldn't it be great to find new clients without ever leaving your office
+                                    or home - potentially generating new clients every day? With AdvocateKhoj, an
+                                    advocate can just log on to our website to connect with clients with whom they would
+                                    really want to work with and not just with any stranger who has a legal problem!
+                                    Also by becoming a member of AdvocateKhoj, you can get steady case flow, selective
+                                    clients and in turn increased revenues and hence build a successful practice.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">How
+                                        do I become a Member?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Advocates are admitted to the AdvocateKhoj program only after they meet strict
+                                    professional standards and in accordance with consumer demands in a given market. To
+                                    become a subscribing member of AdvocateKhoj, you need to be foremost, an advocate
+                                    with a good standing with the local BAR Council. Apart from this you need to qualify
+                                    our screening process and pay your membership fees. For a detailed process flow of
+                                    our intake process, please visit our registration page.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Is
+                                        AdvocateKhoj a law firm?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    No. AdvocateKhoj is not a law firm and does not practice law. AdvocateKhoj does not
+                                    offer any legal advice, recommendations, mediation, or counseling under any
+                                    circumstance. AdvocateKhoj is only a "communication platform" to bring clients and
+                                    advocates together; a nationwide system using the latest technologies.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Is
+                                        AdvocateKhoj a referral service?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    No. AdvocateKhoj is not a referral service. To the contrary, AdvocateKhoj does not
+                                    refer its subscribing members to its consumers; rather, the consumers present their
+                                    case to AdvocateKhoj using the on-line questionnaires, and the subscribing advocates
+                                    respond directly to those prospective clients with whom they are sincerely
+                                    interested to work with.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Is
+                                        AdvocateKhoj a directory or "Yellow Pages" listing service?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    No. AdvocateKhoj does not place any subscribing advocates' name or contact
+                                    information into the public view. No client has the ability to view or otherwise
+                                    obtain the name or contact information of any subscribing advocate of AdvocateKhoj.
+                                    Such information is confidential and not provided to clients. However, once a
+                                    prospective client has agreed to our User Agreement, and has completed the on-line
+                                    case questionnaires, the subscribing advocate can respond to the client's
+                                    submission, and only then does that client receive the name and contact information
+                                    of that advocate who had responded to his case.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Can
+                                        a Law firm register with AdvocateKhoj?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    No. We do not register Law Firms but the individual advocates working in the firm
+                                    are welcome to register with us.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Is
+                                        it mandatory to fill the State Bar Council enrollment number in the application
+                                        form?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Yes. The State Bar Council enrollment number is mandatory. This information is not
+                                    displayed to the public but is needed for our internal verification process.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Does
+                                        AdvocateKhoj release the cases outside the system?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    No. As per our privacy policy, we do not release any of the cases outside our
+                                    system.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Is
+                                        it mandatory for providing the complete profile for membership
+                                        activation?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    The purpose of the advocates' complete profile being made mandatory is that we want
+                                    the clients to make an informed decision on whom they are engaging for their case.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">How
+                                        do I get to know, how many advocates stand in competition with me to get the
+                                        work and how do I stand best in them?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Unfortunately, AdvocateKhoj does not allow communication among the subscribing
+                                    advocates. The only way you can know about this is, when you are contacted by a
+                                    prospective client. The reason why AdvocateKhoj does not collect such information is
+                                    because AdvocateKhoj is only a communication platform between advocates and
+                                    consumers and we do not dictate or govern the fees charged by an advocate for
+                                    his/her service.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">How
+                                        can I know that I have got the work?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    When the client contacts you personally either over the phone or email and seeks
+                                    your representation for his/her case then it implies that you have got the work.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">When
+                                        a client hires an advocate from AdvocateKhoj for his case, will the case be
+                                        immediately deleted from the website?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    When a case is posted at AdvocateKhoj, by default the system allots 6 months for the
+                                    client to get the right advocates after which the case is archived. If during these
+                                    6 months, a client is able to find an advocate, we expect the client to delete
+                                    his/her case otherwise the system archives it as stated above.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Does
+                                        AdvocateKhoj interfere with the fees charged by an advocate?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    No. AdvocateKhoj does not interfere with the fees charged by an advocate for his/her
+                                    work. An advocate is responsible for collection of fees as per his/her discretion
+                                    and AdvocateKhoj does not take part in it.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">What
+                                        are the subscription charges for advocates?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    We offer the following subscription plans:
+
+                                    1. Silver Plan - 3 months validity - 400 INR + GST (18%)
+                                    2. Gold Plan - 6 months validity (12.5% discount) - 700 INR + GST (18%)
+                                    3. Platinum Plan - 12 months validity (25% discount) - 1200 INR + GST (18%)
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">What
+                                        modes of payment does AdvocateKhoj accept?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Payments can be made through Credit Cards/Net Banking/UPI and these details can be
+                                    accessed from the advocates' account.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Refund
+                                        and Cancellation Policy?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    At advocatekhoj.com we take great pride in delivering high-quality services and are
+                                    committed to ensuring your satisfaction. We continually strive to provide the best
+                                    services through our platform. If you are not satisfied with our services, please
+                                    contact us immediately, and we will make every effort to resolve the issue, provide
+                                    a refund, or offer credit for future orders.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Using Blogs -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-[#00377b]">Using Blogs
+                        </h3>
+                        <div class="space-y-4 accordion">
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">What
+                                        is a blog?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    A blog is a short form for weblog and is an online journal with periodic postings by
+                                    members. A blog can be anything, such as opinions, news or useful resources.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">What
+                                        is the purpose of AdvocateKhoj Blog?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    The aim is to provide the online viewers with a constantly renewing source of news
+                                    and insight about laws. The advocate members can voice their thoughts, ideas and
+                                    opinions on laws.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">How
+                                        can I post my blog?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Posting a blog is FREE for all the registered advocates. If you are an advocate and
+                                    in case you are not registered, then you may please submit an application by
+                                    visiting our registration page.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Will
+                                        the blog postings be reviewed before it's published?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Yes, the blog postings would be reviewed before they are posted on to the public
+                                    page. The blog should focus on niche area of the law or jurisdiction and should meet
+                                    the guidelines set by AdvocateKhoj panel as per the User Agreement. Also the blog
+                                    shouldn't promote any business or entity.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Is
+                                        there a limit on the number of blogs an advocate can publish?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    No, an advocate can publish any number of blogs.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Can
+                                        the advocate delete a published blog?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Yes, the advocate can delete any of the blogs published by him/her.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">How
+                                        to rate a blog?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Any user can rate a blog after logging in to AdvocateKhoj.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Using Sawaal Jawaab -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-[#00377b]">Using Sawaal
+                            Jawaab</h3>
+                        <div class="space-y-4 accordion">
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">What
+                                        is a Sawaal-Jawaab?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Sawaal-Jawaab (Question and Answer) is a unique method by which a user can ask
+                                    questions on topics related to law colleges in India and others can share their
+                                    knowledge. All you need to do is create an account and post your Sawaal or Jawaab.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical / Customer Support -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-[#00377b]">Technical /
+                            Customer Support</h3>
+                        <div class="space-y-4 accordion">
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">What
+                                        is the minimum requirements to use AdvocateKhoj?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    You need a modern web browser with JavaScript enabled and cookies enabled. We
+                                    recommend using the latest versions of Chrome, Firefox, Safari, or Edge for the best
+                                    experience.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Why
+                                        am I getting a Security Certificate Warning?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    AdvocateKhoj uses SSL (Secure Sockets Layer) to protect selected private information
+                                    you may input on our site. Our security certificate is valid for the domain name
+                                    http://www.advocatekhoj.com/. It is also possible to access AdvocateKhoj without
+                                    using the prefix WWW, however when you do so, the accessed Internet address will not
+                                    match the address the certificate is valid for and your browser will alert you with
+                                    a warning. If you do not click Yes (or Continue or OK) to proceed, you will NOT be
+                                    able to login.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">Why
+                                        do I need to enable cookies to use AdvocateKhoj?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Cookies allow websites such as AdvocateKhoj to track a user's progress through the
+                                    site. While cookies may store personal non-sensitive information that you enter into
+                                    a webpage for any website, they cannot access and read your hard drive, and most
+                                    expire when a session is over. For you to use AdvocateKhoj properly, cookies need to
+                                    be enabled on your computer. Any information you enter while using AdvocateKhoj is
+                                    stored on our servers and not in cookies. If security and/or privacy settings for
+                                    your web browser are set to the medium-high or highest levels, cookies will be
+                                    disallowed and other web browser functions disabled and you will not be able to use
+                                    AdvocateKhoj. You need to reset your web browser's security and/or privacy levels
+                                    and use AdvocateKhoj with confidence. Use the default settings as recommended by
+                                    Microsoft and Netscape.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">What
+                                        if I forget my AdvocateKhoj Username and Password?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    If you forget your AdvocateKhoj Username or Password, you can use the password
+                                    recovery option on the login page. Click on 'Forgot Password' and follow the
+                                    instructions to reset your credentials.
+                                </div>
+                            </div>
+                            <div class="border rounded-lg px-6 bg-white accordion-item">
+                                <button
+                                    class="w-full py-4 text-left flex items-center justify-between gap-4 accordion-trigger group">
+                                    <span
+                                        class="font-semibold text-gray-900 group-hover:text-[#00377b] transition-colors">How
+                                        do I contact Customer Support /Technical Support?</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200 accordion-icon group-hover:text-[#00377b]"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="hidden pb-4 text-gray-600 accordion-content whitespace-pre-line">
+                                    Click on the Contact Us page to send a message to our customer/technical support
+                                    staff. You can also reach us through the contact information provided in the footer
+                                    of our website.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ready to Expand Your Practice? - Enhanced CTA Section -->
+        <section class="py-20 bg-gradient-to-br from-[#00377b] to-[#00377b]/90">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Expand Your Practice?</h2>
+                    <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                        Join thousands of advocates who are growing their practice with AdvocateKhoj.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../register/index.html?userType=advocate"
+                            class="inline-flex items-center justify-center h-12 px-8 text-lg font-bold rounded-md bg-white text-[#00377b] hover:bg-gray-100 transition-all duration-200 shadow-lg transform hover:scale-105">
+                            Register Now
+                        </a>
+                        <a href="../contact/index.html"
+                            class="inline-flex items-center justify-center h-12 px-8 text-lg font-medium rounded-md border-2 border-white text-white hover:bg-white/10 transition-all duration-200">
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#00377b] text-white border-t-4 border-[#001944] ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-6">
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../about/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">About
+                                Us</a></li>
+                        <li><a href="../media-coverage/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Media
+                                Coverage</a></li>
+                        <li><a href="../contact/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Contact
+                                Us</a></li>
+                        <li><a href="../user-agreement/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">User
+                                Agreement</a></li>
+                        <li><a href="../privacy-policy/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Privacy
+                                Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Client Area</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../register/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Register</a>
+                        </li>
+                        <li><a href="../login/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Login</a>
+                        </li>
+                        <li><a href="../client-area/index.html#faqs"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">FAQ's</a>
+                        </li>
+                        <li><a href="../client-area/index.html#how-it-works"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">How
+                                It Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Advocate Area</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../advocate/register/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Register</a>
+                        </li>
+                        <li><a href="../login/index.html?userType=advocate"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Login</a>
+                        </li>
+                        <li><a href="../advocate-area/index.html#faqs"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">FAQ's</a>
+                        </li>
+                        <li><a href="../advocate-area/index.html#how-it-works"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">How
+                                It Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Law School</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../law-colleges/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Search
+                                Colleges</a></li>
+                        <li><a href="../sawal-jawab/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Search
+                                a Sawaal</a></li>
+                        <li><a href="../sawal-jawab/index.html?mode=ask"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Ask
+                                a Sawaal</a></li>
+                    </ul>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mt-6 mb-4">Blogs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../advocate/dashboard/index.html?section=blogs"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Post
+                                a Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Law Library</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../law-library/legal-tips/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Legal
+                                Tips</a></li>
+                        <li><a href="../law-library/agreements/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Agreements</a>
+                        </li>
+                        <li><a href="../law-library/areas-of-law/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Area
+                                of Law</a></li>
+                        <li><a href="../law-library/bare-acts/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Indian
+                                Bare Acts</a></li>
+                        <li><a href="../law-library/rules/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Rules</a>
+                        </li>
+                        <li><a href="../law-library/judgements/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Judgments</a>
+                        </li>
+                        <li><a href="../law-library/forms/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Legal
+                                Forms</a></li>
+                        <li><a href="../law-library/glossary/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Glossary</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Advertise</h3>
+                    <ul class="space-y-2 mb-6">
+                        <li><a href="../contact/index.html?context=advertise"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm hover:text-white transition-colors duration-200">Get
+                                in Touch</a></li>
+                    </ul>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Social</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://www.facebook.com/advocatekhoj" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 text-sm "
+                                aria-label="Visit AdvocateKhoj on Facebook">
+                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                                Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/scjudgments" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 text-sm "
+                                aria-label="Visit AdvocateKhoj on X">
+                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                                X (Twitter)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/advocatekho" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 text-sm "
+                                aria-label="Visit AdvocateKhoj on LinkedIn">
+                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-[#001944] mt-10 pt-6">
+                <div class="text-center text-xs text-white/80 leading-relaxed">
+                    <p class="mb-2">Information provided on advocatekhoj.com is solely available at your request for
+                        informational purposes only and should not be interpreted as soliciting or advertisement.</p>
+                    <p>&copy; 2025 AdvocateKhoj. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-[#00377b] text-white rounded-full shadow-lg hover:bg-[#1453a3] transition-all duration-300 opacity-0 invisible z-50 flex items-center justify-center hover:scale-110 hover:bg-[#00377b]/90 "
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script src="../scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication - AdvocateKhoj</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../styles/tailwind.css">
+  <!-- This page redirects to login or register based on query params -->
+  <script>
+    // Redirect logic matching Next.js auth page
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const mode = params.get('authMode') || params.get('mode') || params.get('view');
+      const userType = params.get('userType') || params.get('type');
+      
+      let targetPath = '../login/';
+      
+      if (mode) {
+        const normalized = mode.toLowerCase();
+        if (['signup', 'register', 'registration'].includes(normalized) || normalized.startsWith('reg') || normalized.startsWith('sign')) {
+          targetPath = '../register/';
+        }
+      }
+      
+      if (userType && userType !== 'client') {
+        targetPath += '?userType=' + userType;
+      }
+      
+      window.location.replace(targetPath);
+    })();
+  </script>
+</head>
+<body>
+  <div class="min-h-screen flex items-center justify-center bg-gray-50 ">
+    <div class="text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00377b] mx-auto mb-4"></div>
+      <p class="text-gray-600">Redirecting...</p>
+    </div>
+  </div>
+</body>
+</html>

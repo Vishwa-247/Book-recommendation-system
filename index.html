@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdvocateKhoj - Find the Right Advocate</title>
+    <meta name="description"
+        content="AdvocateKhoj helps you connect with qualified advocates by providing access to their background, education, experience and previous case work.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles/global.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00377b',
+                        'primary-dark': '#001944',
+                        secondary: '#d67c40',
+                        'secondary-dark': '#c26a36',
+                        accent: '#f17313',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#F9FAFB] text-gray-900 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 w-full border-b border-[#001944]/20 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between ">
+            <div class="flex items-center flex-shrink-0 ">
+                <a href="index.html" class="flex items-center hover:opacity-85 transition-opacity">
+                    <img src="assets/logo.svg" alt="AdvocateKhoj Logo" class="h-14 w-auto sm:h-16"
+                        onerror="this.src='https://via.placeholder.com/140x80?text=AdvocateKhoj'">
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-6 relative " id="main-nav">
+                <a href="client-area/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Post
+                    a Case</a>
+                <a href="advocate-area/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Join
+                    as Advocate</a>
+                <a href="law-colleges/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Law
+                    College</a>
+                <a href="sawal-jawab/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Sawal
+                    Jawab</a>
+                <a href="law-library/index.html"
+                    class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Law
+                    Library</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-3 ">
+                <a href="login/index.html"
+                    class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#00377b] hover:bg-[#00377b]/90 text-white shadow-md border border-[#001944]/80 transition-all duration-200">Log
+                    In</a>
+                <a href="register/index.html"
+                    class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#d67c40] hover:bg-[#c26a36] text-white font-semibold shadow-md border border-[#d67c40]/70 transition-[background] duration-200 ">Register</a>
+            </div>
+
+            <button class="md:hidden text-[#001944] p-2 hover:bg-gray-100 rounded-md transition-colors"
+                id="mobile-menu-btn" aria-label="Toggle navigation">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden border-t border-[#001944]/10 bg-white/95 backdrop-blur hidden" id="mobile-menu">
+            <nav class="max-w-7xl mx-auto px-4 py-4 space-y-3">
+                <a href="client-area/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Post
+                    a Case</a>
+                <a href="advocate-area/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Join
+                    as Advocate</a>
+                <a href="law-colleges/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Law
+                    College</a>
+                <a href="sawal-jawab/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Sawal
+                    Jawab</a>
+                <a href="law-library/index.html"
+                    class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors py-2">Law
+                    Library</a>
+                <div class="pt-4 border-t border-[#001944]/10 space-y-2">
+                    <a href="login/index.html"
+                        class="block w-full px-4 py-3 text-center bg-[#00377b] hover:bg-[#00377b]/90 text-white rounded-md font-medium">Log
+                        In</a>
+                    <a href="register/index.html"
+                        class="block w-full px-4 py-3 text-center bg-[#d67c40] text-white rounded-md font-medium hover:bg-[#c26a36]">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Global Top Banner -->
+    <div class="w-full bg-white/80 backdrop-blur-sm border-b border-[#001944]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Left Banner -->
+                <div
+                    class="flex-1 h-24 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center  ">
+                    <div class="text-center text-gray-500">
+                        <div class="text-sm font-medium">Advertisement Space Available</div>
+                        <div class="text-xs mt-1">550 x 94</div>
+                    </div>
+                </div>
+                <!-- Right Banner -->
+                <div
+                    class="flex-1 h-24 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center  ">
+                    <div class="text-center text-gray-500">
+                        <div class="text-sm font-medium">Advertisement Space Available</div>
+                        <div class="text-xs mt-1">550 x 94</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-1">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-[#00377b]/5 to-[#d67c40]/5 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                        Find the Right Advocate - <span class="text-[#00377b]">Half the battle won</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        AdvocateKhoj helps you connect with qualified advocates by providing access to their background,
+                        education, experience and previous case work. Your peace of mind is compromised, not them!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                        <a href="client-area/index.html"
+                            class="inline-flex items-center justify-center h-10 px-6 text-sm font-medium rounded-md bg-[#00377b] text-white hover:bg-[#00377b]/90 transition-all duration-200 shadow-xs w-full sm:w-auto ">
+                            Post a Case
+                        </a>
+                        <a href="advocate-area/index.html"
+                            class="inline-flex items-center justify-center h-10 px-6 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#d67c40] hover:text-white transition-all duration-200 w-full sm:w-auto hover:bg-[#f17313] hover:text-white ">
+                            Join as Advocate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Middle Advertisement Banner -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div
+                class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center h-24 md:h-32  ">
+                <div class="text-center text-gray-500">
+                    <div class="text-sm font-medium">Featured Advertisement - Content Area</div>
+                    <div class="text-xs mt-1">728x90 / 970x250 / Responsive</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        Your One-Stop Legal Provider
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Connect with qualified advocates, access comprehensive law library, and get expert legal
+                        consultation all in one platform.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature Card 1 -->
+                    <div
+                        class="group bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-xl hover:border-[#00377b]/30 transition-all duration-300 hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-[#00377b]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#00377b]/20 transition-colors hover:bg-[#00377b]/90 ">
+                            <svg class="w-12 h-12 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900">Find Expert Advocates</h3>
+                        <p class="text-gray-600 mb-5 leading-relaxed">Connect with qualified and experienced advocates
+                            across India for your legal needs.</p>
+                        <a href="client-area/index.html"
+                            class="inline-flex items-center justify-center h-9 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-[#f17313]-foreground transition-all duration-200 w-full ">
+                            Find Lawyers
+                        </a>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div
+                        class="group bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-xl hover:border-[#00377b]/30 transition-all duration-300 hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-[#00377b]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#00377b]/20 transition-colors hover:bg-[#00377b]/90 ">
+                            <svg class="w-12 h-12 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900">Comprehensive Law Library</h3>
+                        <p class="text-gray-600 mb-5 leading-relaxed">Access Supreme Court judgments, bare acts, legal
+                            forms, and extensive legal resources.</p>
+                        <a href="law-library/index.html"
+                            class="inline-flex items-center justify-center h-9 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-[#f17313]-foreground transition-all duration-200 w-full ">
+                            Explore Library
+                        </a>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div
+                        class="group bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-xl hover:border-[#00377b]/30 transition-all duration-300 hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-[#00377b]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#00377b]/20 transition-colors hover:bg-[#00377b]/90 ">
+                            <svg class="w-12 h-12 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900">Law Colleges Directory</h3>
+                        <p class="text-gray-600 mb-5 leading-relaxed">Discover law colleges, admissions, conferences,
+                            and career opportunities in legal field.</p>
+                        <a href="law-colleges/index.html"
+                            class="inline-flex items-center justify-center h-9 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-[#f17313]-foreground transition-all duration-200 w-full ">
+                            View Colleges
+                        </a>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div
+                        class="group bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-xl hover:border-[#00377b]/30 transition-all duration-300 hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-[#00377b]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#00377b]/20 transition-colors hover:bg-[#00377b]/90 ">
+                            <svg class="w-12 h-12 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900">Sawal Jawab Forum</h3>
+                        <p class="text-gray-600 mb-5 leading-relaxed">Ask legal questions and get answers from legal
+                            experts and community members.</p>
+                        <a href="sawal-jawab/index.html"
+                            class="inline-flex items-center justify-center h-9 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-[#f17313]-foreground transition-all duration-200 w-full ">
+                            Ask Questions
+                        </a>
+                    </div>
+
+                    <!-- Feature Card 5 -->
+                    <div
+                        class="group bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-xl hover:border-[#00377b]/30 transition-all duration-300 hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-[#00377b]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#00377b]/20 transition-colors hover:bg-[#00377b]/90 ">
+                            <svg class="w-12 h-12 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900">Case Management</h3>
+                        <p class="text-gray-600 mb-5 leading-relaxed">Efficiently manage your legal cases with our
+                            comprehensive case tracking system.</p>
+                        <a href="client-area/index.html"
+                            class="inline-flex items-center justify-center h-9 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-[#f17313]-foreground transition-all duration-200 w-full ">
+                            Manage Cases
+                        </a>
+                    </div>
+
+                    <!-- Feature Card 6 -->
+                    <div
+                        class="group bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-xl hover:border-[#00377b]/30 transition-all duration-300 hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-[#00377b]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#00377b]/20 transition-colors hover:bg-[#00377b]/90 ">
+                            <svg class="w-12 h-12 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900">Legal Documentation</h3>
+                        <p class="text-gray-600 mb-5 leading-relaxed">Download legal forms, agreements, and templates
+                            for various legal requirements.</p>
+                        <a href="law-library/index.html"
+                            class="inline-flex items-center justify-center h-9 px-4 text-sm font-medium rounded-md border bg-white shadow-xs hover:bg-[#f17313] hover:text-[#f17313]-foreground transition-all duration-200 w-full ">
+                            Get Documents
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Ticker Section -->
+        <section class="bg-gradient-to-r from-gray-50 via-white to-gray-50 border-y border-[#001944]/10 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Latest Supreme Court Judgments -->
+                    <div
+                        class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-[#001944]/10 hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-4 ">
+                            <div
+                                class="w-10 h-10 bg-[#00377b]/10 rounded-lg flex items-center justify-center mr-3 hover:bg-[#00377b]/90 ">
+                                <svg class="w-5 h-5 text-[#00377b]" fill="none" stroke="#00377b" stroke-width="2"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900">Latest Supreme Court Judgments</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <a href="#"
+                                class="flex items-start group hover:bg-[#00377b]/5 p-3 rounded-lg transition-all duration-200 border border-transparent hover:border-[#001944]/20">
+                                <svg class="w-4 h-4 text-gray-400 mt-1 mr-3 group-hover:text-[#00377b] flex-shrink-0 transition-colors"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <div class="flex-1">
+                                    <p class="text-sm text-gray-700 group-">Supreme Court upholds digital privacy rights
+                                        in landmark judgment</p>
+                                    <p class="text-xs text-gray-500 mt-1">12/09/2025</p>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="flex items-start group hover:bg-[#00377b]/5 p-3 rounded-lg transition-all duration-200 border border-transparent hover:border-[#001944]/20">
+                                <svg class="w-4 h-4 text-gray-400 mt-1 mr-3 group-hover:text-[#00377b] flex-shrink-0 transition-colors"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <div class="flex-1">
+                                    <p class="text-sm text-gray-700 group-">New guidelines for arbitration proceedings
+                                        released</p>
+                                    <p class="text-xs text-gray-500 mt-1">10/09/2025</p>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="flex items-start group hover:bg-[#00377b]/5 p-3 rounded-lg transition-all duration-200 border border-transparent hover:border-[#001944]/20">
+                                <svg class="w-4 h-4 text-gray-400 mt-1 mr-3 group-hover:text-[#00377b] flex-shrink-0 transition-colors"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <div class="flex-1">
+                                    <p class="text-sm text-gray-700 group-">Environmental protection laws strengthened
+                                        by apex court</p>
+                                    <p class="text-xs text-gray-500 mt-1">08/09/2025</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="law-library/index.html"
+                            class="inline-flex items-center text-sm text-[#00377b] hover:text-[#00377b]/80 mt-4 font-medium group hover:opacity-85 transition-opacity">
+                            View all judgments
+                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Forthcoming Events -->
+                    <div
+                        class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-[#d67c40]/10 hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-4 ">
+                            <div
+                                class="w-10 h-10 bg-[#d67c40]/10 rounded-lg flex items-center justify-center mr-3 hover:bg-[#c26a36] ">
+                                <svg class="w-5 h-5 text-[#d67c40]" fill="none" stroke="#d67c40" stroke-width="2"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900">Forthcoming Events</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <a href="#"
+                                class="flex items-start group hover:bg-[#d67c40]/5 p-3 rounded-lg transition-all duration-200 border border-transparent hover:border-[#d67c40]/20 hover:bg-[#c26a36]">
+                                <svg class="w-4 h-4 text-gray-400 mt-1 mr-3 group-hover:text-[#d67c40] flex-shrink-0 transition-colors"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <div class="flex-1">
+                                    <p class="text-sm text-gray-700 group-">National Law Conference on AI & Legal Ethics
+                                        - Mumbai, Sept 25-26</p>
+                                    <p class="text-xs text-gray-500 mt-1">25/09/2025</p>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="flex items-start group hover:bg-[#d67c40]/5 p-3 rounded-lg transition-all duration-200 border border-transparent hover:border-[#d67c40]/20 hover:bg-[#c26a36]">
+                                <svg class="w-4 h-4 text-gray-400 mt-1 mr-3 group-hover:text-[#d67c40] flex-shrink-0 transition-colors"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <div class="flex-1">
+                                    <p class="text-sm text-gray-700 group-">Bar Council Annual Meeting - New Delhi, Oct
+                                        5</p>
+                                    <p class="text-xs text-gray-500 mt-1">05/10/2025</p>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="flex items-start group hover:bg-[#d67c40]/5 p-3 rounded-lg transition-all duration-200 border border-transparent hover:border-[#d67c40]/20 hover:bg-[#c26a36]">
+                                <svg class="w-4 h-4 text-gray-400 mt-1 mr-3 group-hover:text-[#d67c40] flex-shrink-0 transition-colors"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <div class="flex-1">
+                                    <p class="text-sm text-gray-700 group-">Legal Tech Summit 2025 - Bangalore, Oct
+                                        15-16</p>
+                                    <p class="text-xs text-gray-500 mt-1">15/10/2025</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="sawal-jawab/index.html"
+                            class="inline-flex items-center text-sm text-[#d67c40] hover:text-[#d67c40]/80 mt-4 font-medium group hover:opacity-85 transition-opacity">
+                            View all events
+                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Blogs Section -->
+        <section class="py-16 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Featured Legal Blogs</h2>
+                        <p class="text-gray-600">Stay updated with the latest legal insights and analysis</p>
+                    </div>
+                    <a href="blogs/index.html"
+                        class="inline-flex items-center text-[#00377b] hover:text-[#00377b]/80 font-semibold mt-4 md:mt-0 group hover:opacity-85 transition-opacity">
+                        View all blogs
+                        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Blog Card 1 -->
+                    <article
+                        class="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div
+                            class="aspect-video bg-gradient-to-br from-[#00377b]/20 to-[#d67c40]/20 flex items-center justify-center ">
+                            <svg class="w-16 h-16 text-[#00377b]/40" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-3 ">
+                                <span
+                                    class="px-2.5 py-1 text-xs font-medium bg-[#00377b]/10 text-[#00377b] rounded-full ">Constitutional
+                                    Law</span>
+                                <span class="text-xs text-gray-500">5 min read</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2 group-">Understanding Fundamental
+                                Rights: A Comprehensive Guide</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">An in-depth analysis of the fundamental
+                                rights enshrined in the Indian Constitution and their practical applications.</p>
+                            <div class="flex items-center justify-between ">
+                                <span class="text-xs text-gray-500">By Adv. Sharma • Dec 1, 2025</span>
+                                <a href="#" class="text-[#00377b] text-sm font-medium hover:underline">Read more</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article
+                        class="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div
+                            class="aspect-video bg-gradient-to-br from-[#d67c40]/20 to-[#00377b]/20 flex items-center justify-center ">
+                            <svg class="w-16 h-16 text-[#d67c40]/40" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-3 ">
+                                <span
+                                    class="px-2.5 py-1 text-xs font-medium bg-[#d67c40]/10 text-[#d67c40] rounded-full ">Corporate
+                                    Law</span>
+                                <span class="text-xs text-gray-500">8 min read</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2 group-">New Companies Act Amendments:
+                                What You Need to Know</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">Recent amendments to the Companies Act
+                                and their implications for businesses and corporate governance.</p>
+                            <div class="flex items-center justify-between ">
+                                <span class="text-xs text-gray-500">By Adv. Patel • Nov 28, 2025</span>
+                                <a href="#" class="text-[#00377b] text-sm font-medium hover:underline">Read more</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 3 -->
+                    <article
+                        class="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div
+                            class="aspect-video bg-gradient-to-br from-[#00377b]/20 to-[#d67c40]/20 flex items-center justify-center ">
+                            <svg class="w-16 h-16 text-[#00377b]/40" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-3 ">
+                                <span
+                                    class="px-2.5 py-1 text-xs font-medium bg-[#00377b]/10 text-[#00377b] rounded-full ">Criminal
+                                    Law</span>
+                                <span class="text-xs text-gray-500">6 min read</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2 group-">Bail Provisions Under New
+                                Criminal Laws</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">A detailed examination of bail provisions
+                                under the new criminal codes and their impact on accused persons.</p>
+                            <div class="flex items-center justify-between ">
+                                <span class="text-xs text-gray-500">By Adv. Kumar • Nov 25, 2025</span>
+                                <a href="#" class="text-[#00377b] text-sm font-medium hover:underline">Read more</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advertisers Section -->
+        <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Trusted Partners</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">We collaborate with leading legal organizations and
+                        service providers to bring you the best resources and opportunities.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                    <!-- Partner 1 -->
+                    <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center border border-gray-200 ">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-4 ">
+                            <img src="assets/placeholder-logo.png" alt="Legal Services India"
+                                class="w-12 h-12 object-contain"
+                                onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22%3E%3Crect width=%2248%22 height=%2248%22 fill=%22%23f3f4f6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-size=%2212%22%3ELogo%3C/text%3E%3C/svg%3E';">
+                        </div>
+                        <h3 class="font-semibold text-sm text-gray-900 mb-2">Legal Services India</h3>
+                        <a href="https://legalservicesindia.com" target="_blank" rel="noopener noreferrer"
+                            class="text-xs text-[#00377b] hover:underline">Visit Website</a>
+                    </div>
+                    <!-- Partner 2 -->
+                    <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center border border-gray-200 ">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-4 ">
+                            <img src="assets/placeholder-logo.png" alt="Law Firm Directory"
+                                class="w-12 h-12 object-contain"
+                                onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22%3E%3Crect width=%2248%22 height=%2248%22 fill=%22%23f3f4f6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-size=%2212%22%3ELogo%3C/text%3E%3C/svg%3E';">
+                        </div>
+                        <h3 class="font-semibold text-sm text-gray-900 mb-2">Law Firm Directory</h3>
+                        <a href="https://lawfirmdirectory.com" target="_blank" rel="noopener noreferrer"
+                            class="text-xs text-[#00377b] hover:underline">Visit Website</a>
+                    </div>
+                    <!-- Partner 3 -->
+                    <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center border border-gray-200 ">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-4 ">
+                            <img src="assets/placeholder-logo.png" alt="Indian Legal Resources"
+                                class="w-12 h-12 object-contain"
+                                onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22%3E%3Crect width=%2248%22 height=%2248%22 fill=%22%23f3f4f6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-size=%2212%22%3ELogo%3C/text%3E%3C/svg%3E';">
+                        </div>
+                        <h3 class="font-semibold text-sm text-gray-900 mb-2">Indian Legal Resources</h3>
+                        <a href="https://indianlegalresources.com" target="_blank" rel="noopener noreferrer"
+                            class="text-xs text-[#00377b] hover:underline">Visit Website</a>
+                    </div>
+                    <!-- Partner 4 -->
+                    <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center border border-gray-200 ">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-4 ">
+                            <img src="assets/placeholder-logo.png" alt="Legal Tech Solutions"
+                                class="w-12 h-12 object-contain"
+                                onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22%3E%3Crect width=%2248%22 height=%2248%22 fill=%22%23f3f4f6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-size=%2212%22%3ELogo%3C/text%3E%3C/svg%3E';">
+                        </div>
+                        <h3 class="font-semibold text-sm text-gray-900 mb-2">Legal Tech Solutions</h3>
+                        <a href="https://legaltechsolutions.com" target="_blank" rel="noopener noreferrer"
+                            class="text-xs text-[#00377b] hover:underline">Visit Website</a>
+                    </div>
+                </div>
+                <!-- Call to Action -->
+                <div class="text-center mt-12">
+                    <p class="text-gray-600 mb-4">Want to advertise with us or become a partner?</p>
+                    <a href="contact/index.html"
+                        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#00377b] hover:bg-[#00377b]/90 transition-colors duration-200 ">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Advertisement Banner -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div
+                class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center h-32 md:h-40  ">
+                <div class="text-center text-gray-500">
+                    <div class="text-sm font-medium">Advertisement Space - Footer Area</div>
+                    <div class="text-xs mt-1">728x90 / 970x250 / Responsive</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#00377b] text-white border-t-4 border-[#001944] ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-6">
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">About
+                                Us</a></li>
+                        <li><a href="media-coverage/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Media
+                                Coverage</a></li>
+                        <li><a href="contact/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Contact
+                                Us</a></li>
+                        <li><a href="user-agreement/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">User
+                                Agreement</a></li>
+                        <li><a href="privacy-policy/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Privacy
+                                Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Client Area</h3>
+                    <ul class="space-y-2">
+                        <li><a href="register/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Register</a>
+                        </li>
+                        <li><a href="login/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Login</a>
+                        </li>
+                        <li><a href="client-area/index.html#faqs"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">FAQ's</a>
+                        </li>
+                        <li><a href="client-area/index.html#how-it-works"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">How It
+                                Works</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Advocate Area</h3>
+                    <ul class="space-y-2">
+                        <li><a href="advocate/register/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Register</a>
+                        </li>
+                        <li><a href="login/index.html?userType=advocate"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Login</a>
+                        </li>
+                        <li><a href="advocate-area/index.html#faqs"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">FAQ's</a>
+                        </li>
+                        <li><a href="advocate-area/index.html#how-it-works"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">How It
+                                Works</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Law School</h3>
+                    <ul class="space-y-2">
+                        <li><a href="law-colleges/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Search
+                                Colleges</a></li>
+                        <li><a href="sawal-jawab/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Search a
+                                Sawaal</a></li>
+                        <li><a href="sawal-jawab/index.html?mode=ask"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Ask a
+                                Sawaal</a></li>
+                    </ul>
+
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mt-6 mb-4">Blogs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="blogs/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Post a
+                                Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Law Library</h3>
+                    <ul class="space-y-2">
+                        <li><a href="law-library/legal-tips/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Legal
+                                Tips</a></li>
+                        <li><a href="law-library/agreements/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Agreements</a>
+                        </li>
+                        <li><a href="law-library/areas-of-law/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Area of
+                                Law</a></li>
+                        <li><a href="law-library/bare-acts/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Indian
+                                Bare Acts</a></li>
+                        <li><a href="law-library/rules/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Rules</a>
+                        </li>
+                        <li><a href="law-library/judgements/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Judgments</a>
+                        </li>
+                        <li><a href="law-library/forms/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Legal
+                                Forms</a></li>
+                        <li><a href="law-library/glossary/index.html"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Glossary</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Advertise</h3>
+                    <ul class="space-y-2 mb-6">
+                        <li><a href="contact/index.html?context=advertise"
+                                class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Get in
+                                Touch</a></li>
+                    </ul>
+
+                    <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Social</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://www.facebook.com/advocatekhoj" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm "
+                                aria-label="Visit AdvocateKhoj on Facebook">
+                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                                Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/scjudgments" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm "
+                                aria-label="Visit AdvocateKhoj on X">
+                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                                X (Twitter)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/advocatekho" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm "
+                                aria-label="Visit AdvocateKhoj on LinkedIn">
+                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-[#001944] mt-10 pt-6">
+                <div class="text-center text-xs text-white/80 leading-relaxed">
+                    <p class="mb-2">Information provided on advocatekhoj.com is solely available at your request for
+                        informational purposes only and should not be interpreted as soliciting or advertisement.</p>
+                    <p>&copy; 2025 AdvocateKhoj. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-[#00377b] text-white rounded-full shadow-lg hover:bg-[#1453a3] transition-all duration-300 opacity-0 invisible z-50 flex items-center justify-center hover:scale-110 hover:bg-[#00377b]/90 "
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

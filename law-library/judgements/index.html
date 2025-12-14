@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supreme Court Judgements - Law Library - AdvocateKhoj</title>
+  <meta name="description" content="Browse Supreme Court judgements by year and search for specific cases">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../../styles/global.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00377b',
+            'primary-dark': '#001944',
+            secondary: '#d67c40',
+            'secondary-dark': '#c26a36',
+            accent: '#f17313',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-background">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full border-b border-[#001944]/20 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center flex-shrink-0">
+        <a href="../../index.html" class="flex items-center hover:opacity-85 transition-opacity">
+          <img src="../../assets/logo.svg" alt="AdvocateKhoj Logo" class="h-14 w-auto sm:h-16" onerror="this.src='https://via.placeholder.com/140x80?text=AdvocateKhoj'">
+        </a>
+      </div>
+      <nav class="hidden md:flex items-center space-x-6 relative">
+        <a href="../../client-area/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Post a Case</a>
+        <a href="../../advocate-area/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Join as Advocate</a>
+        <a href="../../law-colleges/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Law College</a>
+        <a href="../../sawal-jawab/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Sawal Jawab</a>
+        <a href="../../law-library/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] border-[#f17313]">Law Library</a>
+      </nav>
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="../../login/index.html" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-gradient-to-r from-[#00377b] to-[#1453a3] hover:from-[#1453a3] hover:to-[#1f64c7] text-white shadow-md border border-[#001944]/80 transition-[background] duration-200">Log In</a>
+        <a href="../../register/index.html" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#d67c40] hover:bg-[#c26a36] text-white font-semibold shadow-md border border-[#d67c40]/70 transition-[background] duration-200">Register</a>
+      </div>
+      <button class="md:hidden text-[#001944] p-2 hover:bg-gray-100 rounded-md transition-colors" id="mobile-menu-btn" aria-label="Toggle navigation">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="md:hidden border-t border-[#001944]/10 bg-white/95 backdrop-blur hidden" id="mobile-menu">
+      <nav class="max-w-7xl mx-auto px-4 py-4 space-y-3">
+        <a href="../../client-area/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors">Post a Case</a>
+        <a href="../../advocate-area/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors">Join as Advocate</a>
+        <a href="../../law-colleges/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors">Law College</a>
+        <a href="../../sawal-jawab/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors">Sawal Jawab</a>
+        <a href="../../law-library/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors">Law Library</a>
+        <div class="pt-4 border-t border-[#001944]/10 space-y-2">
+          <a href="../../login/index.html" class="block w-full inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-gradient-to-r from-[#00377b] to-[#1453a3] hover:from-[#1453a3] hover:to-[#1f64c7] text-white shadow-md border border-[#001944]/80 transition-[background] duration-200 text-center">Log In</a>
+          <a href="../../register/index.html" class="block w-full inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#d67c40] hover:bg-[#c26a36] text-white font-semibold shadow-md border border-[#d67c40]/70 transition-[background] duration-200 text-center">Register</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Global Top Banner -->
+  <div class="w-full bg-white/80 backdrop-blur-sm border-b border-[#001944]/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-col lg:flex-row gap-4">
+        <!-- Left Banner -->
+        <div class="flex-1 h-24 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
+          <div class="text-center text-gray-500">
+            <div class="text-sm font-medium">Advertisement Space Available</div>
+            <div class="text-xs mt-1">550 x 94</div>
+          </div>
+        </div>
+        <!-- Right Banner -->
+        <div class="flex-1 h-24 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
+          <div class="text-center text-gray-500">
+            <div class="text-sm font-medium">Advertisement Space Available</div>
+            <div class="text-xs mt-1">550 x 94</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-r from-[#00377b] via-primary to-secondary text-white py-8">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold mb-2">Law Library</h1>
+      <div class="flex items-center gap-2 text-sm ">
+        <a href="../" class="hover:underline">Law Library</a>
+        <span>&gt;</span>
+        <span>Supreme Court Judgements</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Left Sidebar - Years -->
+      <div class="w-full lg:w-64 flex-shrink-0">
+        <div class="bg-white rounded-lg shadow-sm border p-4 sticky top-4">
+          <h3 class="font-bold text-gray-800 mb-4">Browse by Year</h3>
+          <div class="space-y-3">
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">2020 - 2025</h4>
+              <div class="grid grid-cols-2 gap-1 mb-3">
+                <a href="year/index.html?year=2025" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2025</a>
+                <a href="year/index.html?year=2024" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2024</a>
+                <a href="year/index.html?year=2023" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2023</a>
+                <a href="year/index.html?year=2022" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2022</a>
+                <a href="year/index.html?year=2021" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2021</a>
+                <a href="year/index.html?year=2020" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2020</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">2010 - 2019</h4>
+              <div class="grid grid-cols-2 gap-1 mb-3">
+                <a href="year/index.html?year=2019" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2019</a>
+                <a href="year/index.html?year=2018" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2018</a>
+                <a href="year/index.html?year=2017" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2017</a>
+                <a href="year/index.html?year=2016" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2016</a>
+                <a href="year/index.html?year=2015" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2015</a>
+                <a href="year/index.html?year=2014" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2014</a>
+                <a href="year/index.html?year=2013" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2013</a>
+                <a href="year/index.html?year=2012" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2012</a>
+                <a href="year/index.html?year=2011" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2011</a>
+                <a href="year/index.html?year=2010" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2010</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">2000 - 2009</h4>
+              <div class="grid grid-cols-2 gap-1 mb-3">
+                <a href="year/index.html?year=2009" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2009</a>
+                <a href="year/index.html?year=2008" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2008</a>
+                <a href="year/index.html?year=2007" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2007</a>
+                <a href="year/index.html?year=2006" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2006</a>
+                <a href="year/index.html?year=2005" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2005</a>
+                <a href="year/index.html?year=2004" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2004</a>
+                <a href="year/index.html?year=2003" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2003</a>
+                <a href="year/index.html?year=2002" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2002</a>
+                <a href="year/index.html?year=2001" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2001</a>
+                <a href="year/index.html?year=2000" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">2000</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">1990 - 1999</h4>
+              <div class="grid grid-cols-2 gap-1 mb-3">
+                <a href="year/index.html?year=1999" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1999</a>
+                <a href="year/index.html?year=1998" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1998</a>
+                <a href="year/index.html?year=1997" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1997</a>
+                <a href="year/index.html?year=1996" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1996</a>
+                <a href="year/index.html?year=1995" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1995</a>
+                <a href="year/index.html?year=1994" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1994</a>
+                <a href="year/index.html?year=1993" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1993</a>
+                <a href="year/index.html?year=1992" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1992</a>
+                <a href="year/index.html?year=1991" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1991</a>
+                <a href="year/index.html?year=1990" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1990</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">1980 - 1989</h4>
+              <div class="grid grid-cols-2 gap-1 mb-3">
+                <a href="year/index.html?year=1989" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1989</a>
+                <a href="year/index.html?year=1988" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1988</a>
+                <a href="year/index.html?year=1987" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1987</a>
+                <a href="year/index.html?year=1986" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1986</a>
+                <a href="year/index.html?year=1985" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1985</a>
+                <a href="year/index.html?year=1984" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1984</a>
+                <a href="year/index.html?year=1983" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1983</a>
+                <a href="year/index.html?year=1982" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1982</a>
+                <a href="year/index.html?year=1981" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1981</a>
+                <a href="year/index.html?year=1980" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1980</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">1970 - 1979</h4>
+              <div class="grid grid-cols-2 gap-1 mb-3">
+                <a href="year/index.html?year=1979" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1979</a>
+                <a href="year/index.html?year=1978" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1978</a>
+                <a href="year/index.html?year=1977" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1977</a>
+                <a href="year/index.html?year=1976" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1976</a>
+                <a href="year/index.html?year=1975" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1975</a>
+                <a href="year/index.html?year=1974" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1974</a>
+                <a href="year/index.html?year=1973" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1973</a>
+                <a href="year/index.html?year=1972" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1972</a>
+                <a href="year/index.html?year=1971" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1971</a>
+                <a href="year/index.html?year=1970" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1970</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">1960 - 1969</h4>
+              <div class="grid grid-cols-2 gap-1 mb-3">
+                <a href="year/index.html?year=1969" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1969</a>
+                <a href="year/index.html?year=1968" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1968</a>
+                <a href="year/index.html?year=1967" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1967</a>
+                <a href="year/index.html?year=1966" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1966</a>
+                <a href="year/index.html?year=1965" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1965</a>
+                <a href="year/index.html?year=1964" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1964</a>
+                <a href="year/index.html?year=1963" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1963</a>
+                <a href="year/index.html?year=1962" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1962</a>
+                <a href="year/index.html?year=1961" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1961</a>
+                <a href="year/index.html?year=1960" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1960</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">1950 - 1959</h4>
+              <div class="grid grid-cols-2 gap-1 mb-3">
+                <a href="year/index.html?year=1959" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1959</a>
+                <a href="year/index.html?year=1958" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1958</a>
+                <a href="year/index.html?year=1957" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1957</a>
+                <a href="year/index.html?year=1956" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1956</a>
+                <a href="year/index.html?year=1955" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1955</a>
+                <a href="year/index.html?year=1954" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1954</a>
+                <a href="year/index.html?year=1953" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1953</a>
+                <a href="year/index.html?year=1952" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1952</a>
+                <a href="year/index.html?year=1951" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1951</a>
+                <a href="year/index.html?year=1950" class="text-blue-600 hover:text-blue-800 hover:underline text-sm py-1">1950</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex-1">
+        <div class="bg-white rounded-lg shadow-sm border">
+          <div class="p-6 border-b">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <h2 class="text-xl font-bold text-gray-800">Supreme Court Judgements</h2>
+              <!-- Search Box -->
+              <div class="w-full sm:w-80">
+                <div class="relative">
+                  <input type="text" placeholder="Search judgements..." class="h-10 w-full px-3 py-2 text-base border-2 border-gray-300 rounded-md bg-white shadow-sm transition-colors focus-visible:border-[#00377b] focus-visible:ring-2 focus-visible:ring-[#00377b]/20 hover:border-gray-400 md:text-sm hover:border-gray-400">
+                  <button class="absolute right-2 top-2 text-gray-400 hover:text-gray-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Latest Judgements</h3>
+            <div class="space-y-4">
+              <!-- Judgement items -->
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">1.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19424" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Prakash Asphallings and Toll Highways (India) Ltd. Vs. Mandeepa Enterprises</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19424</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">2.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19423" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Mansi Brar Farmandea Vs. Shubha Sharma</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19423</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">3.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19422" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Mansukh Sahu Vs. State of Chhattisgarh</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19422</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">4.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19421" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Confederation of Real Estate Developers Association of India (CREDAI) Vs. Union of India</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19421</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">5.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19420" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Anna Winman Bhiserao Vs. State of Maharashtra</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19420</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">6.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19419" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">ITC Ltd. Vs. State of Karnataka</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19419</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">7.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19418" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Mammam Khan Vs. State of Haryana</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19418</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">8.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19417" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Shanti Devi since (D) through L.Rs. Goram Vs. Jagan Davi</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/08/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19417</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">9.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19416" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Raju Mema Shinuatraa Rajeshwar Ramdas Sheth Vs. Khramshai Shakarsitaa Patel</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19416</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">10.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19415" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Vandita Pathak Vs. Nirmal Kanti Chakraborti</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19415</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">11.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19414" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Reena Banerjee Vs. Government of NCT of Delhi</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19414</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">12.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19413" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Geeta @ Reeta Mishra Vs. Ajay Kumar Mishra</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">12/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19413</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">13.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19412" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Vandana Vs. State of Maharashtra</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">11/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19412</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">14.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19411" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Mohammad Afzal Mohammad Sharif Vs. State of Maharashtra</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">11/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19411</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <div class="flex gap-4">
+                  <span class="text-blue-600 font-medium w-8">15.</span>
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-1 gap-2">
+                      <a href="judgement/detail/index.html?id=19410" class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium">Sumitra Aggarwal Vs. Ravi Agarwal</a>
+                      <span class="text-gray-500 text-xs whitespace-nowrap">11/09/25</span>
+                    </div>
+                    <div class="text-gray-600 text-xs">Judgement ID: 19410</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-8 flex justify-center">
+              <div class="flex gap-2">
+                <button class="px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-50 transition-colors">Previous</button>
+                <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm hover:bg-blue-700 transition-colors">1</button>
+                <button class="px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-50 transition-colors">2</button>
+                <button class="px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-50 transition-colors">3</button>
+                <button class="px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-50 transition-colors">Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Advertisement Banner -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center h-32 md:h-40">
+      <div class="text-center text-gray-500">
+        <div class="text-sm font-medium">Advertisement Space - Footer Area</div>
+        <div class="text-xs mt-1">728x90 / 970x250 / Responsive</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#00377b] text-white border-t-4 border-[#001944]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-6">
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="../../about/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">About Us</a></li>
+            <li><a href="../../media-coverage/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Media Coverage</a></li>
+            <li><a href="../../contact/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Contact Us</a></li>
+            <li><a href="../../user-agreement/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">User Agreement</a></li>
+            <li><a href="../../privacy-policy/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Client Area</h3>
+          <ul class="space-y-2">
+            <li><a href="../../register/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Register</a></li>
+            <li><a href="../../login/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Login</a></li>
+            <li><a href="../../client-area/index.html#faqs" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">FAQ's</a></li>
+            <li><a href="../../client-area/index.html#how-it-works" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Advocate Area</h3>
+          <ul class="space-y-2">
+            <li><a href="../../advocate/register/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Register</a></li>
+            <li><a href="../../login/index.html?userType=advocate" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Login</a></li>
+            <li><a href="../../advocate-area/index.html#faqs" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">FAQ's</a></li>
+            <li><a href="../../advocate-area/index.html#how-it-works" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Law School</h3>
+          <ul class="space-y-2">
+            <li><a href="../../law-colleges/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Search Colleges</a></li>
+            <li><a href="../../sawal-jawab/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Search a Sawaal</a></li>
+            <li><a href="../../sawal-jawab/index.html?mode=ask" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Ask a Sawaal</a></li>
+          </ul>
+
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mt-6 mb-4">Blogs</h3>
+          <ul class="space-y-2">
+            <li><a href="../../advocate/dashboard/index.html?section=blogs" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Post a Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Law Library</h3>
+          <ul class="space-y-2">
+            <li><a href="../legal-tips/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Legal Tips</a></li>
+            <li><a href="../agreements/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Agreements</a></li>
+            <li><a href="../areas-of-law/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Area of Law</a></li>
+            <li><a href="../bare-acts/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Indian Bare Acts</a></li>
+            <li><a href="../rules/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Rules</a></li>
+            <li><a href="../judgements/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Judgments</a></li>
+            <li><a href="../forms/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Legal Forms</a></li>
+            <li><a href="../glossary/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Glossary</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Advertise</h3>
+          <ul class="space-y-2 mb-6">
+            <li><a href="../../contact/index.html?context=advertise" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Get in Touch</a></li>
+          </ul>
+
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Social</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="https://www.facebook.com/advocatekhoj" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 text-sm" aria-label="Visit AdvocateKhoj on Facebook">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/scjudgments" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 text-sm" aria-label="Visit AdvocateKhoj on X">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X (Twitter)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/advocatekho" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 text-sm" aria-label="Visit AdvocateKhoj on LinkedIn">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-[#001944] mt-10 pt-6">
+        <div class="text-center text-xs text-white/80 leading-relaxed">
+          <p class="mb-2">Information provided on advocatekhoj.com is solely available at your request for informational purposes only and should not be interpreted as soliciting or advertisement.</p>
+          <p>&copy; 2025 AdvocateKhoj. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-[#00377b] text-white rounded-full shadow-lg hover:bg-[#1453a3] transition-all duration-300 opacity-0 invisible z-50 flex items-center justify-center hover:scale-110" aria-label="Back to top">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </button>
+
+  <script src="../../scripts/main.js"></script>
+</body>
+</html>

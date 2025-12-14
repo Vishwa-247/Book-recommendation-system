@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report No. 01 - Liability of the State in Tort | AdvocateKhoj</title>
+  <meta name="description" content="Law Commission of India Report No. 01 - Liability of the State in Tort">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../../../styles/global.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00377b',
+            'primary-dark': '#001944',
+            secondary: '#d67c40',
+            'secondary-dark': '#c26a36',
+            accent: '#f17313',
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    // Get report ID from URL parameter
+    function getReportId() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('id') || '1';
+    }
+    
+    // Sample report data - in a real app, this would come from a database or API
+    const reportData = {
+      "1": {
+        reportNo: "01",
+        title: "Liability of the State in Tort",
+        contents: [
+          {
+            chapter: "I",
+            title: "Introductory",
+            sections: [{ number: "", title: "References" }],
+          },
+          {
+            chapter: "II",
+            title: "Existing Law in India (1)",
+            sections: [{ number: "", title: "Existing Law in India (2)" }],
+          },
+          {
+            chapter: "III",
+            title: "The Law in England",
+            sections: [
+              { number: "", title: "Crown Proceedings Act" },
+              { number: "2(1)", title: "Section 2(1)" },
+              { number: "", title: "Vicarious liability of the master" },
+              { number: "", title: "Onardous governing master's liability" },
+              { number: "", title: "Defence of common employment" },
+              { number: "", title: "The Crown as master and its liability to servants" },
+              { number: "", title: "Statutory duties and powers" },
+              { number: "", title: "Statutory duties" },
+              { number: "", title: "Statutory powers" },
+              { number: "", title: "Public duties" },
+              { number: "2(2)", title: "Section 2(2)" },
+              { number: "2(1)", title: "Section 2(1)" },
+              { number: "3", title: "Section 3" },
+              { number: "4", title: "Section 4" },
+              { number: "9 - Postal Packets", title: "Section 9 - Postal Packets" },
+              { number: "10 - Armed Forces", title: "Section 10 - Armed Forces" },
+            ],
+          },
+        ],
+        content: `
+          <h3>Report No. 01</h3>
+          <h2>Liability of the State in Tort</h2>
+          
+          <h4>Chapter I</h4>
+          <h3>Introductory</h3>
+          
+          <h4>1. Reference :</h4>
+          <p>On the initiative of the President of India, the Law Ministry took up for consideration the question whether 
+          legislation on the lines of the Crown Proceedings Act, 1947 of the United Kingdom in respect of claims against 
+          the Union and the States based on tort is needed and, if so, to what extent. After the constitution of this Law 
+          Commission, the Law Ministry referred the matter to the Commission for examination and report.</p>
+          
+          <p>2. The law regarding the liability of the Union and the States in respect of contracts, property etc., is not in 
+          doubt. But the law relating to the liability of the Union and the States for tortious acts is in a state of 
+          uncertainty. It becomes necessary therefore, to examine the existing law with a view to determine the extent 
+          of the liability of the Union and the States for tortious acts.</p>
+        `,
+      },
+    };
+    
+    // Load report data on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const reportId = getReportId();
+      const report = reportData[reportId];
+      
+      if (report) {
+        // Update title
+        document.title = `Report No. ${report.reportNo} - ${report.title} | AdvocateKhoj`;
+        
+        // Update report number
+        const reportNoEl = document.getElementById('report-no');
+        if (reportNoEl) reportNoEl.textContent = `Report No. ${report.reportNo}`;
+        
+        // Update report title
+        const reportTitleEl = document.getElementById('report-title');
+        if (reportTitleEl) reportTitleEl.textContent = report.title;
+        
+        // Update breadcrumb
+        const breadcrumbTitleEl = document.getElementById('breadcrumb-title');
+        if (breadcrumbTitleEl) breadcrumbTitleEl.textContent = report.title;
+        
+        // Update contents table
+        const contentsTbody = document.getElementById('contents-tbody');
+        if (contentsTbody) {
+          contentsTbody.innerHTML = report.contents.map((chapter, index) => {
+            const chapterRow = `
+              <tr>
+                <td class="border border-gray-300 px-4 py-2">
+                  <strong>Chapter ${chapter.chapter}</strong> - ${chapter.title}
+                </td>
+              </tr>
+            `;
+            const sectionRows = chapter.sections.map(section => `
+              <tr>
+                <td class="border border-gray-300 px-4 py-2 pl-8">
+                  ${section.number ? `${section.number} - ` : ''}${section.title}
+                </td>
+              </tr>
+            `).join('');
+            return chapterRow + sectionRows;
+          }).join('');
+        }
+        
+        // Update content
+        const contentEl = document.getElementById('report-content');
+        if (contentEl) contentEl.innerHTML = report.content;
+        
+        // Update next link
+        const nextLink = document.getElementById('next-link');
+        if (nextLink) {
+          const nextId = parseInt(reportId) + 1;
+          nextLink.href = `index.html?id=${nextId}`;
+        }
+      }
+    });
+  </script>
+</head>
+<body class="min-h-screen bg-background">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full border-b border-[#001944]/20 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center flex-shrink-0">
+        <a href="../../../index.html" class="flex items-center hover:opacity-85 transition-opacity">
+          <img src="../../../assets/logo.svg" alt="AdvocateKhoj Logo" class="h-14 w-auto sm:h-16" onerror="this.src='https://via.placeholder.com/140x80?text=AdvocateKhoj'">
+        </a>
+      </div>
+      <nav class="hidden md:flex items-center space-x-6 relative">
+        <a href="../../../client-area/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Post a Case</a>
+        <a href="../../../advocate-area/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Join as Advocate</a>
+        <a href="../../../law-colleges/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Law College</a>
+        <a href="../../../sawal-jawab/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] hover:text-[#00377b] border-transparent hover:border-[#1453a3]/60">Sawal Jawab</a>
+        <a href="../../../law-library/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-[#001944] border-[#f17313]">Law Library</a>
+      </nav>
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="../../../login/index.html" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-gradient-to-r from-[#00377b] to-[#1453a3] hover:from-[#1453a3] hover:to-[#1f64c7] text-white shadow-md border border-[#001944]/80 transition-[background] duration-200">Log In</a>
+        <a href="../../../register/index.html" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#d67c40] hover:bg-[#c26a36] text-white font-semibold shadow-md border border-[#d67c40]/70 transition-[background] duration-200">Register</a>
+      </div>
+      <button class="md:hidden text-[#001944] p-2 hover:bg-gray-100 rounded-md transition-colors" id="mobile-menu-btn" aria-label="Toggle navigation">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="md:hidden border-t border-[#001944]/10 bg-white/95 backdrop-blur hidden" id="mobile-menu">
+      <nav class="max-w-7xl mx-auto px-4 py-4 space-y-3">
+        <a href="../../../client-area/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors">Post a Case</a>
+        <a href="../../../advocate-area/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors">Join as Advocate</a>
+        <a href="../../../law-colleges/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors">Law College</a>
+        <a href="../../../sawal-jawab/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors">Sawal Jawab</a>
+        <a href="../../../law-library/index.html" class="block text-sm font-semibold uppercase tracking-wide text-[#001944] hover:text-[#00377b] transition-colors">Law Library</a>
+        <div class="pt-4 border-t border-[#001944]/10 space-y-2">
+          <a href="../../../login/index.html" class="block w-full inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-gradient-to-r from-[#00377b] to-[#1453a3] hover:from-[#1453a3] hover:to-[#1f64c7] text-white shadow-md border border-[#001944]/80 transition-[background] duration-200 text-center">Log In</a>
+          <a href="../../../register/index.html" class="block w-full inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-[#d67c40] hover:bg-[#c26a36] text-white font-semibold shadow-md border border-[#d67c40]/70 transition-[background] duration-200 text-center">Register</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Global Top Banner -->
+  <div class="w-full bg-white/80 backdrop-blur-sm border-b border-[#001944]/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-col lg:flex-row gap-4">
+        <!-- Left Banner -->
+        <div class="flex-1 h-24 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
+          <div class="text-center text-gray-500">
+            <div class="text-sm font-medium">Advertisement Space Available</div>
+            <div class="text-xs mt-1">550 x 94</div>
+          </div>
+        </div>
+        <!-- Right Banner -->
+        <div class="flex-1 h-24 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
+          <div class="text-center text-gray-500">
+            <div class="text-sm font-medium">Advertisement Space Available</div>
+            <div class="text-xs mt-1">550 x 94</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <div class="bg-gradient-to-r from-primary via-primary to-secondary text-white py-8">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold mb-2">Law Library</h1>
+      <div class="flex items-center gap-2 text-sm">
+        <a href="../../index.html" class="hover:underline">Law Library</a>
+        <span>&gt;</span>
+        <a href="../index.html" class="hover:underline">Law Commission Reports</a>
+        <span>&gt;</span>
+        <span id="breadcrumb-title">Liability of the State in Tort</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex gap-8">
+      <!-- Main Content -->
+      <div class="flex-1">
+        <div class="bg-white rounded-lg shadow-sm border">
+          <div class="p-6">
+            <div class="text-center mb-6">
+              <h2 class="text-xl font-bold text-gray-800 mb-2" id="report-no">
+                Report No. 01
+              </h2>
+              <h3 class="text-lg font-semibold text-gray-700" id="report-title">
+                Liability of the State in Tort
+              </h3>
+            </div>
+
+            <!-- Contents Table -->
+            <div class="mb-8">
+              <table class="w-full border border-gray-300">
+                <thead>
+                  <tr class="bg-gray-100">
+                    <th class="border border-gray-300 px-4 py-2 text-left font-bold">
+                      Contents
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="contents-tbody">
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2">
+                      <strong>Chapter I</strong> - Introductory
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      References
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2">
+                      <strong>Chapter II</strong> - Existing Law in India (1)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      Existing Law in India (2)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2">
+                      <strong>Chapter III</strong> - The Law in England
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      Crown Proceedings Act
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      2(1) - Section 2(1)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      Vicarious liability of the master
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      Onardous governing master's liability
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      Defence of common employment
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      The Crown as master and its liability to servants
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      Statutory duties and powers
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      Statutory duties
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      Statutory powers
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      Public duties
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      2(2) - Section 2(2)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      2(1) - Section 2(1)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      3 - Section 3
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      4 - Section 4
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      9 - Postal Packets - Section 9 - Postal Packets
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 pl-8">
+                      10 - Armed Forces - Section 10 - Armed Forces
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Report Content -->
+            <div class="prose max-w-none" id="report-content">
+              <h3>Report No. 01</h3>
+              <h2>Liability of the State in Tort</h2>
+              
+              <h4>Chapter I</h4>
+              <h3>Introductory</h3>
+              
+              <h4>1. Reference :</h4>
+              <p>On the initiative of the President of India, the Law Ministry took up for consideration the question whether 
+              legislation on the lines of the Crown Proceedings Act, 1947 of the United Kingdom in respect of claims against 
+              the Union and the States based on tort is needed and, if so, to what extent. After the constitution of this Law 
+              Commission, the Law Ministry referred the matter to the Commission for examination and report.</p>
+              
+              <p>2. The law regarding the liability of the Union and the States in respect of contracts, property etc., is not in 
+              doubt. But the law relating to the liability of the Union and the States for tortious acts is in a state of 
+              uncertainty. It becomes necessary therefore, to examine the existing law with a view to determine the extent 
+              of the liability of the Union and the States for tortious acts.</p>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-between items-center mt-8 pt-6 border-t">
+              <a href="../index.html" class="text-blue-600 hover:underline flex items-center gap-1">
+                ← Back
+              </a>
+              <a href="../index.html" class="text-blue-600 hover:underline">
+                Index
+              </a>
+              <a href="index.html?id=2" id="next-link" class="text-blue-600 hover:underline flex items-center gap-1">
+                Next →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="w-64 flex-shrink-0">
+        <div class="space-y-6">
+          <!-- Search Judgements -->
+          <div class="bg-white rounded-lg shadow-sm border overflow-hidden">
+            <div class="bg-red-800 text-white p-3">
+              <h3 class="font-bold text-sm">SEARCH</h3>
+              <h3 class="font-bold text-sm">Judgements</h3>
+            </div>
+            <div class="p-3">
+              <div class="w-full h-20 bg-gray-200 rounded mb-2 flex items-center justify-center">
+                <span class="text-gray-500 text-xs">Image Placeholder</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Law College -->
+          <div class="bg-white rounded-lg shadow-sm border overflow-hidden">
+            <div class="bg-blue-600 text-white p-3">
+              <h3 class="font-bold text-sm">LAW</h3>
+              <h3 class="font-bold text-sm">College</h3>
+            </div>
+            <div class="p-3">
+              <div class="w-full h-20 bg-gray-200 rounded mb-2 flex items-center justify-center">
+                <span class="text-gray-500 text-xs">Image Placeholder</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Law Dictionary -->
+          <div class="bg-white rounded-lg shadow-sm border overflow-hidden">
+            <div class="bg-blue-800 text-white p-3">
+              <h3 class="font-bold text-sm">LAW</h3>
+              <h3 class="font-bold text-sm">Dictionary</h3>
+            </div>
+            <div class="p-3">
+              <div class="w-full h-20 bg-gray-200 rounded mb-2 flex items-center justify-center">
+                <span class="text-gray-500 text-xs">Image Placeholder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Advertisement Banner -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center h-32 md:h-40">
+      <div class="text-center text-gray-500">
+        <div class="text-sm font-medium">Advertisement Space - Footer Area</div>
+        <div class="text-xs mt-1">728x90 / 970x250 / Responsive</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#00377b] text-white border-t-4 border-[#001944]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-6">
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="../../../about/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">About Us</a></li>
+            <li><a href="../../../media-coverage/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Media Coverage</a></li>
+            <li><a href="../../../contact/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Contact Us</a></li>
+            <li><a href="../../../user-agreement/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">User Agreement</a></li>
+            <li><a href="../../../privacy-policy/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Client Area</h3>
+          <ul class="space-y-2">
+            <li><a href="../../../register/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Register</a></li>
+            <li><a href="../../../login/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Login</a></li>
+            <li><a href="../../../client-area/index.html#faqs" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">FAQ's</a></li>
+            <li><a href="../../../client-area/index.html#how-it-works" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Advocate Area</h3>
+          <ul class="space-y-2">
+            <li><a href="../../../advocate/register/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Register</a></li>
+            <li><a href="../../../login/index.html?userType=advocate" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Login</a></li>
+            <li><a href="../../../advocate-area/index.html#faqs" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">FAQ's</a></li>
+            <li><a href="../../../advocate-area/index.html#how-it-works" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Law School</h3>
+          <ul class="space-y-2">
+            <li><a href="../../../law-colleges/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Search Colleges</a></li>
+            <li><a href="../../../sawal-jawab/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Search a Sawaal</a></li>
+            <li><a href="../../../sawal-jawab/index.html?mode=ask" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Ask a Sawaal</a></li>
+          </ul>
+
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mt-6 mb-4">Blogs</h3>
+          <ul class="space-y-2">
+            <li><a href="../../../advocate/dashboard/index.html?section=blogs" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Post a Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Law Library</h3>
+          <ul class="space-y-2">
+            <li><a href="../../legal-tips/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Legal Tips</a></li>
+            <li><a href="../../agreements/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Agreements</a></li>
+            <li><a href="../../areas-of-law/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Area of Law</a></li>
+            <li><a href="../../bare-acts/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Indian Bare Acts</a></li>
+            <li><a href="../../rules/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Rules</a></li>
+            <li><a href="../../judgements/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Judgments</a></li>
+            <li><a href="../../forms/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Legal Forms</a></li>
+            <li><a href="../../glossary/index.html" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Glossary</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Advertise</h3>
+          <ul class="space-y-2 mb-6">
+            <li><a href="../../../contact/index.html?context=advertise" class="text-white/90 hover:text-white transition-colors duration-200 text-sm">Get in Touch</a></li>
+          </ul>
+
+          <h3 class="text-base font-bold text-white border-b-2 border-[#001944] pb-2 mb-4">Social</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="https://www.facebook.com/advocatekhoj" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 text-sm" aria-label="Visit AdvocateKhoj on Facebook">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/scjudgments" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 text-sm" aria-label="Visit AdvocateKhoj on X">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X (Twitter)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/advocatekho" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 text-sm" aria-label="Visit AdvocateKhoj on LinkedIn">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-[#001944] mt-10 pt-6">
+        <div class="text-center text-xs text-white/80 leading-relaxed">
+          <p class="mb-2">Information provided on advocatekhoj.com is solely available at your request for informational purposes only and should not be interpreted as soliciting or advertisement.</p>
+          <p>&copy; 2025 AdvocateKhoj. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-[#00377b] text-white rounded-full shadow-lg hover:bg-[#1453a3] transition-all duration-300 opacity-0 invisible z-50 flex items-center justify-center hover:scale-110" aria-label="Back to top">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </button>
+
+  <script src="../../../scripts/main.js"></script>
+</body>
+</html>

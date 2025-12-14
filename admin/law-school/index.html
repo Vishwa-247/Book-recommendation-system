@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law School Admin - AdvocateKhoj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#00377b', dark: '#001944', light: '#1453a3' },
+                        secondary: { DEFAULT: '#d67c40', dark: '#c26a36' },
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="../styles/global.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Top Bar -->
+    <header id="admin-top-bar" class="bg-white border-b shadow-sm fixed top-0 left-0 right-0 z-30">
+        <!-- Populated by admin-layout.js -->
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="admin-sidebar-container" class="fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r shadow-sm transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-20 overflow-y-auto">
+        <div class="p-4" id="admin-sidebar">
+            <!-- Populated by admin-layout.js -->
+        </div>
+    </aside>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-10 hidden lg:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[57px] lg:pl-64 min-h-screen transition-all duration-300">
+        <div class="p-6">
+            <div class="space-y-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Law School</h1>
+                    <p class="text-gray-600 mt-1">Manage law colleges, courses, and specializations</p>
+                </div>
+
+                <!-- Tabs -->
+                <div class="flex gap-2 flex-wrap">
+                    <button onclick="switchTab('manage-schools')" id="tab-manage-schools" class="px-4 py-2 rounded-lg bg-[#00377b] text-white font-medium transition-colors hover:bg-[#00377b]/90">Manage Schools</button>
+                    <button onclick="switchTab('sawaal')" id="tab-sawaal" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors">Sawaal</button>
+                    <button onclick="switchTab('manage-courses')" id="tab-manage-courses" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors">Manage Courses</button>
+                </div>
+
+                <!-- Manage Schools Tab -->
+                <div id="content-manage-schools" class="tab-content">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4">
+                            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+                                <h2 class="text-lg font-semibold">Manage Law Colleges</h2>
+                                <div class="flex gap-2 flex-wrap">
+                                    <button onclick="switchSubTab('live-colleges')" id="sub-tab-live-colleges" class="px-3 py-1 text-xs rounded bg-[#00377b] text-white hover:bg-[#00377b]/90">Manage Live Colleges</button>
+                                    <button onclick="switchSubTab('search-college')" id="sub-tab-search-college" class="px-3 py-1 text-xs rounded border hover:bg-gray-50">Search College</button>
+                                    <button onclick="switchSubTab('archived-colleges')" id="sub-tab-archived-colleges" class="px-3 py-1 text-xs rounded border hover:bg-gray-50">Manage Archived Colleges</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <!-- Live Colleges -->
+                            <div id="sub-content-live-colleges" class="sub-tab-content">
+                                <div class="bg-green-100 border border-green-300 rounded p-4">
+                                    <h3 class="font-semibold mb-2">Current List Of All Colleges</h3>
+                                    <select class="border rounded px-3 py-2 w-full mb-4" size="15">
+                                        <option>A B M S P S. Yashwantrao Chavan Law College [Maharashtra]</option>
+                                        <option>A E H's Anjuman Law College [Karnataka]</option>
+                                        <option>A J R C. Law College and Evening College [Karnataka]</option>
+                                        <option>A K. Chanda Law College [Assam]</option>
+                                        <option>A M Law College [Himachal Pradesh]</option>
+                                        <option>A M P. Law College [Gujarat]</option>
+                                        <option>A M S. College of Law for Women [Telangana]</option>
+                                    </select>
+                                    <div class="flex gap-2 flex-wrap">
+                                        <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Edit</button>
+                                        <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">New</button>
+                                        <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Archive</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Search College -->
+                            <div id="sub-content-search-college" class="sub-tab-content hidden">
+                                <div class="bg-green-100 border border-green-300 rounded p-4">
+                                    <h3 class="font-semibold mb-4">Search Based on the following Category/Categories</h3>
+                                    <div class="space-y-4 max-w-2xl">
+                                        <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                            <label class="text-sm">Select Location:</label>
+                                            <select class="border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                                <option>--Select Location--</option>
+                                            </select>
+                                        </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                            <label class="text-sm">Select Course:</label>
+                                            <select class="border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                                <option>--select course--</option>
+                                            </select>
+                                        </div>
+                                        <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Archived Colleges -->
+                            <div id="sub-content-archived-colleges" class="sub-tab-content hidden">
+                                <div class="bg-green-100 border border-green-300 rounded p-4">
+                                    <h3 class="font-semibold mb-2">Archived List Of All Colleges</h3>
+                                    <select class="border rounded px-3 py-2 w-full mb-4" size="15">
+                                        <option>Akola Law College [Maharashtra]</option>
+                                        <option>Almora Campus College [Uttarakhand]</option>
+                                        <option>Andhra Christian College of Law [Andhra Pradesh]</option>
+                                        <option>Anwarul Uloom College of Law [Andhra Pradesh]</option>
+                                        <option>Aaqshas College [Kerala]</option>
+                                    </select>
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Make Live?</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sawaal Tab -->
+                <div id="content-sawaal" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4">
+                            <h2 class="text-lg font-semibold">Sawaal Jawab</h2>
+                        </div>
+                        <div class="p-6 space-y-8">
+                            <div>
+                                <h3 class="text-lg font-semibold text-blue-700 mb-4">Search by Date</h3>
+                                <p class="text-sm text-red-600 mb-4">Select Both Month and Year to Search</p>
+                                <div class="space-y-4 max-w-2xl">
+                                    <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                        <label class="text-sm">Posted Year</label>
+                                        <select class="border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]"><option>--select--</option></select>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                        <label class="text-sm">Month in above Year</label>
+                                        <select class="border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]"><option>--select--</option></select>
+                                    </div>
+                                    <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Search</button>
+                                </div>
+                            </div>
+                            <div class="border-t pt-8">
+                                <h3 class="text-lg font-semibold text-blue-700 mb-4">Search by KeyWords</h3>
+                                <p class="text-sm text-red-600 mb-4">Enter Keyword to search which is Either in Sawaal or Jawab or both</p>
+                                <div class="space-y-4 max-w-2xl">
+                                    <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                        <label class="text-sm">Enter Keyword</label>
+                                        <input type="text" class="border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                    </div>
+                                    <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Search</button>
+                                </div>
+                            </div>
+                            <div class="border-t pt-8">
+                                <h3 class="text-lg font-semibold text-blue-700 mb-4">Search by Timeline</h3>
+                                <p class="text-sm text-red-600 mb-4">Enter Date in Both Fields to search Sawaals in Particular Period. Date Format should Be(dd-mm-yyyy)</p>
+                                <div class="space-y-4 max-w-2xl">
+                                    <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                        <label class="text-sm">From Date</label>
+                                        <input type="text" class="border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" placeholder="dd-mm-yyyy">
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                        <label class="text-sm">To Date</label>
+                                        <input type="text" class="border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" placeholder="dd-mm-yyyy">
+                                    </div>
+                                    <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manage Courses Tab -->
+                <div id="content-manage-courses" class="tab-content hidden">
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="bg-gray-50 border-b px-6 py-4">
+                                <h2 class="text-lg font-semibold">List Of Courses</h2>
+                            </div>
+                            <div class="p-6">
+                                <div class="bg-green-100 border border-green-300 rounded p-4">
+                                    <h3 class="font-semibold mb-2">Current List Of All Courses</h3>
+                                    <select class="border rounded px-3 py-2 w-full" size="8">
+                                        <option>B.Tech LLB</option>
+                                        <option>BA LLB</option>
+                                        <option>BBA LLB</option>
+                                        <option>BCom LLB</option>
+                                        <option>BSc LLB</option>
+                                        <option>BSL LLB</option>
+                                        <option>BSW LLB</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="bg-gray-50 border-b px-6 py-4">
+                                <h2 class="text-lg font-semibold">List Of Specialization</h2>
+                            </div>
+                            <div class="p-6">
+                                <div class="bg-green-100 border border-green-300 rounded p-4">
+                                    <h3 class="font-semibold mb-2">Current List Of All Specialization</h3>
+                                    <select class="border rounded px-3 py-2 w-full" size="8">
+                                        <option>Alternative Dispute Resolution</option>
+                                        <option>Arbitration, Conciliation and Alternative Dispute Resolution System</option>
+                                        <option>Aviation Law and Air Transport Management</option>
+                                        <option>Banking Law</option>
+                                        <option>Business and Trade Law</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/admin-layout.js"></script>
+    <script>
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="tab-"]').forEach(el => {
+                el.classList.remove('bg-[#00377b]', 'text-white');
+                el.classList.add('border', 'border-gray-300', 'hover:bg-gray-50');
+            });
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            const activeTab = document.getElementById('tab-' + tabName);
+            if (activeTab) {
+                activeTab.classList.add('bg-[#00377b]', 'text-white');
+                activeTab.classList.remove('border', 'border-gray-300', 'hover:bg-gray-50');
+            }
+        }
+
+        function switchSubTab(tabName) {
+            document.querySelectorAll('.sub-tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="sub-tab-"]').forEach(el => {
+                el.classList.remove('bg-[#00377b]', 'text-white');
+                el.classList.add('border', 'hover:bg-gray-50');
+            });
+            document.getElementById('sub-content-' + tabName).classList.remove('hidden');
+            const activeTab = document.getElementById('sub-tab-' + tabName);
+            if (activeTab) {
+                activeTab.classList.add('bg-[#00377b]', 'text-white');
+                activeTab.classList.remove('border', 'hover:bg-gray-50');
+            }
+        }
+    </script>
+</body>
+</html>

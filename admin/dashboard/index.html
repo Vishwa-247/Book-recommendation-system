@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - AdvocateKhoj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#00377b', dark: '#001944', light: '#1453a3' },
+                        secondary: { DEFAULT: '#d67c40', dark: '#c26a36' },
+                        accent: '#f17313',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="../../styles/global.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Top Bar -->
+    <header id="admin-top-bar" class="bg-white border-b shadow-sm fixed top-0 left-0 right-0 z-30">
+        <!-- Populated by admin-layout.js -->
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="admin-sidebar-container" class="fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r shadow-sm transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-20 overflow-y-auto">
+        <div class="p-4" id="admin-sidebar">
+            <!-- Populated by admin-layout.js -->
+        </div>
+    </aside>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-10 hidden lg:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[57px] lg:pl-64 min-h-screen transition-all duration-300">
+        <div class="p-6">
+            <div class="space-y-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+                    <p class="text-gray-600 mt-1">Welcome to AdvocateKhoj Admin Portal</p>
+                </div>
+
+                <div class="bg-white rounded-lg border p-8 text-center">
+                    <p class="text-gray-500">Select a section from the sidebar to get started</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/admin-layout.js"></script>
+</body>
+</html>

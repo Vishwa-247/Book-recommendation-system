@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advocate Admin - AdvocateKhoj Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#00377b', dark: '#001944', light: '#1453a3' },
+            secondary: { DEFAULT: '#d67c40', dark: '#c26a36' },
+            accent: '#f17313',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="../../styles/global.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- Top Bar -->
+  <header id="admin-top-bar" class="bg-white border-b shadow-sm fixed top-0 left-0 right-0 z-30">
+    <!-- Populated by admin-layout.js -->
+  </header>
+
+  <!-- Sidebar -->
+  <aside id="admin-sidebar-container" class="fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r shadow-sm transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-20 overflow-y-auto">
+    <div class="p-4" id="admin-sidebar">
+      <!-- Populated by admin-layout.js -->
+    </div>
+  </aside>
+
+  <!-- Mobile Overlay -->
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-10 hidden lg:hidden"></div>
+
+  <!-- Main Content -->
+  <main class="pt-[57px] lg:pl-64 min-h-screen transition-all duration-300">
+    <div class="p-6">
+      <div class="space-y-6">
+        <!-- Header -->
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900">Advocate Admin</h1>
+          <p class="text-gray-600 mt-1">Manage advocate and law firm applications</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex gap-2 flex-wrap">
+          <button class="tab-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors bg-[#00377b] text-white" data-tab="advocate-new">
+            Advocate Application
+          </button>
+          <button class="tab-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors" data-tab="firm-new">
+            Firm Application
+          </button>
+          <button class="tab-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors" data-tab="registered">
+            Registered Advocates
+          </button>
+        </div>
+
+        <!-- Advocate Application - New -->
+        <div id="advocate-new" class="tab-content bg-white rounded-lg border">
+          <div class="bg-gray-50 border-b p-4 flex items-center justify-between">
+            <h2 class="text-lg font-semibold">Advocate Application : New</h2>
+            <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50" onclick="switchToTab('advocate-modify')">Modify Application</button>
+          </div>
+          <div class="p-6">
+            <div class="mb-6">
+              <p class="text-sm text-gray-600">A new advocate application begins by registering the advocate's name in the system.</p>
+              <p class="text-sm text-gray-600">Once an application is started, the name cannot be changed or updated.</p>
+            </div>
+
+            <form action="/api/admin/advocate/new" method="POST" class="space-y-4 max-w-2xl">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">First Name <span class="text-red-600">*</span></label>
+                  <input type="text" name="first_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" required>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Middle Name</label>
+                  <input type="text" name="middle_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name / Surname <span class="text-red-600">*</span></label>
+                <input type="text" name="last_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" required>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Office Phone</label>
+                <div class="flex gap-2">
+                  <input type="text" name="std_code" class="w-32 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" placeholder="STD Code">
+                  <input type="text" name="phone" class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" placeholder="Number">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input type="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+              </div>
+
+              <div class="border-t pt-4">
+                <p class="text-sm text-gray-600 mb-3">The following advocate profile have been possible duplicates:</p>
+                <select class="w-full px-3 py-2 border border-gray-300 rounded-md" size="3" id="duplicate-list">
+                  <option></option>
+                </select>
+              </div>
+
+              <button type="submit" class="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-md">Register</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Advocate Application - Modify -->
+        <div id="advocate-modify" class="tab-content bg-white rounded-lg border hidden">
+          <div class="bg-gray-50 border-b p-4 flex items-center justify-between">
+            <h2 class="text-lg font-semibold">Advocate Application : Modify</h2>
+            <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50" onclick="switchToTab('advocate-new')">New Application</button>
+          </div>
+          <div class="p-6">
+            <div class="mb-6">
+              <p class="text-sm text-gray-600 mb-4">Select an advocate to modify application</p>
+
+              <div class="flex items-center gap-4 mb-4">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 bg-green-500 rounded"></div>
+                  <span class="text-sm">Live Advocate</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 bg-red-500 rounded"></div>
+                  <span class="text-sm">Registered Advocate</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 bg-black rounded"></div>
+                  <span class="text-sm">UnRegistered Advocate</span>
+                </div>
+              </div>
+
+              <select class="w-full px-3 py-2 border border-gray-300 rounded-md mb-4" size="8" id="application-list">
+                <option></option>
+              </select>
+
+              <div class="flex gap-2">
+                <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Edit Application</button>
+                <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Show All</button>
+              </div>
+            </div>
+
+            <div class="border-t pt-6">
+              <h3 class="text-lg font-semibold mb-4">Search</h3>
+              <form action="/api/admin/advocate/search" method="GET" class="space-y-4 max-w-2xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                    <input type="text" name="first_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Surname</label>
+                    <input type="text" name="surname" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">City</label>
+                    <input type="text" name="city" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">State</label>
+                    <input type="text" name="state" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Pincode</label>
+                    <input type="text" name="pincode" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Office Phone</label>
+                  <div class="flex gap-2">
+                    <input type="text" name="std_code" class="w-32 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" placeholder="STD Code">
+                    <input type="text" name="phone" class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" placeholder="Number">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <input type="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                </div>
+
+                <button type="submit" class="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-md">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Firm Application - New -->
+        <div id="firm-new" class="tab-content bg-white rounded-lg border hidden">
+          <div class="bg-gray-50 border-b p-4 flex items-center justify-between">
+            <h2 class="text-lg font-semibold">Law Firm Application : New</h2>
+            <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50" onclick="switchToTab('firm-modify')">Modify Application</button>
+          </div>
+          <div class="p-6">
+            <p class="text-sm text-gray-600 mb-6">A new firm application begins by registering the firm's name in the system.</p>
+
+            <form action="/api/admin/firm/new" method="POST" class="space-y-4 max-w-2xl">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Firm Name <span class="text-red-600">*</span></label>
+                <input type="text" name="firm_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" required>
+              </div>
+
+              <button type="submit" class="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-md">Register</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Firm Application - Modify -->
+        <div id="firm-modify" class="tab-content bg-white rounded-lg border hidden">
+          <div class="bg-gray-50 border-b p-4 flex items-center justify-between">
+            <h2 class="text-lg font-semibold">Law Firm Application : Modify</h2>
+            <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50" onclick="switchToTab('firm-new')">New Application</button>
+          </div>
+          <div class="p-6">
+            <div class="mb-6">
+              <p class="text-sm text-gray-600 mb-4">Select a firm to modify application</p>
+
+              <select class="w-full px-3 py-2 border border-gray-300 rounded-md mb-4" size="8" id="firm-list">
+                <option></option>
+              </select>
+
+              <div class="flex gap-2">
+                <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Edit Application</button>
+                <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Show All</button>
+              </div>
+            </div>
+
+            <div class="border-t pt-6">
+              <h3 class="text-lg font-semibold mb-4">Search</h3>
+              <form action="/api/admin/firm/search" method="GET" class="space-y-4 max-w-2xl">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Firmname</label>
+                  <input type="text" name="firm_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                </div>
+
+                <button type="submit" class="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-md">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registered Advocates -->
+        <div id="registered" class="tab-content bg-white rounded-lg border hidden">
+          <div class="bg-gray-50 border-b p-4">
+            <h2 class="text-lg font-semibold">Registered Advocates</h2>
+          </div>
+          <div class="p-6">
+            <div class="mb-6">
+              <div class="flex items-center gap-4 mb-4 flex-wrap">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 bg-green-500 rounded"></div>
+                  <span class="text-sm">Live Advocate</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 bg-red-500 rounded"></div>
+                  <span class="text-sm">Registered Advocate</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 bg-black rounded"></div>
+                  <span class="text-sm">UnRegistered Advocate</span>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h3 class="text-sm font-semibold mb-2">Advocate List :</h3>
+                <select class="w-full px-3 py-2 border border-gray-300 rounded-md" size="10" id="registered-list">
+                  <option></option>
+                </select>
+              </div>
+
+              <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Modify Registration</button>
+            </div>
+
+            <div class="border-t pt-6">
+              <h3 class="text-lg font-semibold mb-4">Search</h3>
+              <form action="/api/admin/advocate/registered/search" method="GET" class="space-y-4 max-w-2xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                    <input type="text" name="first_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Surname</label>
+                    <input type="text" name="surname" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">City</label>
+                    <input type="text" name="city" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">State</label>
+                    <input type="text" name="state" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Pincode</label>
+                    <input type="text" name="pincode" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Office Phone</label>
+                  <div class="flex gap-2">
+                    <input type="text" name="std_code" class="w-32 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" placeholder="STD Code">
+                    <input type="text" name="phone" class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" placeholder="Number">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <input type="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                </div>
+
+                <div class="flex gap-2">
+                  <button type="submit" class="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-md">Search</button>
+                  <button type="button" class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50">Show All</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../scripts/admin-layout.js"></script>
+  <script>
+    // Tab switching
+    function switchToTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.add('hidden');
+      });
+      document.getElementById(tabId).classList.remove('hidden');
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.dataset.tab;
+        
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.classList.remove('bg-[#00377b]', 'text-white');
+          b.classList.add('border', 'border-gray-300', 'hover:bg-gray-50');
+        });
+        btn.classList.add('bg-[#00377b]', 'text-white');
+        btn.classList.remove('border', 'border-gray-300', 'hover:bg-gray-50');
+        
+        switchToTab(tabId);
+      });
+    });
+  </script>
+</body>
+</html>

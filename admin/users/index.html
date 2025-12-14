@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Admin - AdvocateKhoj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#00377b', dark: '#001944', light: '#1453a3' },
+                        secondary: { DEFAULT: '#d67c40', dark: '#c26a36' },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Top Bar -->
+    <header id="admin-top-bar" class="bg-white border-b shadow-sm fixed top-0 left-0 right-0 z-30">
+        <!-- Populated by admin-layout.js -->
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="admin-sidebar-container" class="fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r shadow-sm transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-20 overflow-y-auto">
+        <div class="p-4" id="admin-sidebar">
+            <!-- Populated by admin-layout.js -->
+        </div>
+    </aside>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-10 hidden lg:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[57px] lg:pl-64 min-h-screen transition-all duration-300">
+        <div class="p-6">
+                <div class="space-y-6">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">Users</h1>
+                        <p class="text-gray-600 mt-1">Manage system users and access</p>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="flex gap-2 flex-wrap">
+                        <button onclick="switchTab('user-list')" id="tab-user-list" class="px-4 py-2 rounded-lg bg-[#00377b] text-white font-medium transition-colors hover:bg-[#00377b]/90">User List</button>
+                        <button onclick="switchTab('permissions')" id="tab-permissions" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors">Permissions</button>
+                        <button onclick="switchTab('access-key')" id="tab-access-key" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors">Access Key</button>
+                        <button onclick="switchTab('user-groups')" id="tab-user-groups" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors">User Groups</button>
+                    </div>
+
+                    <!-- User List Tab -->
+                    <div id="content-user-list" class="tab-content space-y-6">
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="px-6 py-4 border-b">
+                                <h2 class="text-lg font-semibold">Current User List</h2>
+                            </div>
+                            <div class="p-6">
+                                <select class="border rounded px-3 py-2 w-full max-w-md" size="6">
+                                    <option>Anoop, Elezebath</option>
+                                    <option>Arjj, Jeevan</option>
+                                    <option>Boora, Vasu</option>
+                                    <option>John, Nitish</option>
+                                    <option>Madem, Suresh</option>
+                                </select>
+                                <div class="mt-4 space-x-2">
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">New User</button>
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Delete User</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="px-6 py-4 border-b">
+                                <h2 class="text-lg font-semibold">User Information</h2>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-4 max-w-2xl">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                            <input type="text" class="w-full border rounded px-3 py-2">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">MI</label>
+                                            <input type="text" class="w-full border rounded px-3 py-2">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                            <input type="text" class="w-full border rounded px-3 py-2">
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                                            <input type="text" value="master" readonly class="w-full border rounded px-3 py-2 bg-gray-50">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                                            <input type="password" value="********" class="w-full border rounded px-3 py-2">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                                        <div class="flex items-center gap-2 ">
+                                            <input type="checkbox" id="active">
+                                            <label for="active" class="text-sm text-gray-700">Account Active</label>
+                                        </div>
+                                        <div class="flex-1">
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                            <input type="email" class="w-full border rounded px-3 py-2">
+                                        </div>
+                                    </div>
+                                    <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Permissions Tab -->
+                    <div id="content-permissions" class="tab-content hidden space-y-6">
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="px-6 py-4 border-b">
+                                <h2 class="text-lg font-semibold">Permission List</h2>
+                            </div>
+                            <div class="p-6">
+                                <select class="border rounded px-3 py-2 w-full max-w-md" size="6">
+                                    <option>[D] Delete</option>
+                                    <option>[A] Add</option>
+                                    <option>[V] View</option>
+                                    <option>[*] All</option>
+                                    <option>[E] Edit</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="px-6 py-4 border-b">
+                                <h2 class="text-lg font-semibold">New Permission</h2>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-4 max-w-2xl">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Permission Code</label>
+                                        <input type="text" class="w-full border rounded px-3 py-2">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Permission Name</label>
+                                        <input type="text" class="w-full border rounded px-3 py-2">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                                        <textarea rows="4" class="w-full border rounded px-3 py-2"></textarea>
+                                    </div>
+                                    <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Access Key Tab -->
+                    <div id="content-access-key" class="tab-content hidden space-y-6">
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="px-6 py-4 border-b">
+                                <h2 class="text-lg font-semibold">Access Key List</h2>
+                            </div>
+                            <div class="p-6">
+                                <select class="border rounded px-3 py-2 w-full max-w-md" size="8">
+                                    <option>ADD_REMOVE_SPECIALIZATION</option>
+                                    <option>ADENGINE</option>
+                                    <option>ADENGINE_ADS</option>
+                                    <option>ADENGINE_BUSINESSDIR</option>
+                                    <option>ADVOCATE</option>
+                                    <option>ADVOCATE_APPLICATION</option>
+                                    <option>ADVOCATE_FIRM_APPLICATION</option>
+                                    <option>ADVOCATE_REGISTERED</option>
+                                    <option>BLOGS</option>
+                                    <option>BLOGS_CATEGORIES</option>
+                                </select>
+                                <div class="mt-4">
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Delete Access Key</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="px-6 py-4 border-b">
+                                <h2 class="text-lg font-semibold">New Access Key</h2>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-4 max-w-2xl">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Key</label>
+                                        <input type="text" class="w-full border rounded px-3 py-2">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                                        <input type="text" class="w-full border rounded px-3 py-2">
+                                    </div>
+                                    <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Groups Tab -->
+                    <div id="content-user-groups" class="tab-content hidden space-y-6">
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="px-6 py-4 border-b">
+                                <h2 class="text-lg font-semibold">Group List</h2>
+                            </div>
+                            <div class="p-6">
+                                <select class="border rounded px-3 py-2 w-full max-w-md" size="4">
+                                    <option>Administrator</option>
+                                </select>
+                                <div class="mt-4 space-x-2 flex flex-wrap gap-2">
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">New Group</button>
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Delete Group</button>
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Group Permissions</button>
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Group Membership</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="px-6 py-4 border-b">
+                                <h2 class="text-lg font-semibold">Group Information</h2>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-4 max-w-2xl">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Group Name</label>
+                                        <input type="text" class="w-full border rounded px-3 py-2">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Group Description</label>
+                                        <input type="text" class="w-full border rounded px-3 py-2">
+                                    </div>
+                                    <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </main>
+
+    <script src="../scripts/admin-layout.js"></script>
+    <script>
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="tab-"]').forEach(el => {
+                el.classList.remove('bg-[#00377b]', 'text-white');
+                el.classList.add('border', 'border-gray-300', 'hover:bg-gray-50');
+            });
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            const activeTab = document.getElementById('tab-' + tabName);
+            if (activeTab) {
+                activeTab.classList.add('bg-[#00377b]', 'text-white');
+                activeTab.classList.remove('border', 'border-gray-300', 'hover:bg-gray-50');
+            }
+        }
+    </script>
+</body>
+</html>

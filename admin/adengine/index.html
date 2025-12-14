@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdEngine Admin - AdvocateKhoj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#00377b', dark: '#001944', light: '#1453a3' },
+                        secondary: { DEFAULT: '#d67c40', dark: '#c26a36' },
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="../styles/global.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Top Bar -->
+    <header id="admin-top-bar" class="bg-white border-b shadow-sm fixed top-0 left-0 right-0 z-30">
+        <!-- Populated by admin-layout.js -->
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="admin-sidebar-container" class="fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r shadow-sm transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-20 overflow-y-auto">
+        <div class="p-4" id="admin-sidebar">
+            <!-- Populated by admin-layout.js -->
+        </div>
+    </aside>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-10 hidden lg:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[57px] lg:pl-64 min-h-screen transition-all duration-300">
+        <div class="p-6">
+            <div class="space-y-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">AdEngine</h1>
+                    <p class="text-gray-600 mt-1">Manage advertising campaigns and targets</p>
+                </div>
+
+                <!-- Main Tabs -->
+                <div class="flex gap-2 flex-wrap">
+                    <button onclick="switchMainTab('campaigns-business')" id="main-tab-campaigns-business" class="px-4 py-2 rounded-lg bg-[#00377b] text-white font-medium transition-colors hover:bg-[#00377b]/90">Campaigns By Business</button>
+                    <button onclick="switchMainTab('campaigns-name')" id="main-tab-campaigns-name" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors">Campaigns By Name</button>
+                    <button onclick="switchMainTab('business-dir')" id="main-tab-business-dir" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors">Business Dir</button>
+                </div>
+
+                <!-- Campaigns By Business -->
+                <div id="main-content-campaigns-business" class="main-tab-content">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4">
+                            <h2 class="text-lg font-semibold">Ad Campaigns By Business</h2>
+                        </div>
+                        <div class="p-6 space-y-6">
+                            <div class="bg-green-100 border border-green-300 rounded p-4">
+                                <h3 class="font-semibold mb-2">Business List (select a business to view it's campaign)</h3>
+                                <select class="border rounded px-3 py-2 w-full" size="10"></select>
+                            </div>
+                            <div class="bg-green-100 border border-green-300 rounded p-4">
+                                <h3 class="font-semibold mb-2">Campaign List For Selected Business</h3>
+                                <select class="border rounded px-3 py-2 w-full mb-4" size="10"></select>
+                                <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Edit / View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campaigns By Name -->
+                <div id="main-content-campaigns-name" class="main-tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4">
+                            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+                                <h2 class="text-lg font-semibold">Ad Campaigns By Name</h2>
+                                <div class="flex gap-2 flex-wrap">
+                                    <button onclick="switchSubTab('targets')" id="sub-tab-targets" class="px-3 py-1 text-xs rounded bg-[#00377b] text-white hover:bg-[#00377b]/90">Targets</button>
+                                    <button onclick="switchSubTab('new-campaign')" id="sub-tab-new-campaign" class="px-3 py-1 text-xs rounded border hover:bg-gray-50">New Campaign</button>
+                                    <button onclick="switchSubTab('target-groups')" id="sub-tab-target-groups" class="px-3 py-1 text-xs rounded border hover:bg-gray-50">Target Groups</button>
+                                    <button onclick="switchSubTab('new-target-group')" id="sub-tab-new-target-group" class="px-3 py-1 text-xs rounded border hover:bg-gray-50">New Target Group</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <!-- Targets Sub Tab -->
+                            <div id="sub-content-targets" class="sub-tab-content">
+                                <div class="space-y-6">
+                                    <div class="bg-green-100 border border-green-300 rounded p-4">
+                                        <h3 class="font-semibold mb-2">Target List</h3>
+                                        <select class="border rounded px-3 py-2 w-full" size="8"></select>
+                                    </div>
+                                    <div class="bg-green-100 border border-green-300 rounded p-4">
+                                        <h3 class="font-semibold mb-4">Target Details</h3>
+                                        <p class="text-sm text-red-600 mb-4">Target names must be unique.</p>
+                                        <div class="space-y-4 max-w-3xl">
+                                            <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                                <label class="text-sm">Name</label>
+                                                <input type="text" class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                            </div>
+                                            <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-start">
+                                                <label class="text-sm pt-2">Target Group</label>
+                                                <textarea rows="5" class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]"></textarea>
+                                            </div>
+                                            <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                                <label class="text-sm">Is Vertical</label>
+                                                <div>
+                                                    <input type="checkbox" class="mr-2">
+                                                    <p class="text-xs text-red-600 mt-1">check this option if campaigns are displayed vertically</p>
+                                                </div>
+                                            </div>
+                                            <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                                <label class="text-sm">Num. Of Children</label>
+                                                <input type="text" value="0" class="border rounded px-3 py-2 max-w-xs focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                            </div>
+                                            <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                                <label class="text-sm">Height</label>
+                                                <div>
+                                                    <input type="text" value="0" class="border rounded px-3 py-2 max-w-xs focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                                    <p class="text-xs text-red-600 mt-1">Enter 0 if this target is in horizontal with fixed height campaigns</p>
+                                                </div>
+                                            </div>
+                                            <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                                <label class="text-sm">Width</label>
+                                                <div>
+                                                    <input type="text" value="0" class="border rounded px-3 py-2 max-w-xs focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                                    <p class="text-xs text-red-600 mt-1">Enter 0 if this target is vertical with fixed width campaigns</p>
+                                                </div>
+                                            </div>
+                                            <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                                <label class="text-sm">Active</label>
+                                                <div>
+                                                    <input type="checkbox" class="mr-2">
+                                                    <p class="text-xs text-red-600 mt-1">Check this to activate this target</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- New Campaign Sub Tab -->
+                            <div id="sub-content-new-campaign" class="sub-tab-content hidden">
+                                <div class="bg-green-100 border border-green-300 rounded p-4">
+                                    <h3 class="font-semibold mb-4">Campaign Details</h3>
+                                    <p class="text-sm text-red-600 mb-4">Every campaign must belong to one and only one business.</p>
+                                    <div class="space-y-4 max-w-3xl">
+                                        <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                            <label class="text-sm">Campaign ID</label>
+                                            <input type="text" class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                        </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                            <label class="text-sm">Name</label>
+                                            <input type="text" class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                        </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                            <label class="text-sm">Business</label>
+                                            <select class="border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                                <option>-----select one-----</option>
+                                            </select>
+                                        </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-start">
+                                            <label class="text-sm pt-2">Target</label>
+                                            <select class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]" size="5"></select>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Save</button>
+                                            <button class="px-4 py-2 border rounded hover:bg-gray-50">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Target Groups Sub Tab -->
+                            <div id="sub-content-target-groups" class="sub-tab-content hidden">
+                                <div class="bg-green-100 border border-green-300 rounded p-4">
+                                    <h3 class="font-semibold mb-2">Target Group List</h3>
+                                    <select class="border rounded px-3 py-2 w-full mb-4" size="10"></select>
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Edit / View</button>
+                                </div>
+                            </div>
+
+                            <!-- New Target Group Sub Tab -->
+                            <div id="sub-content-new-target-group" class="sub-tab-content hidden">
+                                <div class="bg-green-100 border border-green-300 rounded p-4">
+                                    <h3 class="font-semibold mb-4">New Target Group</h3>
+                                    <div class="space-y-4 max-w-3xl">
+                                        <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                            <label class="text-sm">Group Name</label>
+                                            <input type="text" class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                        </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-start">
+                                            <label class="text-sm pt-2">Description</label>
+                                            <textarea rows="4" class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]"></textarea>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Create</button>
+                                            <button class="px-4 py-2 border rounded hover:bg-gray-50">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Directory -->
+                <div id="main-content-business-dir" class="main-tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4">
+                            <h2 class="text-lg font-semibold">Business Directory</h2>
+                        </div>
+                        <div class="p-6 space-y-6">
+                            <div class="bg-green-100 border border-green-300 rounded p-4">
+                                <h3 class="font-semibold mb-2">Business List</h3>
+                                <select class="border rounded px-3 py-2 w-full mb-4" size="10"></select>
+                                <div class="flex gap-2">
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Edit</button>
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">New</button>
+                                    <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Delete</button>
+                                </div>
+                            </div>
+                            <div class="bg-green-100 border border-green-300 rounded p-4">
+                                <h3 class="font-semibold mb-4">Business Details</h3>
+                                <div class="space-y-4 max-w-3xl">
+                                    <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                        <label class="text-sm">Business Name</label>
+                                        <input type="text" class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                        <label class="text-sm">Contact Person</label>
+                                        <input type="text" class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                        <label class="text-sm">Email</label>
+                                        <input type="email" class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-center">
+                                        <label class="text-sm">Phone</label>
+                                        <input type="text" class="border rounded px-3 py-2 w-full focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/admin-layout.js"></script>
+    <script>
+        function switchMainTab(tabName) {
+            document.querySelectorAll('.main-tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="main-tab-"]').forEach(el => {
+                el.classList.remove('bg-[#00377b]', 'text-white');
+                el.classList.add('border', 'border-gray-300', 'hover:bg-gray-50');
+            });
+            document.getElementById('main-content-' + tabName).classList.remove('hidden');
+            const activeTab = document.getElementById('main-tab-' + tabName);
+            if (activeTab) {
+                activeTab.classList.add('bg-[#00377b]', 'text-white');
+                activeTab.classList.remove('border', 'border-gray-300', 'hover:bg-gray-50');
+            }
+        }
+
+        function switchSubTab(tabName) {
+            document.querySelectorAll('.sub-tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="sub-tab-"]').forEach(el => {
+                el.classList.remove('bg-[#00377b]', 'text-white');
+                el.classList.add('border', 'hover:bg-gray-50');
+            });
+            document.getElementById('sub-content-' + tabName).classList.remove('hidden');
+            const activeTab = document.getElementById('sub-tab-' + tabName);
+            if (activeTab) {
+                activeTab.classList.add('bg-[#00377b]', 'text-white');
+                activeTab.classList.remove('border', 'hover:bg-gray-50');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocate Registration | AdvocateKhoj</title>
+    <meta name="description" content="Register as an advocate on AdvocateKhoj and connect with clients seeking legal representation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../../styles/global.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00377b',
+                        'primary-dark': '#001944',
+                        'primary-light': '#1453a3',
+                        secondary: '#d67c40',
+                        'secondary-dark': '#c26a36',
+                        accent: '#f17313',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-[#00377b]/5 via-white to-secondary/5">
+    <!-- Registration Form Container -->
+    <div class="min-h-screen flex items-center justify-center p-4 py-8 ">
+        <!-- Step 1 & 2 Form -->
+        <div id="registration-form-container" class="w-full max-w-2xl">
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <!-- Card Header -->
+                <div class="p-6 pb-4 border-b border-gray-100">
+                    <div class="flex items-center justify-between mb-4 ">
+                        <span id="step-badge" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 ">Step 1 of 2</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-gray-200 text-gray-600 ">New Application</span>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-900 mb-2">Advocate Registration</h1>
+                    <p class="text-sm text-gray-600">Register basic details so we can verify your credentials. After approval you will receive login details to complete your profile.</p>
+                    <!-- Progress Bar -->
+                    <div class="flex items-center gap-2 mt-4 ">
+                        <div id="progress-1" class="flex-1 h-2 rounded bg-[#00377b] transition-colors duration-300 hover:bg-[#00377b]/90"></div>
+                        <div id="progress-2" class="flex-1 h-2 rounded bg-gray-200 transition-colors duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Form Content -->
+                <div class="p-6">
+                    <form id="advocate-register-form" action="/api/advocate/register" method="POST">
+                        <!-- Step 1: Personal Information -->
+                        <div id="step-1" class="space-y-5">
+                            <!-- Alert Note -->
+                            <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                <p class="text-sm text-gray-700"><strong>Note:</strong> Once your application is submitted, the displayed advocate name cannot be changed. Please double-check spelling.</p>
+                            </div>
+
+                            <!-- Name Fields -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="space-y-2">
+                                    <label for="firstName" class="block text-sm font-medium text-gray-700">First Name <span class="text-red-500">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="Enter first name">
+                                    <p id="firstName-error" class="text-xs text-red-500 hidden"></p>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="middleName" class="block text-sm font-medium text-gray-700">Middle Name</label>
+                                    <input type="text" id="middleName" name="middleName" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="Optional">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name / Surname <span class="text-red-500">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="Enter last name">
+                                    <p id="lastName-error" class="text-xs text-red-500 hidden"></p>
+                                </div>
+                            </div>
+
+                            <!-- Email and Mobile -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-2">
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email <span class="text-red-500">*</span></label>
+                                    <div class="relative">
+                                        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg>
+                                        <input type="email" id="email" name="email" class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="your.email@example.com">
+                                    </div>
+                                    <p id="email-error" class="text-xs text-red-500 hidden"></p>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile Number <span class="text-red-500">*</span></label>
+                                    <div class="relative">
+                                        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                        </svg>
+                                        <input type="tel" id="mobile" name="mobile" class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="10 digit mobile number" maxlength="10">
+                                    </div>
+                                    <p id="mobile-error" class="text-xs text-red-500 hidden"></p>
+                                </div>
+                            </div>
+
+                            <!-- Alternate Phone -->
+                            <div class="space-y-2">
+                                <label for="alternatePhone" class="block text-sm font-medium text-gray-700">Alternate Phone (optional)</label>
+                                <input type="tel" id="alternatePhone" name="alternatePhone" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="Provide another reachable number" maxlength="10">
+                            </div>
+                        </div>
+
+                        <!-- Step 2: BAR Council Information -->
+                        <div id="step-2" class="space-y-5 hidden">
+                            <!-- Alert Info -->
+                            <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                <p class="text-sm text-gray-700">Provide BAR council information so we can verify your credentials.</p>
+                            </div>
+
+                            <!-- BAR Council Fields -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-2">
+                                    <label for="stateBarCouncil" class="block text-sm font-medium text-gray-700">State BAR Council <span class="text-red-500">*</span></label>
+                                    <input type="text" id="stateBarCouncil" name="stateBarCouncil" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="e.g., Bar Council of Delhi">
+                                    <p id="stateBarCouncil-error" class="text-xs text-red-500 hidden"></p>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="barCouncilNumber" class="block text-sm font-medium text-gray-700">BAR Council Number <span class="text-red-500">*</span></label>
+                                    <input type="text" id="barCouncilNumber" name="barCouncilNumber" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="Enter registration number">
+                                    <p id="barCouncilNumber-error" class="text-xs text-red-500 hidden"></p>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-2">
+                                    <label for="yearOfEnrollment" class="block text-sm font-medium text-gray-700">Year of Enrollment <span class="text-red-500">*</span></label>
+                                    <input type="text" id="yearOfEnrollment" name="yearOfEnrollment" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="YYYY" maxlength="4">
+                                    <p id="yearOfEnrollment-error" class="text-xs text-red-500 hidden"></p>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="localBarAssociation" class="block text-sm font-medium text-gray-700">Member of Local Bar Association?</label>
+                                    <select id="localBarAssociation" name="localBarAssociation" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all bg-white">
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Conditional Local Bar Association Name -->
+                            <div id="localBarAssociationNameContainer" class="space-y-2 hidden">
+                                <label for="localBarAssociationName" class="block text-sm font-medium text-gray-700">Local Bar Association Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="localBarAssociationName" name="localBarAssociationName" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="Enter association name">
+                                <p id="localBarAssociationName-error" class="text-xs text-red-500 hidden"></p>
+                            </div>
+
+                            <!-- Referral and Comments -->
+                            <div class="space-y-2">
+                                <label for="referralAdvocateId" class="block text-sm font-medium text-gray-700">Referral Advocate ID (optional)</label>
+                                <input type="text" id="referralAdvocateId" name="referralAdvocateId" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all" placeholder="Enter referral ID if any">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="additionalComments" class="block text-sm font-medium text-gray-700">Additional Comments</label>
+                                <textarea id="additionalComments" name="additionalComments" rows="4" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00377b]/20 focus:border-[#00377b] outline-none transition-all resize-none" placeholder="Share any extra details for the admin review"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-3 pt-6">
+                            <!-- Step 1 Buttons -->
+                            <div id="step-1-buttons" class="flex flex-col sm:flex-row gap-3 w-full">
+                                <a href="../../login/index.html?userType=advocate" class="flex-1 inline-flex items-center justify-center px-6 py-3 border-2 border-gray-200 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-all hover:opacity-85 transition-opacity">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                                    </svg>
+                                    Back to Login
+                                </a>
+                                <button type="button" id="next-btn" class="flex-1 inline-flex items-center justify-center px-6 py-3 bg-[#00377b] text-white font-medium rounded-lg hover:bg-primary-light transition-all hover:bg-[#00377b]/90 ">
+                                    Continue
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <!-- Step 2 Buttons -->
+                            <div id="step-2-buttons" class="flex flex-col sm:flex-row gap-3 w-full hidden">
+                                <button type="button" id="back-btn" class="flex-1 inline-flex items-center justify-center px-6 py-3 border-2 border-gray-200 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-all ">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                                    </svg>
+                                    Back
+                                </button>
+                                <button type="submit" id="submit-btn" class="flex-1 inline-flex items-center justify-center px-6 py-3 bg-[#00377b] text-white font-medium rounded-lg hover:bg-primary-light transition-all hover:bg-[#00377b]/90 ">
+                                    <span id="submit-text">Submit Application</span>
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Footer Link -->
+                    <p class="text-center text-sm text-gray-600 mt-6">
+                        Already have an account? <a href="../../login/index.html?userType=advocate" class="text-[#00377b] hover:underline font-medium">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Screen -->
+        <div id="success-screen" class="w-full max-w-2xl hidden">
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="p-6 md:p-8 text-center">
+                    <!-- Success Icon -->
+                    <div class="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 ">
+                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Registration Submitted Successfully!</h2>
+                </div>
+                <div class="px-6 md:px-8 pb-8 space-y-6">
+                    <!-- Info Alert -->
+                    <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                        <div class="text-sm text-gray-700 space-y-3">
+                            <p><strong>Thank you for registering with AdvocateKhoj!</strong></p>
+                            <p>Your application has been submitted and is now under review by our admin team.</p>
+                            <div class="space-y-2">
+                                <p class="font-semibold">What happens next?</p>
+                                <ol class="list-decimal list-inside space-y-2 ml-2">
+                                    <li>The admin team verifies your details and checks for duplicates.</li>
+                                    <li>You receive your username and temporary password via email.</li>
+                                    <li>Complete your profile with contact, practice areas, languages, and BAR affiliations.</li>
+                                    <li>Your profile is approved within 15 days.</li>
+                                </ol>
+                            </div>
+                            <!-- Important Note -->
+                            <div class="p-3 bg-yellow-50 border border-yellow-200 rounded mt-4">
+                                <p class="text-sm"><strong>Important:</strong> Watch for an email from <span class="font-mono text-xs bg-gray-100 px-1 py-0.5 rounded">customer_service@advocatekhoj.in</span>. Check your spam folder if you do not see it in your inbox.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Registered Email -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm font-semibold text-gray-700 mb-1">Registered Email</p>
+                        <p id="registered-email" class="text-base text-gray-900">email@example.com</p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col gap-3">
+                        <a href="../../index.html" class="w-full inline-flex items-center justify-center px-6 py-3 bg-[#00377b] text-white font-medium rounded-lg hover:bg-primary-light transition-all hover:bg-[#00377b]/90 ">
+                            Return to Home
+                        </a>
+                        <a href="../../login/index.html?userType=advocate" class="w-full inline-flex items-center justify-center px-6 py-3 border-2 border-gray-200 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-all hover:opacity-85 transition-opacity">
+                            Login (After receiving credentials)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+    <script src="../../scripts/main.js"></script>
+    <script>
+        // Multi-step Form Handler
+        const AdvocateRegisterForm = {
+            currentStep: 1,
+            formData: {},
+
+            init() {
+                this.bindEvents();
+                this.setupValidation();
+            },
+
+            bindEvents() {
+                // Next button
+                document.getElementById('next-btn')?.addEventListener('click', () => this.goToStep(2));
+                // Back button
+                document.getElementById('back-btn')?.addEventListener('click', () => this.goToStep(1));
+                // Form submit
+                document.getElementById('advocate-register-form')?.addEventListener('submit', (e) => this.handleSubmit(e));
+                // Local Bar Association toggle
+                document.getElementById('localBarAssociation')?.addEventListener('change', (e) => this.toggleLocalBarAssociation(e.target.value));
+                // Mobile input - numbers only
+                document.getElementById('mobile')?.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
+                });
+                // Year input - numbers only
+                document.getElementById('yearOfEnrollment')?.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.replace(/\D/g, '').slice(0, 4);
+                });
+            },
+
+            setupValidation() {
+                // Clear error on input
+                const inputs = document.querySelectorAll('#advocate-register-form input, #advocate-register-form select, #advocate-register-form textarea');
+                inputs.forEach(input => {
+                    input.addEventListener('input', () => {
+                        const errorEl = document.getElementById(`${input.id}-error`);
+                        if (errorEl) {
+                            errorEl.classList.add('hidden');
+                            errorEl.textContent = '';
+                        }
+                        input.classList.remove('border-red-500');
+                    });
+                });
+            },
+
+            showError(fieldId, message) {
+                const errorEl = document.getElementById(`${fieldId}-error`);
+                const inputEl = document.getElementById(fieldId);
+                if (errorEl) {
+                    errorEl.textContent = message;
+                    errorEl.classList.remove('hidden');
+                }
+                if (inputEl) {
+                    inputEl.classList.add('border-red-500');
+                }
+            },
+
+            validateStep1() {
+                let isValid = true;
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const mobile = document.getElementById('mobile').value.trim();
+
+                if (!firstName) {
+                    this.showError('firstName', 'First name is required');
+                    isValid = false;
+                }
+                if (!lastName) {
+                    this.showError('lastName', 'Last name is required');
+                    isValid = false;
+                }
+                if (!email) {
+                    this.showError('email', 'Email is required');
+                    isValid = false;
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    this.showError('email', 'Enter a valid email address');
+                    isValid = false;
+                }
+                if (!mobile) {
+                    this.showError('mobile', 'Mobile number is required');
+                    isValid = false;
+                } else if (!/^\d{10}$/.test(mobile)) {
+                    this.showError('mobile', 'Mobile must be 10 digits');
+                    isValid = false;
+                }
+
+                return isValid;
+            },
+
+            validateStep2() {
+                let isValid = true;
+                const stateBarCouncil = document.getElementById('stateBarCouncil').value.trim();
+                const barCouncilNumber = document.getElementById('barCouncilNumber').value.trim();
+                const yearOfEnrollment = document.getElementById('yearOfEnrollment').value.trim();
+                const localBarAssociation = document.getElementById('localBarAssociation').value;
+                const localBarAssociationName = document.getElementById('localBarAssociationName').value.trim();
+
+                if (!stateBarCouncil) {
+                    this.showError('stateBarCouncil', 'State BAR Council is required');
+                    isValid = false;
+                }
+                if (!barCouncilNumber) {
+                    this.showError('barCouncilNumber', 'BAR Council Number is required');
+                    isValid = false;
+                }
+                if (!yearOfEnrollment) {
+                    this.showError('yearOfEnrollment', 'Year of enrollment is required');
+                    isValid = false;
+                } else if (!/^\d{4}$/.test(yearOfEnrollment)) {
+                    this.showError('yearOfEnrollment', 'Enter a valid 4 digit year');
+                    isValid = false;
+                }
+                if (localBarAssociation === 'Yes' && !localBarAssociationName) {
+                    this.showError('localBarAssociationName', 'Please mention the association name');
+                    isValid = false;
+                }
+
+                return isValid;
+            },
+
+            goToStep(step) {
+                if (step === 2 && !this.validateStep1()) return;
+
+                this.currentStep = step;
+
+                // Update UI
+                document.getElementById('step-1').classList.toggle('hidden', step !== 1);
+                document.getElementById('step-2').classList.toggle('hidden', step !== 2);
+                document.getElementById('step-1-buttons').classList.toggle('hidden', step !== 1);
+                document.getElementById('step-2-buttons').classList.toggle('hidden', step !== 2);
+
+                // Update badge and progress
+                document.getElementById('step-badge').textContent = `Step ${step} of 2`;
+                document.getElementById('progress-1').classList.toggle('bg-[#00377b]', step >= 1);
+                document.getElementById('progress-1').classList.toggle('bg-gray-200', step < 1);
+                document.getElementById('progress-2').classList.toggle('bg-[#00377b]', step >= 2);
+                document.getElementById('progress-2').classList.toggle('bg-gray-200', step < 2);
+
+                // Scroll to top of form
+                document.getElementById('registration-form-container').scrollIntoView({ behavior: 'smooth' });
+            },
+
+            toggleLocalBarAssociation(value) {
+                const container = document.getElementById('localBarAssociationNameContainer');
+                if (value === 'Yes') {
+                    container.classList.remove('hidden');
+                } else {
+                    container.classList.add('hidden');
+                    document.getElementById('localBarAssociationName').value = '';
+                }
+            },
+
+            async handleSubmit(e) {
+                e.preventDefault();
+                if (!this.validateStep2()) return;
+
+                const submitBtn = document.getElementById('submit-btn');
+                const submitText = document.getElementById('submit-text');
+                
+                // Loading state
+                submitBtn.disabled = true;
+                submitText.textContent = 'Submitting...';
+
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Show success screen
+                const email = document.getElementById('email').value;
+                document.getElementById('registered-email').textContent = email;
+                document.getElementById('registration-form-container').classList.add('hidden');
+                document.getElementById('success-screen').classList.remove('hidden');
+
+                // Reset button
+                submitBtn.disabled = false;
+                submitText.textContent = 'Submit Application';
+            }
+        };
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            AdvocateRegisterForm.init();
+        });
+    </script>
+</body>
+</html>

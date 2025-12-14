@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{COLLEGE_NAME}} | AdvocateKhoj Law Colleges</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00377b',
+            secondary: '#d67c40',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- PHP: include 'includes/header.php'; -->
+  
+  <!-- Hero Banner -->
+  <div class="relative bg-gradient-to-r from-[#00377b] to-[#00377b]/80 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <a href="/law-colleges" class="inline-flex items-center text-white hover:bg-white/10 px-3 py-1 rounded mb-4 hover:opacity-85 transition-opacity">
+        <i class="fas fa-arrow-left mr-2"></i> Back to Colleges
+      </a>
+
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <!-- College Logo -->
+        <div class="bg-white p-4 rounded-lg shadow-xl">
+          <img src="{{COLLEGE_LOGO}}" alt="{{COLLEGE_NAME}}" class="w-24 h-24 object-contain">
+        </div>
+
+        <!-- College Info -->
+        <div class="flex-1">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">{{COLLEGE_NAME}}</h1>
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class="bg-yellow-500 text-white text-sm px-3 py-1 rounded">
+              <i class="fas fa-star mr-1"></i> NIRF Ranking #{{NIRF_RANKING}}
+            </span>
+            <span class="bg-white/10 text-white border border-white px-3 py-1 rounded text-sm">
+              {{ACCREDITATION}}
+            </span>
+            <span class="bg-white/10 text-white border border-white px-3 py-1 rounded text-sm">
+              <i class="fas fa-calendar-alt mr-1"></i> Est. {{ESTABLISHED_YEAR}}
+            </span>
+          </div>
+          <div class="flex items-center gap-2 text-white/90 hover:text-white ">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="text-lg">{{COLLEGE_LOCATION}}</span>
+          </div>
+        </div>
+
+        <div class="hidden md:flex gap-2">
+          <button class="bg-white/10 border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-[#00377b] transition-colors">
+            <i class="fas fa-bookmark mr-1"></i> Save
+          </button>
+          <button class="bg-white/10 border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-[#00377b] transition-colors">
+            <i class="fas fa-share-alt mr-1"></i> Share
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+          <div class="text-2xl font-bold">{{STUDENT_FACULTY_RATIO}}</div>
+          <div class="text-sm text-white/80">Student Faculty Ratio</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+          <div class="text-2xl font-bold">{{TOTAL_STUDENTS}}</div>
+          <div class="text-sm text-white/80">Total Students</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+          <div class="text-2xl font-bold">{{AVERAGE_PACKAGE}}</div>
+          <div class="text-sm text-white/80">Average Package</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+          <div class="text-2xl font-bold">{{PLACEMENT_RATE}}</div>
+          <div class="text-sm text-white/80">Placement Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Tabs -->
+    <div class="border-b mb-6">
+      <div class="flex flex-wrap gap-4">
+        <button class="tab-btn active px-4 py-2 text-[#00377b] border-b-2 border-[#00377b] font-medium" data-tab="about">
+          <i class="fas fa-building mr-2"></i>About
+        </button>
+        <button class="tab-btn px-4 py-2 text-gray-600 hover:text-[#00377b]" data-tab="courses">
+          <i class="fas fa-book mr-2"></i>Courses
+        </button>
+        <button class="tab-btn px-4 py-2 text-gray-600 hover:text-[#00377b]" data-tab="contact">
+          <i class="fas fa-phone mr-2"></i>Contact
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="about-tab" class="tab-content">
+      <div class="bg-white rounded-lg shadow-sm border p-6">
+        <h2 class="text-2xl font-bold mb-4">About {{COLLEGE_SHORT_NAME}}</h2>
+        <div class="prose max-w-none mb-6">
+          <!-- PHP: echo $college_description; -->
+          <p class="text-gray-700 leading-relaxed mb-4">{{COLLEGE_DESCRIPTION}}</p>
+        </div>
+
+        <hr class="my-6">
+
+        <!-- Key Highlights -->
+        <h3 class="text-xl font-semibold mb-4 flex items-center ">
+          <i class="fas fa-award mr-2 text-[#00377b]"></i> Key Highlights
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+          <!-- PHP: Loop through highlights -->
+          <div class="flex items-start gap-2">
+            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+            <span class="text-gray-700">{{HIGHLIGHT}}</span>
+          </div>
+          <!-- End Loop -->
+        </div>
+
+        <hr class="my-6">
+
+        <!-- Facilities -->
+        <h3 class="text-xl font-semibold mb-4 flex items-center ">
+          <i class="fas fa-building mr-2 text-[#00377b]"></i> Campus Facilities
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- PHP: Loop through facilities -->
+          <div class="border-2 rounded-lg p-4 hover:border-[#00377b]/50 transition-colors">
+            <h4 class="font-semibold text-gray-900 mb-1">{{FACILITY_NAME}}</h4>
+            <p class="text-sm text-gray-600">{{FACILITY_DESCRIPTION}}</p>
+          </div>
+          <!-- End Loop -->
+        </div>
+      </div>
+    </div>
+
+    <div id="courses-tab" class="tab-content hidden">
+      <div class="bg-white rounded-lg shadow-sm border p-6">
+        <h2 class="text-2xl font-bold mb-4">Academic Programs</h2>
+        <p class="text-gray-600 mb-6">Explore the various programs offered by {{COLLEGE_SHORT_NAME}}</p>
+
+        <!-- PHP: Loop through courses -->
+        <div class="border-2 border-[#001944]/20 rounded-lg mb-6">
+          <div class="bg-[#00377b]/5 p-4 hover:bg-[#00377b]/90">
+            <div class="flex flex-col sm:flex-row items-start justify-between gap-2">
+              <div>
+                <h3 class="text-xl font-bold mb-2">{{COURSE_NAME}}</h3>
+                <p class="text-gray-600">{{COURSE_DESCRIPTION}}</p>
+              </div>
+              <span class="bg-[#00377b] text-white px-3 py-1 rounded ">{{COURSE_DURATION}}</span>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="flex items-center gap-2 ">
+                <i class="fas fa-users text-[#00377b]"></i>
+                <div>
+                  <div class="text-sm text-gray-600">Total Seats</div>
+                  <div class="font-semibold">{{COURSE_SEATS}}</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 ">
+                <i class="fas fa-dollar-sign text-[#00377b]"></i>
+                <div>
+                  <div class="text-sm text-gray-600">Annual Fees</div>
+                  <div class="font-semibold">{{COURSE_FEES}}</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 ">
+                <i class="fas fa-book text-[#00377b]"></i>
+                <div>
+                  <div class="text-sm text-gray-600">Entrance Exam</div>
+                  <div class="font-semibold">{{COURSE_EXAM}}</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 ">
+                <i class="fas fa-check-circle text-[#00377b]"></i>
+                <div>
+                  <div class="text-sm text-gray-600">Eligibility</div>
+                  <div class="font-semibold text-sm">{{COURSE_ELIGIBILITY}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Loop -->
+      </div>
+    </div>
+
+    <div id="contact-tab" class="tab-content hidden">
+      <div class="bg-white rounded-lg shadow-sm border p-6">
+        <h2 class="text-2xl font-bold mb-4">Contact Information</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-semibold mb-3">Address</h3>
+            <p class="text-gray-700 mb-4">{{COLLEGE_ADDRESS}}</p>
+
+            <h3 class="font-semibold mb-3">Phone</h3>
+            <p class="text-gray-700 mb-4">{{COLLEGE_PHONE}}</p>
+
+            <h3 class="font-semibold mb-3">Email</h3>
+            <p class="text-gray-700 mb-4">{{COLLEGE_EMAIL}}</p>
+
+            <h3 class="font-semibold mb-3">Website</h3>
+            <a href="{{COLLEGE_WEBSITE}}" target="_blank" class="text-[#00377b] hover:underline">{{COLLEGE_WEBSITE}}</a>
+          </div>
+
+          <div>
+            <h3 class="font-semibold mb-3">Office Hours</h3>
+            <p class="text-gray-700 mb-4">{{OFFICE_HOURS}}</p>
+
+            <h3 class="font-semibold mb-3">Follow Us</h3>
+            <div class="flex gap-3">
+              <a href="{{FACEBOOK_URL}}" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook text-2xl"></i></a>
+              <a href="{{TWITTER_URL}}" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter text-2xl"></i></a>
+              <a href="{{LINKEDIN_URL}}" class="text-blue-700 hover:text-blue-900"><i class="fab fa-linkedin text-2xl"></i></a>
+              <a href="{{INSTAGRAM_URL}}" class="text-pink-600 hover:text-pink-800"><i class="fab fa-instagram text-2xl"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHP: include 'includes/footer.php'; -->
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.dataset.tab;
+        
+        // Update button styles
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.classList.remove('active', 'text-[#00377b]', 'border-b-2', 'border-[#00377b]');
+          b.classList.add('text-gray-600');
+        });
+        btn.classList.add('active', 'text-[#00377b]', 'border-b-2', 'border-[#00377b]');
+        btn.classList.remove('text-gray-600');
+        
+        // Show/hide content
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.add('hidden');
+        });
+        document.getElementById(tabId + '-tab').classList.remove('hidden');
+      });
+    });
+  </script>
+  <script src="/scripts/main.js"></script>
+</body>
+</html>

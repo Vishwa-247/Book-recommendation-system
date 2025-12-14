@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Admin - AdvocateKhoj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#00377b', dark: '#001944', light: '#1453a3' },
+                        secondary: { DEFAULT: '#d67c40', dark: '#c26a36' },
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="../styles/global.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Top Bar -->
+    <header id="admin-top-bar" class="bg-white border-b shadow-sm fixed top-0 left-0 right-0 z-30">
+        <!-- Populated by admin-layout.js -->
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="admin-sidebar-container" class="fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r shadow-sm transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-20 overflow-y-auto">
+        <div class="p-4" id="admin-sidebar">
+            <!-- Populated by admin-layout.js -->
+        </div>
+    </aside>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-10 hidden lg:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[57px] lg:pl-64 min-h-screen transition-all duration-300">
+        <div class="p-6">
+            <div class="space-y-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Newsletter</h1>
+                    <p class="text-gray-600 mt-1">Manage newsletter categories, drafts and sent items</p>
+                </div>
+
+                <!-- Tabs -->
+                <div class="flex gap-2 flex-wrap">
+                    <button onclick="switchTab('category')" id="tab-category" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors">Category</button>
+                    <button onclick="switchTab('drafts')" id="tab-drafts" class="px-4 py-2 rounded-lg bg-[#00377b] text-white font-medium transition-colors hover:bg-[#00377b]/90">Drafts</button>
+                    <button onclick="switchTab('sent')" id="tab-sent" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors">Sent Items</button>
+                </div>
+
+                <!-- Drafts Tab -->
+                <div id="content-drafts" class="tab-content">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4">
+                            <h2 class="text-lg font-semibold text-orange-700">Newsletter : Draft</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="font-semibold mb-2">Saved Newsletters (Drafts):</h3>
+                                    <p class="text-xs text-red-600 mb-2">Select a newsletter to edit or create new</p>
+                                    <select class="w-full border rounded px-3 py-2 mb-4" size="5">
+                                        <option>Weekly Legal Updates - Draft 1</option>
+                                        <option>Case Law Digest - November</option>
+                                        <option>Important Amendments Notice</option>
+                                    </select>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-start">
+                                    <label class="font-semibold">Status</label>
+                                    <div class="text-red-600 text-sm">-Not Available-</div>
+
+                                    <label class="font-semibold">From</label>
+                                    <select class="border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                        <option>--Select From Address--</option>
+                                        <option>noreply@advocatekhoj.com</option>
+                                        <option>info@advocatekhoj.com</option>
+                                    </select>
+
+                                    <label class="font-semibold">To</label>
+                                    <div>
+                                        <textarea rows="3" class="w-full border rounded px-3 py-2 mb-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]"></textarea>
+                                        <button class="text-blue-600 text-sm hover:underline">view address group</button>
+                                    </div>
+
+                                    <label class="font-semibold">Subject</label>
+                                    <input type="text" class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+
+                                    <label class="font-semibold">Content</label>
+                                    <textarea rows="8" class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]"></textarea>
+                                </div>
+                                <div class="flex gap-2 flex-wrap">
+                                    <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Save</button>
+                                    <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Send</button>
+                                    <button class="px-4 py-2 border rounded hover:bg-gray-50">Delete</button>
+                                    <button class="px-4 py-2 border rounded hover:bg-gray-50 ml-auto">New</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Tab -->
+                <div id="content-category" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4">
+                            <h2 class="text-lg font-semibold text-orange-700">Newsletter : Category</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-6">
+                                <div class="flex gap-2 mb-4">
+                                    <button class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">Category</button>
+                                    <button class="px-4 py-2 border rounded hover:bg-gray-50">Subscriptions</button>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-2">Current Newsletter Categories :</h3>
+                                    <p class="text-xs text-red-600 mb-2">The categories are ordered based on WEB ORDER. They will appear in this order on web site.</p>
+                                    <p class="text-xs text-red-600 mb-4">To change the order in which they appear, edit the Web Order field.</p>
+                                    <select class="w-full border rounded px-3 py-2 mb-4" size="8">
+                                        <option>Corporate Law</option>
+                                        <option>Criminal Law</option>
+                                        <option>Family Law</option>
+                                        <option>Tax Law</option>
+                                        <option>Labour Law</option>
+                                    </select>
+                                    <div class="flex gap-2">
+                                        <button class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">New Category</button>
+                                        <button class="px-4 py-2 border rounded hover:bg-gray-50">Delete Category</button>
+                                    </div>
+                                </div>
+                                <div class="border-t pt-6">
+                                    <h3 class="font-semibold mb-4">Category :</h3>
+                                    <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-start max-w-3xl">
+                                        <label class="font-semibold">Category Name</label>
+                                        <input type="text" class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+
+                                        <label class="font-semibold">Short Description</label>
+                                        <textarea rows="4" class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]"></textarea>
+
+                                        <label class="font-semibold">Web Order</label>
+                                        <input type="text" value="0" class="w-32 border rounded px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+
+                                        <label></label>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center gap-2">
+                                                <input type="checkbox" id="hide-desc">
+                                                <label for="hide-desc" class="text-sm">Hide description on web site</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input type="checkbox" id="cat-active">
+                                                <label for="cat-active" class="text-sm">Category Active</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-6">
+                                        <button class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">Create</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sent Items Tab -->
+                <div id="content-sent" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4">
+                            <h2 class="text-lg font-semibold text-orange-700">Newsletter : Sent Items</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="font-semibold mb-2">Newsletters (Sent Items):</h3>
+                                    <select class="w-full border rounded px-3 py-2 mb-4" size="8">
+                                        <option>Monthly Newsletter - November 2025</option>
+                                        <option>Breaking Legal News - Supreme Court</option>
+                                        <option>Weekly Digest - Oct 2025</option>
+                                    </select>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-4 items-start">
+                                    <label class="font-semibold">Status</label>
+                                    <div class="text-red-600 text-sm">-Not Available-</div>
+
+                                    <label class="font-semibold">From</label>
+                                    <div class="text-sm text-gray-700">noreply@advocatekhoj.com</div>
+
+                                    <label class="font-semibold">To</label>
+                                    <textarea readonly rows="3" class="w-full border rounded px-3 py-2 bg-gray-50">all-subscribers@advocatekhoj.com</textarea>
+
+                                    <label class="font-semibold">Subject</label>
+                                    <input type="text" readonly value="Monthly Legal Updates - November 2025" class="w-full border rounded px-3 py-2 bg-gray-50">
+
+                                    <label class="font-semibold">Content</label>
+                                    <textarea readonly rows="8" class="w-full border rounded px-3 py-2 bg-gray-50">Dear Subscriber,
+
+Here are the important legal updates for November 2025...</textarea>
+                                </div>
+                                <div>
+                                    <button class="px-4 py-2 border rounded hover:bg-gray-50">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/admin-layout.js"></script>
+    <script>
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="tab-"]').forEach(el => {
+                el.classList.remove('bg-[#00377b]', 'text-white');
+                el.classList.add('border', 'border-gray-300', 'hover:bg-gray-50');
+            });
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            const activeTab = document.getElementById('tab-' + tabName);
+            if (activeTab) {
+                activeTab.classList.add('bg-[#00377b]', 'text-white');
+                activeTab.classList.remove('border', 'border-gray-300', 'hover:bg-gray-50');
+            }
+        }
+    </script>
+</body>
+</html>

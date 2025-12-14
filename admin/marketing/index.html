@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Admin - AdvocateKhoj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#00377b', dark: '#001944', light: '#1453a3' },
+                        secondary: { DEFAULT: '#d67c40', dark: '#c26a36' },
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="../styles/global.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Top Bar -->
+    <header id="admin-top-bar" class="bg-white border-b shadow-sm fixed top-0 left-0 right-0 z-30">
+        <!-- Populated by admin-layout.js -->
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="admin-sidebar-container" class="fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r shadow-sm transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-20 overflow-y-auto">
+        <div class="p-4" id="admin-sidebar">
+            <!-- Populated by admin-layout.js -->
+        </div>
+    </aside>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-10 hidden lg:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[57px] lg:pl-64 min-h-screen transition-all duration-300">
+        <div class="p-6">
+            <div class="space-y-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Marketing</h1>
+                    <p class="text-gray-600 mt-1">Campaign management and email exports</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <div class="bg-gray-50 border-b px-6 py-4">
+                        <h2 class="text-lg font-semibold">Campaign</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-6 max-w-2xl">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                                <label class="text-sm font-medium text-gray-700 whitespace-nowrap">Enter Campaign ID to export :</label>
+                                <input type="text" class="border rounded-lg px-3 py-2 w-full sm:max-w-xs focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                <button class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors whitespace-nowrap">Export</button>
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4 border-t">
+                                <label class="text-sm font-medium text-gray-700 whitespace-nowrap">Export un-subscribed email ids</label>
+                                <button class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors">Export</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/admin-layout.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Admin - AdvocateKhoj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#00377b', dark: '#001944', light: '#1453a3' },
+                        secondary: { DEFAULT: '#d67c40', dark: '#c26a36' },
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="../styles/global.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Top Bar -->
+    <header id="admin-top-bar" class="bg-white border-b shadow-sm fixed top-0 left-0 right-0 z-30">
+        <!-- Populated by admin-layout.js -->
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="admin-sidebar-container" class="fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r shadow-sm transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-20 overflow-y-auto">
+        <div class="p-4" id="admin-sidebar">
+            <!-- Populated by admin-layout.js -->
+        </div>
+    </aside>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-10 hidden lg:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[57px] lg:pl-64 min-h-screen transition-all duration-300">
+        <div class="p-6">
+            <div class="space-y-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Client Admin</h1>
+                    <p class="text-gray-600 mt-1">Manage client cases and profiles</p>
+                </div>
+
+                <!-- Tabs -->
+                <div class="flex gap-2 flex-wrap">
+                    <button onclick="switchTab('cases')" id="tab-cases" class="px-4 py-2 rounded-lg bg-[#00377b] text-white font-medium transition-colors hover:bg-[#00377b]/90">Cases</button>
+                    <button onclick="switchTab('profiles')" id="tab-profiles" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium transition-colors">Profiles</button>
+                </div>
+
+                <!-- Cases Tab -->
+                <div id="content-cases" class="tab-content">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4 flex items-center justify-between">
+                            <h2 class="text-lg font-semibold">Client Cases : Live</h2>
+                            <button onclick="switchTab('search-cases')" class="px-3 py-1.5 text-sm border rounded-lg hover:bg-gray-100 transition-colors">Search Cases</button>
+                        </div>
+                        <div class="p-6">
+                            <div class="mb-6">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <p class="text-sm text-gray-600">The following cases have been posted and are live as of today :</p>
+                                    <select class="border rounded px-3 py-1 text-sm">
+                                        <option>Page : 1</option>
+                                    </select>
+                                </div>
+
+                                <!-- Case Items -->
+                                <div class="space-y-6">
+                                    <!-- Case 1 -->
+                                    <div class="border-b pb-6">
+                                        <div class="flex gap-2 mb-3">
+                                            <button class="px-3 py-1 text-sm border rounded hover:bg-gray-50">email</button>
+                                            <button class="px-3 py-1 text-sm border rounded hover:bg-gray-50">archive</button>
+                                        </div>
+                                        <div class="space-y-2 text-sm">
+                                            <div><span class="font-semibold">Case ID :</span> 5626048b00b8646d792058493</div>
+                                            <div><span class="font-semibold">Case Title :</span> nEIGHBOUR</div>
+                                            <div><span class="font-semibold">Annonymous :</span> No</div>
+                                            <div><span class="font-semibold">Description :</span> I am staying in 1st floor ( Property is in my mother name aged ) Year , neighbour of 2nd floor is not maintaining his floor due to which roof of my floor is getting damaged regularly and twice in a....</div>
+                                            <div><span class="font-semibold">Post Date :</span> 2021-03-10 11:55:50</div>
+                                            <div class="flex gap-4 text-xs pt-2">
+                                                <button class="text-[#00377b] hover:underline">ADVOCATES VISITED [6]</button>
+                                                <button class="text-[#00377b] hover:underline">OFFERS RECEIVED [1]</button>
+                                                <button class="text-[#00377b] hover:underline">MESSAGES RECEIVED [2]</button>
+                                                <button class="text-[#00377b] hover:underline">HIDE/SHOW DIV</button>
+                                            </div>
+                                            <div class="mt-4 overflow-x-auto">
+                                                <table class="w-full border text-sm">
+                                                    <thead class="bg-gray-100">
+                                                        <tr>
+                                                            <th class="border px-3 py-2 text-left">ADVOCATE NAME</th>
+                                                            <th class="border px-3 py-2 text-left">LAST VISITED DATE</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr><td class="border px-3 py-2">Rakhi Banerjee</td><td class="border px-3 py-2">2021-03-10</td></tr>
+                                                        <tr><td class="border px-3 py-2">Anik</td><td class="border px-3 py-2">2021-03-10</td></tr>
+                                                        <tr><td class="border px-3 py-2">M. P. Siddiqui</td><td class="border px-3 py-2">2021-03-11</td></tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Case 2 -->
+                                    <div class="border-b pb-6">
+                                        <div class="flex gap-2 mb-3">
+                                            <button class="px-3 py-1 text-sm border rounded hover:bg-gray-50">email</button>
+                                            <button class="px-3 py-1 text-sm border rounded hover:bg-gray-50">archive</button>
+                                        </div>
+                                        <div class="space-y-2 text-sm">
+                                            <div><span class="font-semibold">Case ID :</span> 129604770a5555f154305370</div>
+                                            <div><span class="font-semibold">Case Title :</span> Anticipatory bail without registration of FIR</div>
+                                            <div><span class="font-semibold">Annonymous :</span> No</div>
+                                            <div><span class="font-semibold">Description :</span> Sir I want to apply for anticipatory bail under section 419, 420, 467, 468 and 471 FIR is not registered till now.please advise me.</div>
+                                            <div><span class="font-semibold">Post Date :</span> 2021-03-09 14:08:45</div>
+                                            <div class="flex gap-4 text-xs pt-2">
+                                                <button class="text-[#00377b] hover:underline">ADVOCATES VISITED [5]</button>
+                                                <button class="text-[#00377b] hover:underline">OFFERS RECEIVED [1]</button>
+                                                <button class="text-[#00377b] hover:underline">MESSAGES RECEIVED [1]</button>
+                                                <button class="text-[#00377b] hover:underline">HIDE/SHOW DIV</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Cases Tab -->
+                <div id="content-search-cases" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4 flex items-center justify-between">
+                            <h2 class="text-lg font-semibold">Client Cases : Search</h2>
+                            <button onclick="switchTab('cases')" class="px-3 py-1.5 text-sm border rounded-lg hover:bg-gray-100 transition-colors">Live Cases</button>
+                        </div>
+                        <div class="p-6">
+                            <div class="mb-6">
+                                <h3 class="text-sm font-semibold mb-2">Case List :</h3>
+                                <select class="border rounded px-3 py-2 w-full mb-4" size="10"></select>
+                                <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Preview Case</button>
+                            </div>
+                            <div class="border-t pt-6">
+                                <h3 class="text-lg font-semibold mb-4">Search</h3>
+                                <div class="space-y-4 max-w-2xl">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">CaseID</label>
+                                        <input type="text" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                        <input type="email" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                    </div>
+                                    <div class="flex gap-2 flex-wrap">
+                                        <button class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors">Search</button>
+                                        <button class="px-4 py-2 border rounded-lg hover:bg-gray-50 transition-colors">Show Cases Flagged By Admin</button>
+                                        <button class="px-4 py-2 border rounded-lg hover:bg-gray-50 transition-colors">Show Cases Flagged By Advocate</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profiles Tab -->
+                <div id="content-profiles" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm border">
+                        <div class="bg-gray-50 border-b px-6 py-4">
+                            <h2 class="text-lg font-semibold">Client Profile</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="mb-6">
+                                <h3 class="text-sm font-semibold mb-2">Client List :</h3>
+                                <select class="border rounded px-3 py-2 w-full mb-4" size="10"></select>
+                                <button class="px-3 py-1.5 text-sm border rounded hover:bg-gray-50">Modify Registration</button>
+                            </div>
+                            <div class="border-t pt-6">
+                                <h3 class="text-lg font-semibold mb-4">Search</h3>
+                                <div class="space-y-4 max-w-2xl">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                            <input type="text" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Surname</label>
+                                            <input type="text" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">City</label>
+                                            <input type="text" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">State</label>
+                                            <input type="text" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Pincode</label>
+                                            <input type="text" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                        <input type="email" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <button class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors">Search</button>
+                                        <button class="px-4 py-2 border rounded-lg hover:bg-gray-50 transition-colors">Show All</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/admin-layout.js"></script>
+    <script>
+        function switchTab(tabName) {
+            // Hide all content
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            // Reset all tab buttons
+            document.querySelectorAll('[id^="tab-"]').forEach(el => {
+                el.classList.remove('bg-[#00377b]', 'text-white');
+                el.classList.add('border', 'border-gray-300', 'hover:bg-gray-50');
+            });
+            // Show selected content
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            // Activate selected tab
+            const activeTab = document.getElementById('tab-' + tabName);
+            if (activeTab) {
+                activeTab.classList.add('bg-[#00377b]', 'text-white');
+                activeTab.classList.remove('border', 'border-gray-300', 'hover:bg-gray-50');
+            }
+        }
+    </script>
+</body>
+</html>

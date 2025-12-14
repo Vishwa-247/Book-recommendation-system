@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Time Login - AdvocateKhoj</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../styles/tailwind.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00377b',
+            secondary: '#d67c40',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <!-- Header -->
+  <?php include '../../includes/header.php'; ?>
+  
+  <main class="container mx-auto px-4 py-8">
+    <div class="max-w-lg mx-auto">
+      <div class="bg-white rounded-lg shadow-lg border p-8">
+        <div class="text-center mb-8">
+          <div class="w-16 h-16 bg-[#00377b]/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-[#00377b]/90 ">
+            <svg class="w-8 h-8 text-[#00377b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold text-gray-900">Welcome to AdvocateKhoj</h1>
+          <p class="text-gray-600 mt-2">Please complete your first-time login setup</p>
+        </div>
+
+        <form id="firstTimeLoginForm" class="space-y-6">
+          <!-- Step 1: Change Password -->
+          <div id="step1" class="space-y-4">
+            <h2 class="text-lg font-semibold text-gray-800 border-b pb-2">Step 1: Change Password</h2>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Current Password</label>
+              <input type="password" name="currentPassword" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">New Password</label>
+              <input type="password" name="newPassword" required minlength="8"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+              <p class="text-xs text-gray-500 mt-1">Minimum 8 characters</p>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Confirm New Password</label>
+              <input type="password" name="confirmPassword" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+            </div>
+          </div>
+
+          <!-- Step 2: Security Question -->
+          <div id="step2" class="space-y-4">
+            <h2 class="text-lg font-semibold text-gray-800 border-b pb-2">Step 2: Security Question</h2>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Select Security Question</label>
+              <select name="securityQuestion" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+                <option value="">Select a question</option>
+                <option value="pet">What was the name of your first pet?</option>
+                <option value="school">What was the name of your first school?</option>
+                <option value="city">In what city were you born?</option>
+                <option value="mother">What is your mother's maiden name?</option>
+                <option value="book">What is your favorite book?</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Your Answer</label>
+              <input type="text" name="securityAnswer" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00377b] focus:border-[#00377b]">
+            </div>
+          </div>
+
+          <!-- Terms -->
+          <div class="flex items-start gap-2">
+            <input type="checkbox" id="terms" name="terms" required class="mt-1">
+            <label for="terms" class="text-sm text-gray-600">
+              I agree to the <a href="../user-agreement/" class="text-[#00377b] hover:underline">Terms of Service</a> 
+              and <a href="../privacy-policy/" class="text-[#00377b] hover:underline">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" 
+            class="w-full py-3 bg-gradient-to-r from-[#00377b] to-secondary text-white rounded-md font-medium hover:opacity-90 transition-opacity">
+            Complete Setup
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <?php include '../../includes/footer.php'; ?>
+
+  <script src="../../scripts/main.js"></script>
+  <script>
+    document.getElementById('firstTimeLoginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const newPass = this.newPassword.value;
+      const confirmPass = this.confirmPassword.value;
+      
+      if (newPass !== confirmPass) {
+        showToast('Passwords do not match', 'error');
+        return;
+      }
+      
+      // Submit to PHP backend
+      showToast('Setup completed successfully!', 'success');
+      setTimeout(() => {
+        window.location.href = '../advocate/dashboard/';
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
